@@ -48,7 +48,15 @@ class Server(MPBasicServer):
     
     def communicate(self, pairings, pool):
         """
-        pairings: [[1,2], [3,4], [5]]
+        The whole simulating communication procedure with the pairs of selected clients.
+        This part supports for simulating the client dropping out.
+        e.g: pairings: [[1,2], [3,4], [5]]
+        
+        :param
+            pairings: the pairings to communicate with
+            pool: pool in thread
+        :return
+            :the unpacked response from pairs that is created ny self.unpack()
         """
         packages_received_from_clients = []        
         packages_received_from_clients = pool.map(self.communicate_with, pairings)
@@ -57,7 +65,12 @@ class Server(MPBasicServer):
 
     def communicate_with(self, group):
         """
-        group = [1,2]
+        e.g: group = [1,2]
+        :param
+            group: the group of the clients to communicate with
+        :return
+            client_package: the reply from the client and will be 'None' if losing connection
+
         """
         gpu_id = int(mp.current_process().name[-1]) - 1
         gpu_id = gpu_id % self.gpus
@@ -66,8 +79,8 @@ class Server(MPBasicServer):
         torch.cuda.set_device(gpu_id)
         device = torch.device('cuda')
         
-        local_epochs = [self.step_2_epochs for i in group]  # [4,4,4,...]
-        local_epochs[0] = None                              # [None,4,4,...]
+        local_epochs = [self.step_2_epochs for i in group]  # [2,2,2,...]
+        # local_epochs[0] = None                              # [None,2,2,...]
         
         result_model = copy.deepcopy(self.model)
         for client_id, epochs in zip(group, local_epochs):
@@ -80,6 +93,9 @@ class Client(MPBasicClient):
         super(Client, self).__init__(option, name, train_data, valid_data)
     
     def reply_peer(self, model, device, epochs):
+        """
+        Reply to server with the transmitted package after training with all client in group.   
+        """
         self.train(model, device, epochs=epochs)
         return model
     
