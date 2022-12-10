@@ -214,7 +214,7 @@ if __name__ == '__main__':
         'mp_fedavg',
         # 'mp_fedprox',
         'mp_proposal_4',
-        'mp_proposal_4_v2',
+        'mp_proposal_4_v3_clustering',
         # 'mp_alg',
         # 'mp_alg_mse',
         # 'feddyn',
@@ -230,10 +230,10 @@ if __name__ == '__main__':
         # 'S': '0',
     }
 
-    num_client = 500
+    num_client = 10
     for s in [1]:
-        # task = f'mnist_cluster_sparse_N{num_client}_K10/mnist/cluster_sparse/{num_client}client/mnist_sparse'
-        task = f'mnist_sparse_N{num_client}_K20/mnist/sparse/{num_client}client/mnist_sparse'
+        task = f'mnist_cluster_sparse_N{num_client}_K10/mnist/cluster_sparse/{num_client}client/mnist_sparse'
+        # task = f'mnist_sparse_N{num_client}_K20/mnist/sparse/{num_client}client/mnist_sparse'
         try:
             main_func(task, headers, flt)
         except ValueError:

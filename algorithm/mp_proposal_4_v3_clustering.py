@@ -14,44 +14,55 @@ class Server(MPBasicServer):
         super(Server, self).__init__(option, model, clients, test_data)
         self.clusters = [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
         self.phase_one_models = None
-        self.pairings = None
+        self.phase_one_ids = None
 
     def iterate(self, t, pool):
         self.selected_clients = self.sample()
+        
+        # print(self.selected_clients)
         # Stage 1
-        phase_one_ids, self.phase_one_models, _ = self.communicate(
-            self.selected_clients, pool)
+        self.phase_one_ids, self.phase_one_models, _ = self.communicate(
+            selected_clients = self.selected_clients, pool = pool)
+        self.phase_one_models = [i.to("cpu") for i in self.phase_one_models]
+        base = copy.deepcopy(self.model).to("cpu")
+        
+        # print(phase_one_ids)
         # self.phase_one_shuffle(t)
 
         clt = []
 
-        for idx, model in zip(phase_one_ids, self.phase_one_models):
+        for idx, model in zip(self.phase_one_ids, self.phase_one_models):
             trained_model = [param[:]
                              for name, param in model.named_parameters()]
             base_model = [param[:]
-                          for name, param in self.model.named_parameters()]
+                          for name, param in base.named_parameters()]
             clt.append(
                 torch.sub(trained_model[-1], base_model[-1]).detach().numpy())
 
-        clt = torch.FloatTensor(clt)
+        # clt = torch.FloatTensor(np.array(clt))
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=0.68)
+        label, num_clusters = self.classifier(data, N, threshold=1.25)
+        
+        # print(label)
+        # print(num_clusters)
+        
         pairings = self.pairing_clients(
-            clients=phase_one_ids, group_label=label, num_clusters=num_clusters, clients_per_group=2)
+            clients=self.phase_one_ids, group_label=label, num_clusters=num_clusters, clients_per_group=2)
 
         # self.phase_one_models = [i.to("cpu") for i in self.phase_one_models]
-        # # Stage 2
-        # phase_two_models, _ = self.communicate(self.selected_clients, pool)
-        # self.phase_one_models = None
+        
+        # Stage 2
+        _, phase_two_models, _ = self.communicate(pairs = pairings, pool = pool)
+        self.phase_one_models = None
 
-        # if not self.selected_clients:
-        #     return
+        if not self.selected_clients:
+            return
 
-        # device0 = torch.device(f"cuda:{self.server_gpu_id}")
-        # models = [i.to(device0) for i in phase_two_models]
-        # self.model = self.aggregate(models, p = [1.0 for cid in self.selected_clients])
+        device0 = torch.device(f"cuda:{self.server_gpu_id}")
+        models = [i.to(device0) for i in phase_two_models]
+        self.model = self.aggregate(models, p = [1.0 for i in range(len(models))])
         return
 
     def pairing_clients(self, clients, group_label, num_clusters, clients_per_group=2):
@@ -60,18 +71,18 @@ class Server(MPBasicServer):
         rest = []
         for i in range(num_clusters):
             group = np.where(group_label == i+1)
-            participants = [clients[i] for i in group]
+            participants = [clients[i] for i in group[0]]
             while len(participants) > 1:
                 one_pair = list(np.random.choice(
                     participants, clients_per_group, replace=False))
                 pairs.append(one_pair)
                 participants = list(set(participants) - set(one_pair))
             if len(participants):
-                rest.append(participants)
-
+                rest.append(participants[0])
+        
         while len(rest) > 1:
-            one_pair = list(np.random.choice(
-                rest, clients_per_group, replace=False))
+            # print(rest[0])
+            one_pair = list(np.random.choice(rest, clients_per_group, replace=False))
             pairs.append(one_pair)
             rest = list(set(rest) - set(one_pair))
         if len(rest):
@@ -82,7 +93,7 @@ class Server(MPBasicServer):
         if not self.phase_one_models:
             send_model = copy.deepcopy(self.model)
         else:
-            send_model = self.phase_one_models[self.selected_clients.index(
+            send_model = self.phase_one_models[self.phase_one_ids.index(
                 client_id)]
 
         return {
@@ -96,26 +107,21 @@ class Server(MPBasicServer):
                         for cp in packages_received_from_clients]
         return ids, models, train_losses
 
-    def communicate(self, selected_clients, pool):
+    def communicate(self, selected_clients = None, pairs = None, pool=None):
         packages_received_from_clients = []
-        packages_received_from_clients = pool.map(
-            self.communicate_with, selected_clients)
-        self.selected_clients = [selected_clients[i] for i in range(
-            len(selected_clients)) if packages_received_from_clients[i]]
-        packages_received_from_clients = [
-            pi for pi in packages_received_from_clients if pi]
-        sortlist = sorted(packages_received_from_clients,
-                          key=lambda d: d['id'])
-        return self.unpack(sortlist)
+        
+        if selected_clients:
+            packages_received_from_clients = pool.map(self.communicate_with, selected_clients)
+            self.selected_clients = [selected_clients[i] for i in range(len(selected_clients)) if packages_received_from_clients[i]]
+        else:
+            packages_received_from_clients = pool.map(
+                self.communicate_with_pairs, pairs)
+        packages_received_from_clients = [pi for pi in packages_received_from_clients if pi]
+        # sortlist = sorted(packages_received_from_clients,
+        #                   key=lambda d: d['id'])
+        return self.unpack(packages_received_from_clients)
 
     def communicate_with(self, client_id):
-        """
-        Pack the information that is needed for client_id to improve the global model
-        :param
-            client_id: the id of the client to communicate with
-        :return
-            client_package: the reply from the client and will be 'None' if losing connection
-        """
         gpu_id = int(mp.current_process().name[-1]) - 1
         gpu_id = gpu_id % self.gpus
 
@@ -129,12 +135,23 @@ class Server(MPBasicServer):
         # listen for the client's response and return None if the client drops out
         if self.clients[client_id].is_drop():
             return None
-        return self.clients[client_id].reply(svr_pkg)
+        return self.clients[client_id].reply(svr_pkg, device)
+    
+    def communicate_with_pairs(self, pairs):
+        gpu_id = int(mp.current_process().name[-1]) - 1
+        gpu_id = gpu_id % self.gpus
 
-    # def phase_one_shuffle(self, time_step):
-    #     random.seed(time_step)
-    #     random.shuffle(self.phase_one_models, lambda : 0.5)
-    #     return
+        torch.manual_seed(0)
+        torch.cuda.set_device(gpu_id)
+        # This is only 'cuda' so its can find the propriate cuda id to train
+        device = torch.device('cuda')
+        # print(pairs)
+        model_clientid = pairs[0]
+        train_clientid = pairs[1] if pairs[1] else pairs[0]
+        svr_pkg = self.pack(client_id = model_clientid)
+        if self.clients[train_clientid].is_drop():
+            return None
+        return self.clients[train_clientid].reply(svr_pkg, device)
 
     def unit_scaler(self, data):
         """
@@ -182,9 +199,7 @@ class Server(MPBasicServer):
 
                         for idx_j in new_group:
                             # Calculate similarity
-                            res = 1 - \
-                                cosine_similarity(data[idx_i, :].reshape(
-                                    1, -1), data[idx_j, :].reshape(1, -1))
+                            res = 1 - cosine_similarity(data[idx_i, :].reshape(1, -1), data[idx_j, :].reshape(1, -1))
                             # Choose element having cosine similarity minimum
                             min_dis = res if min_dis > res else min_dis
 
@@ -193,8 +208,7 @@ class Server(MPBasicServer):
                             picked_index = idx_i
 
                     new_group.append(picked_index)
-                    filtered_label = np.setdiff1d(
-                        filtered_label, [picked_index])
+                    filtered_label = np.setdiff1d(filtered_label, [picked_index])
 
                     # print(new_group)
                     isTrue = False
@@ -221,10 +235,10 @@ class Server(MPBasicServer):
                                 group_NG.remove(picked_index)
                                 break
 
-                    if filtered_label.size == 0:
-                        num_cluster = (
-                            num_cluster - 1) if num_cluster >= 2 else 1
-                        break
+                    # if filtered_label.size == 0:
+                    #     num_cluster = (
+                    #         num_cluster - 1) if num_cluster >= 2 else 1
+                    #     break
                 for id in new_group:
                     label[id] = num_cluster
 
@@ -245,3 +259,22 @@ class Client(MPBasicClient):
             "model": model,
             "train_loss": loss,
         }
+
+    # def reply(self, svr_pkg, device):
+    #     """
+    #     Reply to server with the transmitted package.
+    #     The whole local procedure should be planned here.
+    #     The standard form consists of three procedure:
+    #     unpacking the server_package to obtain the global model,
+    #     training the global model, and finally packing the improved
+    #     model into client_package.
+    #     :param
+    #         svr_pkg: the package received from the server
+    #     :return:
+    #         client_pkg: the package to be send to the server
+    #     """
+    #     model = self.unpack(svr_pkg)
+    #     loss = self.train_loss(model, device)
+    #     self.train(model, device)
+    #     cpkg = self.pack(model, loss)
+    #     return cpkg

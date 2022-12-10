@@ -10,7 +10,6 @@ class MyLogger(flw.Logger):
         super().__init__()
         self.max_acc = 0
         
-        
     def log(self, server=None):
         if server==None: return
         if self.output == {}:

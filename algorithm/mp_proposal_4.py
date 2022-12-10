@@ -80,7 +80,7 @@ class Server(MPBasicServer):
         device = torch.device('cuda')
         
         local_epochs = [self.step_2_epochs for i in group]  # [2,2,2,...]
-        # local_epochs[0] = None                              # [None,2,2,...]
+        local_epochs[0] = None                              # [None,2,2,...]
         
         result_model = copy.deepcopy(self.model)
         for client_id, epochs in zip(group, local_epochs):
