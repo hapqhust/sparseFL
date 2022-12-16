@@ -225,12 +225,12 @@ if __name__ == '__main__':
         # 'E': '8',
         # 'B': '4',
         # 'LR': '0.01',
-        # 'R': '500',
+        # 'R': '200',
         # 'P': '1',
         # 'S': '0',
     }
 
-    num_client = 10
+    num_client = 50
     for s in [1]:
         task = f'mnist_cluster_sparse_N{num_client}_K10/mnist/cluster_sparse/{num_client}client/mnist_sparse'
         # task = f'mnist_sparse_N{num_client}_K20/mnist/sparse/{num_client}client/mnist_sparse'
