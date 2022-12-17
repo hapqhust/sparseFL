@@ -26,7 +26,7 @@ class Server(MPBasicServer):
         self.phase_one_models = [i.to("cpu") for i in self.phase_one_models]
         base = copy.deepcopy(self.model).to("cpu")
         
-        # print(phase_one_ids)
+        # print(self.phase_one_ids)
         # self.phase_one_shuffle(t)
 
         clt = []

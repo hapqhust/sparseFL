@@ -11,7 +11,7 @@ class Server(MPBasicServer):
         super(Server, self).__init__(option, model, clients, test_data)
         self.paras_name = ['cpg', 'se']
         self.client_per_group = option['cpg']
-        self.step_2_epochs = option['se']
+        self.step_2_epochs = int(option['num_epochs']/2)
         
     def pairing_clients(self, clients, clients_per_group=2):
         """
@@ -80,7 +80,7 @@ class Server(MPBasicServer):
         device = torch.device('cuda')
         
         local_epochs = [self.step_2_epochs for i in group]  # [2,2,2,...]
-        local_epochs[0] = None                              # [None,2,2,...]
+        # local_epochs[0] = None                              # [None,2,2,...]
         
         result_model = copy.deepcopy(self.model)
         for client_id, epochs in zip(group, local_epochs):
