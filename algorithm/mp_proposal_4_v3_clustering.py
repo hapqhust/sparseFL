@@ -26,7 +26,7 @@ class Server(MPBasicServer):
         self.phase_one_models = [i.to("cpu") for i in self.phase_one_models]
         base = copy.deepcopy(self.model).to("cpu")
         
-        # print(self.phase_one_ids)
+        print(self.phase_one_ids)
         # self.phase_one_shuffle(t)
 
         clt = []
@@ -43,14 +43,15 @@ class Server(MPBasicServer):
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=1.25)
+        label, num_clusters = self.classifier(data, N, threshold=1)
         
-        # print(label)
+        print(label)
         # print(num_clusters)
         
         pairings = self.pairing_clients(
             clients=self.phase_one_ids, group_label=label, num_clusters=num_clusters, clients_per_group=2)
 
+        print(pairings)
         # self.phase_one_models = [i.to("cpu") for i in self.phase_one_models]
         
         # Stage 2
@@ -78,15 +79,15 @@ class Server(MPBasicServer):
                 pairs.append(one_pair)
                 participants = list(set(participants) - set(one_pair))
             if len(participants):
-                rest.append(participants[0])
+                pairs.append(participants)
         
-        while len(rest) > 1:
-            # print(rest[0])
-            one_pair = list(np.random.choice(rest, clients_per_group, replace=False))
-            pairs.append(one_pair)
-            rest = list(set(rest) - set(one_pair))
-        if len(rest):
-            pairs.append(rest)
+        # while len(rest) > 1:
+        #     # print(rest[0])
+        #     one_pair = list(np.random.choice(rest, clients_per_group, replace=False))
+        #     pairs.append(one_pair)
+        #     rest = list(set(rest) - set(one_pair))
+        # if len(rest):
+        #     pairs.append(rest)
         return pairs
 
     def pack(self, client_id):
@@ -95,7 +96,8 @@ class Server(MPBasicServer):
         else:
             send_model = self.phase_one_models[self.phase_one_ids.index(
                 client_id)]
-
+            print(client_id, self.phase_one_ids.index(client_id))
+        
         return {
             "model": send_model,
         }
@@ -147,7 +149,7 @@ class Server(MPBasicServer):
         device = torch.device('cuda')
         # print(pairs)
         model_clientid = pairs[0]
-        train_clientid = pairs[1] if pairs[1] else pairs[0]
+        train_clientid = pairs[1] if len(pairs) > 1 else pairs[0]
         svr_pkg = self.pack(client_id = model_clientid)
         if self.clients[train_clientid].is_drop():
             return None

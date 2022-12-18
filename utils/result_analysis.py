@@ -232,9 +232,9 @@ if __name__ == '__main__':
 
     num_client = 10
     for s in [1]:
-        # task = f'mnist_sparse5_dense5_N{num_client}_K8/mnist/sparse5_dense5/{num_client}client/mnist_sparse5_dense5'
+        task = f'mnist_sparse5_dense5_N{num_client}_K8/mnist/sparse5_dense5/{num_client}client/mnist_sparse5_dense5'
         
-        task = f'mnist_cluster_sparse_N{num_client}_K10/mnist/cluster_sparse/{num_client}client/mnist_sparse'
+        # task = f'mnist_cluster_sparse_N{num_client}_K10/mnist/cluster_sparse/{num_client}client/mnist_sparse'
         # task = f'mnist_sparse_N{num_client}_K20/mnist/sparse/{num_client}client/mnist_sparse'
         try:
             main_func(task, headers, flt)
