@@ -5,13 +5,15 @@ cudas = ",".join([str(i) for i in visible_cudas])
 task_file = "main.py"
 
 dataset = "mnist"
-dataset_types = ["sparse5_dense5", "sparse3_dense7", "sparse7_dense3"]
-N = 200
-K = 20
+# dataset_types = ["sparse5_dense5", "sparse3_dense7", "sparse7_dense3"]
+dataset_types = ["cluster_sparse"]
+N = 10
+K = 10
 # total_epochs = 8000
 batch_size = 2
 
 model = "cnn"
+# algos = ["mp_proposal_4", "mp_proposal_4_v3_clustering"]
 algos = ["scaffold", "mp_proposal_4", "mp_proposal_4_v3_clustering", "mp_fedavg", "mp_fedprox", "fedfa", "fedfv"]
 data_folder = f"./benchmark/{dataset}/data"
 log_folder = f"motiv/{dataset}"
@@ -22,7 +24,7 @@ header_text = "\
 #$ -cwd\n\
 #$ -l rt_G.small=1\n\
 #$ -l h_rt=36:00:00\n\
-#$ -o /home/aaa10078nj/Federated_Learning/QHa_test/logs/$JOB_NAME_$JOB_ID.log\n\
+#$ -o /home/aaa10078nj/Federated_Learning/Ha_SparseFL/logs/$JOB_NAME_$JOB_ID.log\n\
 #$ -j y\n\n\
 source /etc/profile.d/modules.sh\n\
 module load gcc/11.2.0\n\
@@ -32,7 +34,7 @@ module load cudnn/8.3/8.3.3\n\
 module load nccl/2.11/2.11.4-1\n\
 module load python/3.10/3.10.4\n\
 source ~/venv/pytorch1.11+horovod/bin/activate\n\n\
-LOG_DIR=\"/home/aaa10078nj/Federated_Learning/QHa_test/logs/mnist/$JOB_NAME_$JOB_ID\"\n\
+LOG_DIR=\"/home/aaa10078nj/Federated_Learning/Ha_SparseFL/logs/mnist/$JOB_NAME_$JOB_ID\"\n\
 rm -r ${LOG_DIR}\n\
 mkdir ${LOG_DIR}\n\n\
 #Dataset\n\
@@ -44,7 +46,7 @@ for dataset_type in dataset_types:
     GROUP=\"{}\"\n\
     ALG=\"{}\"\n\
     MODEL=\"{}\"\n\
-    WANDB=0\n\
+    WANDB=1\n\
     ROUND={}\n\
     EPOCH_PER_ROUND={}\n\
     BATCH={}\n\
@@ -53,15 +55,16 @@ for dataset_type in dataset_types:
     NUM_GPUS=1\n\
     SERVER_GPU_ID=0\n\
     TASK=\"{}\"\n\
-    DATA_IDX_FILE=\"mnist/{}/{}client/mnist_{}.json\"\n\n\
+    DATA_IDX_FILE=\"mnist/{}/{}client/mnist_sparse.json\"\n\n\
+    cd sparseFL\n\n\
     "
 
-    for E in [4, 8]:
+    for E in [8]:
         task_name = f"{dataset}_{dataset_type}_N{N}_K{K}_E{E}"
 
         for algo in algos:
             command = formated_command.format(
-                task_name, algo, model, 1000, E, batch_size, K/N, task_name, dataset_type, N, dataset_type
+                task_name, algo, model, 1000, E, batch_size, K/N, task_name, dataset_type, N
             )
                 
             body_text = "python main.py  --task ${TASK}  --model ${MODEL}  --algorithm ${ALG}  --wandb ${WANDB} --data_folder ${DATA_DIR}  --log_folder ${LOG_DIR}   --dataidx_filename ${DATA_IDX_FILE}   --num_rounds ${ROUND} --num_epochs ${EPOCH_PER_ROUND} --proportion ${PROPOTION} --batch_size ${BATCH} --num_threads_per_gpu ${NUM_THRESH_PER_GPU}  --num_gpus ${NUM_GPUS} --server_gpu_id ${SERVER_GPU_ID} "

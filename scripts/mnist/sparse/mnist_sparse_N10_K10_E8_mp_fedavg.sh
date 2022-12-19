@@ -22,19 +22,19 @@ mkdir ${LOG_DIR}
 DATA_DIR="$SGE_LOCALDIR/$JOB_ID/"
 cp -r ./benchmark/mnist/data ${DATA_DIR}
 
-    GROUP="mnist_sparse_N500_K50_E8"
-    ALG="mp_proposal_4"
+    GROUP="mnist_sparse_N10_K10_E8"
+    ALG="mp_fedavg"
     MODEL="cnn"
     WANDB=1
     ROUND=1000
     EPOCH_PER_ROUND=8
     BATCH=2
-    PROPOTION=0.10
+    PROPOTION=1.00
     NUM_THRESH_PER_GPU=1
     NUM_GPUS=1
     SERVER_GPU_ID=0
-    TASK="mnist_sparse_N500_K50_E8"
-    DATA_IDX_FILE="mnist/sparse/500client/mnist_sparse.json"
+    TASK="mnist_sparse_N10_K10_E8"
+    DATA_IDX_FILE="mnist/sparse/10client/mnist_sparse.json"
 
     cd sparseFL
 
