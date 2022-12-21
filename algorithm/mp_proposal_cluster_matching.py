@@ -36,14 +36,16 @@ class Server(MPBasicServer):
                              for name, param in model.named_parameters()]
             base_model = [param[:]
                           for name, param in base.named_parameters()]
-            clt.append(
-                torch.sub(trained_model[-1], base_model[-1]).detach().numpy())
+            
+            res = torch.sub(trained_model[-1], base_model[-1]).detach().numpy()
+            res2 = np.where(res < 0, res*0.1, res)
+            clt.append(res2)
 
         # clt = torch.FloatTensor(np.array(clt))
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=1)
+        label, num_clusters = self.classifier(data, N, threshold=1.05)
         
         print(label)
         # print(num_clusters)
@@ -219,6 +221,7 @@ class Server(MPBasicServer):
                         res2 = 1 - \
                             cosine_similarity(data[id, :].reshape(
                                 1, -1), data[picked_index, :].reshape(1, -1))
+                        # print(res2)
                         if res2 <= threshold:
                             group_OK.append(id)
                             group_NG.remove(id)

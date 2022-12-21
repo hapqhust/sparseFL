@@ -43,8 +43,8 @@ min_sample_per_client = 1
 max_sample_per_client = 200
 
 # num_clients = 5 * len(total_labels)
-num_clients_sparse = 3
-num_clients_dense = 7
+num_clients_sparse = 200
+num_clients_dense = 0
 num_clients = num_clients_sparse + num_clients_dense
 
 total_label = len(total_labels)
@@ -118,7 +118,8 @@ for client_id in range(len(client_labels)):
         
     
 dataset = "mnist"
-type_dataset = "sparse3_dense7"
+# type_dataset = "sparse3_dense7"
+type_dataset = "sparse"
 savepath = f"./dataset_idx/{dataset}/{type_dataset}/{num_clients}client"
 
 if not Path(savepath).exists():
