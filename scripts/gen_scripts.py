@@ -5,16 +5,16 @@ cudas = ",".join([str(i) for i in visible_cudas])
 task_file = "main.py"
 
 dataset = "mnist"
-# dataset_types = ["sparse", "sparse5_dense5", "sparse3_dense7", "sparse7_dense3"]
-dataset_types = ["sparse"]
-N = 1000
-K = 50
+dataset_types = ["sparse", "sparse5_dense5", "sparse3_dense7", "sparse7_dense3"]
+# dataset_types = ["sparse"]
+N = 200
+K = 20
 E = 8
 num_round = 1000
 batch_size = 2
 
 model = "cnn"
-algos = ["mp_proposal_random_matching", "mp_proposal_cluster_matching"]
+algos = ["mp_proposal_random_matching", "mp_proposal_cluster_matching_v1", "mp_proposal_cluster_matching_v2"]
 # algos = ["scaffold", "mp_proposal_random_matching", "mp_proposal_cluster_matching", "mp_fedavg", "mp_fedprox", "fedfa", "fedfv"]
 data_folder = f"./benchmark/{dataset}/data"
 log_folder = f"motiv/{dataset}"
@@ -73,7 +73,12 @@ for dataset_type in dataset_types:
             
         body_text = "python main.py  --task ${TASK}  --model ${MODEL}  --algorithm ${ALG}  --wandb ${WANDB} --data_folder ${DATA_DIR}  --log_folder ${LOG_DIR}   --dataidx_filename ${DATA_IDX_FILE}   --num_rounds ${ROUND} --num_epochs ${EPOCH_PER_ROUND} --proportion ${PROPOTION} --batch_size ${BATCH} --num_threads_per_gpu ${NUM_THRESH_PER_GPU}  --num_gpus ${NUM_GPUS} --server_gpu_id ${SERVER_GPU_ID} "
 
-        file = open(f"./{dataset}/{dataset_type}/{task_name}_{algo}.sh", "w")
+        dir_path = f"./run2/{dataset}/{dataset_type}/"
+        
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+    
+        file = open(dir_path + f"{task_name}_{algo}.sh", "w")
         file.write(header_text + command + body_text)
         file.close()
         # CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_cluster_sparse_N10_K10 --wandb 0 --model cnn --algorithm mp_proposal_4 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/cluster_sparse/10client/mnist_sparse.json --num_rounds 200 --num_epochs 4 --proportion 1 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
