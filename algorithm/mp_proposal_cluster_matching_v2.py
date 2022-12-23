@@ -45,7 +45,7 @@ class Server(MPBasicServer):
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=1.05)
+        label, num_clusters = self.classifier(data, N, threshold=0.8)
         
         print(label)
         # print(num_clusters)
@@ -83,13 +83,6 @@ class Server(MPBasicServer):
             if len(participants):
                 pairs.append(participants)
         
-        # while len(rest) > 1:
-        #     # print(rest[0])
-        #     one_pair = list(np.random.choice(rest, clients_per_group, replace=False))
-        #     pairs.append(one_pair)
-        #     rest = list(set(rest) - set(one_pair))
-        # if len(rest):
-        #     pairs.append(rest)
         return pairs
 
     def pack(self, client_id):
@@ -184,14 +177,11 @@ class Server(MPBasicServer):
 
             if (filtered_label.size > 0):
                 new_group = []  # list
-                group_NG = []
-                group_OK = []
                 new_group.append(filtered_label[0])  # choose the first element
-                group_NG.append(filtered_label[0])  # choose the first element
                 # label[filtered_label[0]] = num_cluster
                 filtered_label = np.delete(filtered_label, 0, 0)  # numpy array
 
-                while (len(group_NG) > 0 and filtered_label.size > 0):
+                while (filtered_label.size > 0):
 
                     # the next index will be added into new group
                     picked_index = None
@@ -211,42 +201,13 @@ class Server(MPBasicServer):
                             max_dis = min_dis
                             picked_index = idx_i
 
-                    new_group.append(picked_index)
-                    filtered_label = np.setdiff1d(filtered_label, [picked_index])
-
-                    # print(new_group)
-                    isTrue = False
-
-                    for id in group_NG:
-                        res2 = 1 - \
-                            cosine_similarity(data[id, :].reshape(
-                                1, -1), data[picked_index, :].reshape(1, -1))
-                        # print(res2)
-                        if res2 <= threshold:
-                            group_OK.append(id)
-                            group_NG.remove(id)
-                            isTrue = True
-
-                    if isTrue:
-                        group_OK.append(picked_index)
+                    if max_dis >= threshold:
+                        new_group.append(picked_index)
+                        filtered_label = np.setdiff1d(filtered_label, [picked_index])
                     else:
-                        group_NG.append(picked_index)
-                        for id in group_OK:
-                            res2 = 1 - \
-                                cosine_similarity(data[id, :].reshape(
-                                    1, -1), data[picked_index, :].reshape(1, -1))
-                            if res2 <= threshold:
-                                group_OK.append(picked_index)
-                                group_NG.remove(picked_index)
-                                break
-
-                    # if filtered_label.size == 0:
-                    #     num_cluster = (
-                    #         num_cluster - 1) if num_cluster >= 2 else 1
-                    #     break
+                        break
                 for id in new_group:
                     label[id] = num_cluster
-
                 num_cluster += 1
             else:
                 break
