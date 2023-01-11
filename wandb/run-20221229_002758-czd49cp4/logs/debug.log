@@ -1,0 +1,26 @@
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_setup.py:_flush():68] Configure stats pid to 36120
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_setup.py:_flush():68] Loading settings from /home/aiotlabws/.config/wandb/settings
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_setup.py:_flush():68] Loading settings from /mnt/disk1/hapq/sparseFL/wandb/settings
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'main.py', 'program': 'main.py'}
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:_log_setup():476] Logging user logs to /mnt/disk1/hapq/sparseFL/wandb/run-20221229_002758-czd49cp4/logs/debug.log
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:_log_setup():477] Logging internal logs to /mnt/disk1/hapq/sparseFL/wandb/run-20221229_002758-czd49cp4/logs/debug-internal.log
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:init():516] calling init triggers
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {'task': 'mnist_cluster_sparse_N50_K10_E8', 'algorithm': 'mp_proposal_cluster_matching_v1', 'model': 'cnn', 'output_file_name': 'output.json', 'sample': 'uniform', 'aggregate': 'none', 'learning_rate_decay': 0.998, 'weight_decay': 0, 'lr_scheduler': -1, 'num_rounds': 500, 'proportion': 0.2, 'num_epochs': 8, 'learning_rate': 0.001, 'batch_size': 2, 'optimizer': 'SGD', 'momentum': 0, 'seed': 0, 'eval_interval': 1, 'num_threads': 1, 'num_threads_per_gpu': 1, 'num_gpus': 2, 'gpu': 0, 'net_drop': 0, 'net_active': 99999, 'capability': 0, 'learning_rate_lambda': 0, 'q': 0.0, 'epsilon': 0.0, 'eta': 1.0, 'tau': 0, 'alpha': 0.5, 'beta': 1.0, 'gamma': 0.0, 'mu': 0.1, 'dataidx_filename': 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', 'dataidx_path': 'none', 'server_gpu_id': 0, 'load_model_path': None, 'data_folder': './benchmark/mnist/data', 'log_folder': 'fedtask', 'wandb': 1, 'neg_fct': 1.0, 'neg_mrg': 5.0, 'temp': 1.0, 'kd_fct': 1.0, 'sthr': 0.975, 'cpg': 2, 'se': 4}
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:init():569] starting backend
+2022-12-29 00:27:58,352 INFO    MainThread:36120 [wandb_init.py:init():573] setting up manager
+2022-12-29 00:27:58,360 INFO    MainThread:36120 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-12-29 00:27:58,372 INFO    MainThread:36120 [wandb_init.py:init():580] backend started and connected
+2022-12-29 00:27:58,377 INFO    MainThread:36120 [wandb_init.py:init():658] updated telemetry
+2022-12-29 00:27:58,629 INFO    MainThread:36120 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2022-12-29 00:27:59,411 INFO    MainThread:36120 [wandb_run.py:_on_init():2000] communicating current version
+2022-12-29 00:27:59,835 INFO    MainThread:36120 [wandb_run.py:_on_init():2004] got version response upgrade_message: "wandb version 0.13.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-12-29 00:27:59,835 INFO    MainThread:36120 [wandb_init.py:init():728] starting run threads in backend
+2022-12-29 00:28:04,855 INFO    MainThread:36120 [wandb_run.py:_console_start():1980] atexit reg
+2022-12-29 00:28:04,855 INFO    MainThread:36120 [wandb_run.py:_redirect():1838] redirect: SettingsConsole.WRAP_RAW
+2022-12-29 00:28:04,856 INFO    MainThread:36120 [wandb_run.py:_redirect():1903] Wrapping output streams.
+2022-12-29 00:28:04,856 INFO    MainThread:36120 [wandb_run.py:_redirect():1925] Redirects installed.
+2022-12-29 00:28:04,859 INFO    MainThread:36120 [wandb_init.py:init():765] run started, returning control to user process
+2022-12-29 00:58:07,341 WARNING MsgRouterThr:36120 [router.py:message_loop():77] message_loop has been closed

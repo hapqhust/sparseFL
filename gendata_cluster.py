@@ -19,11 +19,11 @@ class NpEncoder(json.JSONEncoder):
 train_dataset = datasets.MNIST( "./benchmark/mnist/data", train=True, download=True, transform=None)
 print("total sample of dataset", len(train_dataset))
 
-num_clients = 10
+num_clients = 50
 
 maximum_sample = 8
 minimum_sample = 2
-maximum_num_label = 3
+maximum_num_label = 2
 minimum_num_label = 2
 
 def cluster(dataset, total_client):
@@ -43,13 +43,14 @@ def cluster(dataset, total_client):
     client_labels = []
     
     for _ in range(num_cluster):
-        label_per_client = np.random.randint(minimum_num_label, maximum_num_label)
+        # label_per_client = np.random.randint(minimum_num_label, maximum_num_label)
+        label_per_client = 2
         if len(label_list) >= label_per_client:
             this_set = np.random.choice(label_list, label_per_client, replace=False)
             print("Cover label", this_set)
             client_labels.append(list(this_set))
             label_list = list(set(label_list) - set(this_set))
-        elif 0 <= len(label_list) < label_per_client:
+        elif 0 < len(label_list) < label_per_client:
             remain = label_list.copy()
             # add_on = label_per_client - len(this_set)
             add_on = label_per_client - len(remain)
@@ -59,20 +60,25 @@ def cluster(dataset, total_client):
             client_labels.append(remain + list(this_set))
             label_list = list(set(label_list) - set(remain + list(this_set)))
         else:
-            print(len(label_list), label_per_client)
-
-    num_added_total = (total_client - len(client_labels))
-    num_added = np.random.default_rng().normal(total_client/2, total_client/5, len(client_labels))
-    num_added = np.round(num_added/np.sum(num_added) * num_added_total)
-    num_added = np.sort(num_added)
-    num_added[-1] = num_added_total - np.sum(num_added) + num_added[-1]
+            break
+            # print(len(label_list), label_per_client)
+    print(client_labels)
+    # num_added_total = (total_client - len(client_labels))
+    # num_added = np.random.default_rng().normal(total_client/2, total_client/5, len(client_labels))
+    # num_added = np.round(num_added/np.sum(num_added) * num_added_total)
+    # num_added = np.sort(num_added)
+    # num_added[-1] = num_added_total - np.sum(num_added) + num_added[-1]
     
-    adds = []
-    for i in range(len(client_labels)):
-        for j in range(int(num_added[i])):
-            adds += [client_labels[i]]
+    # adds = []
+    # for i in range(len(client_labels)):
+    #     for j in range(int(num_added[i])):
+    #         adds += [client_labels[i]]
         
-    client_labels += adds
+    # client_labels += adds
+    
+    num_client_added = len(client_labels)
+    for idx in range(num_client_added, total_client):
+        client_labels.append(client_labels[idx % 5])
     
     for client_idx, client_labels in zip(range(total_client), client_labels):
         for label in client_labels:

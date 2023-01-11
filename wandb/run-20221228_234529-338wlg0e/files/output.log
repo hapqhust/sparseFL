@@ -1,0 +1,42 @@
+CONFIG => {'task': 'mnist_cluster_sparse_N50_K10_E8', 'algorithm': 'scaffold', 'model': 'cnn', 'output_file_name': 'output.json', 'sample': 'uniform', 'aggregate': 'none', 'learning_rate_decay': 0.998, 'weight_decay': 0, 'lr_scheduler': -1, 'num_rounds': 2, 'proportion': 0.2, 'num_epochs': 8, 'learning_rate': 0.001, 'batch_size': 2, 'optimizer': 'SGD', 'momentum': 0, 'seed': 0, 'eval_interval': 1, 'num_threads': 1, 'num_threads_per_gpu': 1, 'num_gpus': 2, 'gpu': 0, 'net_drop': 0, 'net_active': 99999, 'capability': 0, 'learning_rate_lambda': 0, 'q': 0.0, 'epsilon': 0.0, 'eta': 1.0, 'tau': 0, 'alpha': 0.5, 'beta': 1.0, 'gamma': 0.0, 'mu': 0.1, 'dataidx_filename': 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', 'dataidx_path': 'none', 'server_gpu_id': 1, 'load_model_path': None, 'data_folder': './benchmark/mnist/data', 'log_folder': 'fedtask', 'wandb': 1, 'neg_fct': 1.0, 'neg_mrg': 5.0, 'temp': 1.0, 'kd_fct': 1.0, 'sthr': 0.975, 'cpg': 2, 'se': 4}
+--------------Round 0--------------
+Time Cost:                    4.9312s
+Training Loss:                2.3067
+Testing Loss:                 2.3054
+Testing Accuracy:             0.1011
+Validating Accuracy:          0.1114
+Mean of Client Accuracy:      0.1166
+Std of Client Accuracy:       0.2472
+--------------Round 1--------------
+Traceback (most recent call last):
+  File "main.py", line 103, in <module>
+    main()
+  File "main.py", line 100, in main
+    server.run()
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedbase.py", line 59, in run
+    self.iterate(round)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/scaffold.py", line 28, in iterate
+    dys, dcs = self.communicate(self.selected_clients)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedbase.py", line 105, in communicate
+    response_from_client_id = self.communicate_with(client_id)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedbase.py", line 130, in communicate_with
+    return self.clients[client_id].reply(svr_pkg)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/scaffold.py", line 77, in reply
+    dy, dc = self.train(model, c_g)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/scaffold.py", line 62, in train
+    loss = self.calculator.get_loss(model, batch_data)
+  File "/mnt/disk1/hapq/sparseFL/benchmark/toolkits.py", line 398, in get_loss
+    outputs = model(tdata[0])
+  File "/mnt/disk1/anaconda3/envs/longnd/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/mnt/disk1/hapq/sparseFL/benchmark/mnist/model/cnn.py", line 14, in forward
+    x = self.encoder(x)
+  File "/mnt/disk1/hapq/sparseFL/benchmark/mnist/model/cnn.py", line 21, in encoder
+    x = F.max_pool2d(F.relu(self.conv1(x)), 2)
+  File "/mnt/disk1/anaconda3/envs/longnd/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/mnt/disk1/anaconda3/envs/longnd/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/mnt/disk1/anaconda3/envs/longnd/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0! (when checking argument for argument weight in method wrapper__cudnn_convolution)

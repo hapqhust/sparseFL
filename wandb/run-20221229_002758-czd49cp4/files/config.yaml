@@ -1,0 +1,177 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.5
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: true
+    python_version: 3.8.12
+    start_time: 1672248478.373172
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.8.12
+      5: 0.13.5
+      8:
+      - 2
+      - 5
+aggregate:
+  desc: null
+  value: none
+algorithm:
+  desc: null
+  value: mp_proposal_cluster_matching_v1
+alpha:
+  desc: null
+  value: 0.5
+batch_size:
+  desc: null
+  value: 2
+beta:
+  desc: null
+  value: 1.0
+capability:
+  desc: null
+  value: 0
+cpg:
+  desc: null
+  value: 2
+data_folder:
+  desc: null
+  value: ./benchmark/mnist/data
+dataidx_filename:
+  desc: null
+  value: mnist/cluster_sparse/50client/mnist_cluster_sparse.json
+dataidx_path:
+  desc: null
+  value: none
+epsilon:
+  desc: null
+  value: 0.0
+eta:
+  desc: null
+  value: 1.0
+eval_interval:
+  desc: null
+  value: 1
+gamma:
+  desc: null
+  value: 0.0
+gpu:
+  desc: null
+  value: 0
+kd_fct:
+  desc: null
+  value: 1.0
+learning_rate:
+  desc: null
+  value: 0.001
+learning_rate_decay:
+  desc: null
+  value: 0.998
+learning_rate_lambda:
+  desc: null
+  value: 0
+load_model_path:
+  desc: null
+  value: null
+log_folder:
+  desc: null
+  value: fedtask
+lr_scheduler:
+  desc: null
+  value: -1
+model:
+  desc: null
+  value: cnn
+momentum:
+  desc: null
+  value: 0
+mu:
+  desc: null
+  value: 0.1
+neg_fct:
+  desc: null
+  value: 1.0
+neg_mrg:
+  desc: null
+  value: 5.0
+net_active:
+  desc: null
+  value: 99999
+net_drop:
+  desc: null
+  value: 0
+num_epochs:
+  desc: null
+  value: 8
+num_gpus:
+  desc: null
+  value: 2
+num_rounds:
+  desc: null
+  value: 500
+num_threads:
+  desc: null
+  value: 1
+num_threads_per_gpu:
+  desc: null
+  value: 1
+optimizer:
+  desc: null
+  value: SGD
+output_file_name:
+  desc: null
+  value: output.json
+proportion:
+  desc: null
+  value: 0.2
+q:
+  desc: null
+  value: 0.0
+sample:
+  desc: null
+  value: uniform
+se:
+  desc: null
+  value: 4
+seed:
+  desc: null
+  value: 0
+server_gpu_id:
+  desc: null
+  value: 0
+sthr:
+  desc: null
+  value: 0.975
+task:
+  desc: null
+  value: mnist_cluster_sparse_N50_K10_E8
+tau:
+  desc: null
+  value: 0
+temp:
+  desc: null
+  value: 1.0
+wandb:
+  desc: null
+  value: 1
+weight_decay:
+  desc: null
+  value: 0

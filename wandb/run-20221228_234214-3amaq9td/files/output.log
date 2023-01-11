@@ -1,0 +1,20 @@
+CONFIG => {'task': 'mnist_cluster_sparse_N50_K10_E8', 'algorithm': 'fedfv', 'model': 'cnn', 'output_file_name': 'output.json', 'sample': 'uniform', 'aggregate': 'none', 'learning_rate_decay': 0.998, 'weight_decay': 0, 'lr_scheduler': -1, 'num_rounds': 2, 'proportion': 0.2, 'num_epochs': 8, 'learning_rate': 0.001, 'batch_size': 2, 'optimizer': 'SGD', 'momentum': 0, 'seed': 0, 'eval_interval': 1, 'num_threads': 1, 'num_threads_per_gpu': 1, 'num_gpus': 2, 'gpu': 0, 'net_drop': 0, 'net_active': 99999, 'capability': 0, 'learning_rate_lambda': 0, 'q': 0.0, 'epsilon': 0.0, 'eta': 1.0, 'tau': 0, 'alpha': 0.5, 'beta': 1.0, 'gamma': 0.0, 'mu': 0.1, 'dataidx_filename': 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', 'dataidx_path': 'none', 'server_gpu_id': 1, 'load_model_path': None, 'data_folder': './benchmark/mnist/data', 'log_folder': 'fedtask', 'wandb': 1, 'neg_fct': 1.0, 'neg_mrg': 5.0, 'temp': 1.0, 'kd_fct': 1.0, 'sthr': 0.975, 'cpg': 2, 'se': 4}
+--------------Round 0--------------
+Traceback (most recent call last):
+  File "main.py", line 103, in <module>
+    main()
+  File "main.py", line 100, in main
+    server.run()
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedbase.py", line 59, in run
+    self.iterate(round)
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedfv.py", line 26, in iterate
+    grads = [self.model - w for w in ws]
+  File "/mnt/disk1/hapq/sparseFL/algorithm/fedfv.py", line 26, in <listcomp>
+    grads = [self.model - w for w in ws]
+  File "/mnt/disk1/hapq/sparseFL/utils/fmodule.py", line 25, in __sub__
+    return _model_sub(self, other)
+  File "/mnt/disk1/hapq/sparseFL/utils/fmodule.py", line 180, in _model_sub
+    _modeldict_cp(res.state_dict(), _modeldict_sub(m1.state_dict(), m2.state_dict()))
+  File "/mnt/disk1/hapq/sparseFL/utils/fmodule.py", line 338, in _modeldict_sub
+    res[layer] = md1[layer] - md2[layer]
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:1 and cuda:0!

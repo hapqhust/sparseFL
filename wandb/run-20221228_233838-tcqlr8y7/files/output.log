@@ -1,0 +1,36 @@
+CONFIG => {'task': 'mnist_cluster_sparse_N50_K10_E8', 'algorithm': 'mp_proposal_cluster_matching_v2', 'model': 'cnn', 'output_file_name': 'output.json', 'sample': 'uniform', 'aggregate': 'none', 'learning_rate_decay': 0.998, 'weight_decay': 0, 'lr_scheduler': -1, 'num_rounds': 2, 'proportion': 0.2, 'num_epochs': 8, 'learning_rate': 0.001, 'batch_size': 2, 'optimizer': 'SGD', 'momentum': 0, 'seed': 0, 'eval_interval': 1, 'num_threads': 1, 'num_threads_per_gpu': 1, 'num_gpus': 2, 'gpu': 0, 'net_drop': 0, 'net_active': 99999, 'capability': 0, 'learning_rate_lambda': 0, 'q': 0.0, 'epsilon': 0.0, 'eta': 1.0, 'tau': 0, 'alpha': 0.5, 'beta': 1.0, 'gamma': 0.0, 'mu': 0.1, 'dataidx_filename': 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', 'dataidx_path': 'none', 'server_gpu_id': 0, 'load_model_path': None, 'data_folder': './benchmark/mnist/data', 'log_folder': 'fedtask', 'wandb': 1, 'neg_fct': 1.0, 'neg_mrg': 5.0, 'temp': 1.0, 'kd_fct': 1.0, 'sthr': 0.975, 'cpg': 2, 'se': 4}
+--------------Round 0--------------
+[2, 7, 43, 44, 14, 47, 17, 23, 25, 31]
+[2 1 1 2 1 4 3 2 1 1]
+[[25, 31], [43, 7], [14], [2, 44], [23], [17], [47]]
+Time Cost:                    27.5412s
+Training Loss:                2.3083
+Testing Loss:                 2.3071
+Testing Accuracy:             0.1010
+Validating Accuracy:          0.1114
+Mean of Client Accuracy:      0.1166
+Std of Client Accuracy:       0.2472
+--------------Round 1--------------
+[0, 37, 7, 44, 45, 14, 18, 19, 20, 21]
+[3 2 1 3 1 2 1 1 2 1]
+[[21, 18], [45, 7], [19], [37, 20], [14], [44, 0]]
+Time Cost:                    1.7089s
+Training Loss:                2.2909
+Testing Loss:                 2.2901
+Testing Accuracy:             0.1324
+Validating Accuracy:          0.1455
+Mean of Client Accuracy:      0.1492
+Std of Client Accuracy:       0.2447
+--------------Round 2--------------
+[0, 33, 7, 8, 9, 40, 13, 19, 20, 24]
+[1 3 1 2 1 3 1 2 2 3]
+[[0, 9], [13, 7], [8, 19], [20], [40, 24], [33]]
+Time Cost:                    1.7271s
+Training Loss:                2.2630
+Testing Loss:                 2.2659
+Testing Accuracy:             0.3500
+Validating Accuracy:          0.3682
+Mean of Client Accuracy:      0.3762
+Std of Client Accuracy:       0.3267
+=================End==================
+Total Time Cost:              40.5362s

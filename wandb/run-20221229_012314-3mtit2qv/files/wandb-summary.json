@@ -1,0 +1,1 @@
+{"Training Loss": 0.1309002708267971, "Testing Loss": 0.44099281487464903, "Testing Accuracy": 0.8764, "Validating Accuracy": 0.9636363633654335, "Mean Client Accuracy": 0.9638333332538604, "Std Client Accuracy": 0.0756096403326108, "Max Testing Accuracy": 0.88, "_timestamp": 1672253886.007182, "_runtime": 2091.78466296196, "_step": 500, "_wandb": {"runtime": 2090}}

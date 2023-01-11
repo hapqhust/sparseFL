@@ -1,0 +1,278 @@
+{
+    "os": "Linux-5.4.0-135-generic-x86_64-with-glibc2.10",
+    "python": "3.8.12",
+    "heartbeatAt": "2022-12-28T16:54:53.793959",
+    "startedAt": "2022-12-28T16:54:52.068478",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--task",
+        "mnist_cluster_sparse_N50_K10_E8",
+        "--wandb",
+        "1",
+        "--model",
+        "cnn",
+        "--algorithm",
+        "mp_proposal_cluster_matching_v2",
+        "--data_folder",
+        "./benchmark/mnist/data",
+        "--log_folder",
+        "fedtask",
+        "--dataidx_filename",
+        "mnist/cluster_sparse/50client/mnist_cluster_sparse.json",
+        "--num_rounds",
+        "500",
+        "--num_epochs",
+        "8",
+        "--proportion",
+        "0.20",
+        "--batch_size",
+        "2",
+        "--num_threads_per_gpu",
+        "1",
+        "--num_gpus",
+        "2",
+        "--server_gpu_id",
+        "0"
+    ],
+    "state": "running",
+    "program": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/hapqhust/sparseFL.git",
+        "commit": "381ca765543d0b7e226dc6fb7cd61f6b17655d61"
+    },
+    "email": "ha.pq194546@sis.hust.edu.vn",
+    "root": "/mnt/disk1/hapq/sparseFL",
+    "host": "aiotlabws",
+    "username": "aiotlabws",
+    "executable": "/mnt/disk1/anaconda3/envs/longnd/bin/python",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 2.54445,
+        "min": 1000.0,
+        "max": 3200.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2.39,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.177,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.499,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.36,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.36,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.53,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.542,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.332,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.397,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.509,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.574,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.7,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.468,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.7,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.7,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.494,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.187,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.327,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.396,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.203,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.495,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.351,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.359,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.53,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.542,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.331,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.388,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.508,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.578,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.7,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.469,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.494,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.192,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.326,
+            "min": 1000.0,
+            "max": 3200.0
+        },
+        {
+            "current": 2.699,
+            "min": 1000.0,
+            "max": 3200.0
+        }
+    ],
+    "disk": {
+        "total": 195.3759765625,
+        "used": 175.44707870483398
+    },
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2080 Ti",
+            "memory_total": 11554717696
+        },
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25447170048
+        }
+    ],
+    "memory": {
+        "total": 188.55243301391602
+    }
+}

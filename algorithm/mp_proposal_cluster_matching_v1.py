@@ -45,7 +45,7 @@ class Server(MPBasicServer):
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=1.2)
+        label, num_clusters = self.classifier(data, N, threshold=1.25)
         
         print(label)
         # print(num_clusters)
@@ -235,6 +235,7 @@ class Server(MPBasicServer):
                             res2 = 1 - \
                                 cosine_similarity(data[id, :].reshape(
                                     1, -1), data[picked_index, :].reshape(1, -1))
+                            print(res2)
                             if res2 <= threshold:
                                 group_OK.append(picked_index)
                                 group_NG.remove(picked_index)

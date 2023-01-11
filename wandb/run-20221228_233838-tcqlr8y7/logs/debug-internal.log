@@ -1,0 +1,197 @@
+2022-12-28 23:38:38,818 INFO    StreamThr :32197 [internal.py:wandb_internal():88] W&B internal server running at pid: 32197, started at: 2022-12-28 23:38:38.817317
+2022-12-28 23:38:38,834 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: status
+2022-12-28 23:38:38,835 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: status
+2022-12-28 23:38:38,847 DEBUG   SenderThread:32197 [sender.py:send():303] send: header
+2022-12-28 23:38:38,848 INFO    WriterThread:32197 [datastore.py:open_for_write():75] open: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/run-tcqlr8y7.wandb
+2022-12-28 23:38:39,096 DEBUG   SenderThread:32197 [sender.py:send():303] send: run
+2022-12-28 23:38:39,924 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: check_version
+2022-12-28 23:38:39,951 INFO    SenderThread:32197 [dir_watcher.py:__init__():216] watching files in: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files
+2022-12-28 23:38:39,951 INFO    SenderThread:32197 [sender.py:_start_run_threads():928] run started: tcqlr8y7 with start time 1672245518.823728
+2022-12-28 23:38:39,952 DEBUG   SenderThread:32197 [sender.py:send():303] send: summary
+2022-12-28 23:38:39,952 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:38:39,952 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: check_version
+2022-12-28 23:38:40,371 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: run_start
+2022-12-28 23:38:40,386 DEBUG   HandlerThread:32197 [system_info.py:__init__():31] System info init
+2022-12-28 23:38:40,386 DEBUG   HandlerThread:32197 [system_info.py:__init__():46] System info init done
+2022-12-28 23:38:40,386 INFO    HandlerThread:32197 [system_monitor.py:start():150] Starting system monitor
+2022-12-28 23:38:40,392 INFO    SystemMonitor:32197 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-28 23:38:40,393 INFO    HandlerThread:32197 [system_monitor.py:probe():168] Collecting system info
+2022-12-28 23:38:40,418 INFO    SystemMonitor:32197 [interfaces.py:start():168] Started cpu
+2022-12-28 23:38:40,422 INFO    SystemMonitor:32197 [interfaces.py:start():168] Started disk
+2022-12-28 23:38:40,438 DEBUG   HandlerThread:32197 [system_info.py:probe():195] Probing system
+2022-12-28 23:38:40,439 DEBUG   HandlerThread:32197 [system_info.py:_probe_git():180] Probing git
+2022-12-28 23:38:40,451 INFO    SystemMonitor:32197 [interfaces.py:start():168] Started gpu
+2022-12-28 23:38:40,455 INFO    SystemMonitor:32197 [interfaces.py:start():168] Started memory
+2022-12-28 23:38:40,485 INFO    SystemMonitor:32197 [interfaces.py:start():168] Started network
+2022-12-28 23:38:40,519 DEBUG   HandlerThread:32197 [system_info.py:_probe_git():188] Probing git done
+2022-12-28 23:38:40,519 DEBUG   HandlerThread:32197 [system_info.py:probe():241] Probing system done
+2022-12-28 23:38:40,519 DEBUG   HandlerThread:32197 [system_monitor.py:probe():177] {'os': 'Linux-5.4.0-135-generic-x86_64-with-glibc2.10', 'python': '3.8.12', 'heartbeatAt': '2022-12-28T16:38:40.438830', 'startedAt': '2022-12-28T16:38:38.793362', 'docker': None, 'cuda': None, 'args': ('--task', 'mnist_cluster_sparse_N50_K10_E8', '--wandb', '1', '--model', 'cnn', '--algorithm', 'mp_proposal_cluster_matching_v2', '--data_folder', './benchmark/mnist/data', '--log_folder', 'fedtask', '--dataidx_filename', 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', '--num_rounds', '2', '--num_epochs', '8', '--proportion', '0.20', '--batch_size', '2', '--num_threads_per_gpu', '1', '--num_gpus', '2', '--server_gpu_id', '0'), 'state': 'running', 'program': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/hapqhust/sparseFL.git', 'commit': '381ca765543d0b7e226dc6fb7cd61f6b17655d61'}, 'email': 'ha.pq194546@sis.hust.edu.vn', 'root': '/mnt/disk1/hapq/sparseFL', 'host': 'aiotlabws', 'username': 'aiotlabws', 'executable': '/mnt/disk1/anaconda3/envs/longnd/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 2.68085, 'min': 1000.0, 'max': 3200.0}, 'cpu_freq_per_core': [{'current': 2.7, 'min': 1000.0, 'max': 3200.0}, {'current': 2.699, 'min': 1000.0, 'max': 3200.0}, {'current': 2.699, 'min': 1000.0, 'max': 3200.0}, {'current': 2.692, 'min': 1000.0, 'max': 3200.0}, {'current': 2.683, 'min': 1000.0, 'max': 3200.0}, {'current': 2.7, 'min': 1000.0, 'max': 3200.0}, {'current': 2.692, 'min': 1000.0, 'max': 3200.0}, {'current': 2.685, 'min': 1000.0, 'max': 3200.0}, {'current': 2.684, 'min': 1000.0, 'max': 3200.0}, {'current': 2.692, 'min': 1000.0, 'max': 3200.0}, {'current': 2.662, 'min': 1000.0, 'max': 3200.0}, {'current': 2.672, 'min': 1000.0, 'max': 3200.0}, {'current': 2.644, 'min': 1000.0, 'max': 3200.0}, {'current': 2.66, 'min': 1000.0, 'max': 3200.0}, {'current': 2.7, 'min': 1000.0, 'max': 3200.0}, {'current': 2.671, 'min': 1000.0, 'max': 3200.0}, {'current': 2.644, 'min': 1000.0, 'max': 3200.0}, {'current': 2.672, 'min': 1000.0, 'max': 3200.0}, {'current': 2.567, 'min': 1000.0, 'max': 3200.0}, {'current': 2.671, 'min': 1000.0, 'max': 3200.0}, {'current': 2.631, 'min': 1000.0, 'max': 3200.0}, {'current': 2.645, 'min': 1000.0, 'max': 3200.0}, {'current': 2.444, 'min': 1000.0, 'max': 3200.0}, {'current': 2.588, 'min': 1000.0, 'max': 3200.0}, {'current': 2.644, 'min': 1000.0, 'max': 3200.0}, {'current': 2.511, 'min': 1000.0, 'max': 3200.0}, {'current': 2.537, 'min': 1000.0, 'max': 3200.0}, {'current': 2.627, 'min': 1000.0, 'max': 3200.0}, {'current': 2.643, 'min': 1000.0, 'max': 3200.0}, {'current': 2.587, 'min': 1000.0, 'max': 3200.0}, {'current': 2.545, 'min': 1000.0, 'max': 3200.0}, {'current': 2.437, 'min': 1000.0, 'max': 3200.0}, {'current': 2.608, 'min': 1000.0, 'max': 3200.0}, {'current': 2.522, 'min': 1000.0, 'max': 3200.0}, {'current': 2.648, 'min': 1000.0, 'max': 3200.0}, {'current': 2.547, 'min': 1000.0, 'max': 3200.0}, {'current': 2.43, 'min': 1000.0, 'max': 3200.0}, {'current': 2.544, 'min': 1000.0, 'max': 3200.0}, {'current': 2.574, 'min': 1000.0, 'max': 3200.0}, {'current': 2.672, 'min': 1000.0, 'max': 3200.0}], 'disk': {'total': 195.3759765625, 'used': 175.37115859985352}, 'gpu': 'NVIDIA GeForce RTX 2080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2080 Ti', 'memory_total': 11554717696}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25447170048}], 'memory': {'total': 188.55243301391602}}
+2022-12-28 23:38:40,519 INFO    HandlerThread:32197 [system_monitor.py:probe():178] Finished collecting system info
+2022-12-28 23:38:40,520 INFO    HandlerThread:32197 [system_monitor.py:probe():181] Publishing system info
+2022-12-28 23:38:40,520 DEBUG   HandlerThread:32197 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2022-12-28 23:38:40,520 DEBUG   HandlerThread:32197 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-28 23:38:40,520 DEBUG   HandlerThread:32197 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2022-12-28 23:38:40,955 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_created():275] file/dir created: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/conda-environment.yaml
+2022-12-28 23:38:40,956 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_created():275] file/dir created: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:38:40,956 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_created():275] file/dir created: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/requirements.txt
+2022-12-28 23:38:55,491 DEBUG   HandlerThread:32197 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-28 23:38:55,493 INFO    HandlerThread:32197 [system_monitor.py:probe():183] Finished publishing system info
+2022-12-28 23:38:55,533 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-28 23:38:55,534 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: stop_status
+2022-12-28 23:38:55,895 DEBUG   SenderThread:32197 [sender.py:send():303] send: telemetry
+2022-12-28 23:38:55,910 DEBUG   SenderThread:32197 [sender.py:send():303] send: files
+2022-12-28 23:38:55,910 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-28 23:38:55,971 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/conda-environment.yaml
+2022-12-28 23:38:55,971 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_created():275] file/dir created: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-metadata.json
+2022-12-28 23:38:55,971 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_created():275] file/dir created: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:38:56,977 INFO    Thread-16 :32197 [upload_job.py:push():143] Uploaded file /tmp/tmpkg1art5kwandb/3ln3lv6i-wandb-metadata.json
+2022-12-28 23:38:57,975 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:09,985 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/config.yaml
+2022-12-28 23:39:12,183 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-28 23:39:12,183 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: stop_status
+2022-12-28 23:39:13,986 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:17,137 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-28 23:39:17,139 DEBUG   SenderThread:32197 [sender.py:send():303] send: history
+2022-12-28 23:39:17,139 DEBUG   SenderThread:32197 [sender.py:send():303] send: summary
+2022-12-28 23:39:17,139 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:39:17,996 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:39:17,996 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:19,992 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:21,857 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-28 23:39:21,858 DEBUG   SenderThread:32197 [sender.py:send():303] send: history
+2022-12-28 23:39:21,858 DEBUG   SenderThread:32197 [sender.py:send():303] send: summary
+2022-12-28 23:39:21,858 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:39:21,995 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:39:21,996 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:23,997 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:26,176 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: partial_history
+2022-12-28 23:39:26,177 DEBUG   SenderThread:32197 [sender.py:send():303] send: history
+2022-12-28 23:39:26,177 DEBUG   SenderThread:32197 [sender.py:send():303] send: summary
+2022-12-28 23:39:26,181 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:39:26,998 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:39:27,093 DEBUG   SenderThread:32197 [sender.py:send():303] send: exit
+2022-12-28 23:39:27,093 INFO    SenderThread:32197 [sender.py:send_exit():442] handling exit code: 0
+2022-12-28 23:39:27,094 INFO    SenderThread:32197 [sender.py:send_exit():444] handling runtime: 46
+2022-12-28 23:39:27,094 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:39:27,094 INFO    SenderThread:32197 [sender.py:send_exit():450] send defer
+2022-12-28 23:39:27,105 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,105 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-28 23:39:27,106 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,106 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-28 23:39:27,106 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 1
+2022-12-28 23:39:27,106 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,106 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-28 23:39:27,106 INFO    HandlerThread:32197 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-28 23:39:27,107 DEBUG   SystemMonitor:32197 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-28 23:39:27,108 DEBUG   SystemMonitor:32197 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-28 23:39:27,108 DEBUG   SystemMonitor:32197 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-28 23:39:27,114 INFO    HandlerThread:32197 [interfaces.py:finish():173] Joined cpu
+2022-12-28 23:39:27,118 INFO    HandlerThread:32197 [interfaces.py:finish():173] Joined disk
+2022-12-28 23:39:27,968 INFO    HandlerThread:32197 [interfaces.py:finish():173] Joined gpu
+2022-12-28 23:39:27,968 INFO    HandlerThread:32197 [interfaces.py:finish():173] Joined memory
+2022-12-28 23:39:27,968 INFO    HandlerThread:32197 [interfaces.py:finish():173] Joined network
+2022-12-28 23:39:27,972 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,972 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-28 23:39:27,972 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 2
+2022-12-28 23:39:27,972 DEBUG   SenderThread:32197 [sender.py:send():303] send: stats
+2022-12-28 23:39:27,974 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,975 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-28 23:39:27,975 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,975 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-28 23:39:27,975 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 3
+2022-12-28 23:39:27,975 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,975 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-28 23:39:27,976 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,976 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-28 23:39:27,976 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 4
+2022-12-28 23:39:27,976 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,976 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-28 23:39:27,977 DEBUG   SenderThread:32197 [sender.py:send():303] send: summary
+2022-12-28 23:39:27,977 INFO    SenderThread:32197 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-28 23:39:27,978 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,978 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-28 23:39:27,978 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 5
+2022-12-28 23:39:27,978 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,978 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-28 23:39:27,979 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,979 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-28 23:39:27,979 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 6
+2022-12-28 23:39:27,979 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:27,979 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-28 23:39:27,979 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:27,979 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-28 23:39:27,999 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:39:28,003 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 7
+2022-12-28 23:39:28,003 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:28,003 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-28 23:39:28,004 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:28,004 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-28 23:39:28,004 INFO    SenderThread:32197 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-28 23:39:28,094 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:29,000 INFO    Thread-13 :32197 [dir_watcher.py:_on_file_modified():292] file/dir modified: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:29,000 INFO    SenderThread:32197 [dir_watcher.py:finish():392] scan: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files
+2022-12-28 23:39:29,001 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-metadata.json wandb-metadata.json
+2022-12-28 23:39:29,001 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/config.yaml config.yaml
+2022-12-28 23:39:29,001 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/conda-environment.yaml conda-environment.yaml
+2022-12-28 23:39:29,002 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log output.log
+2022-12-28 23:39:29,002 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json wandb-summary.json
+2022-12-28 23:39:29,002 INFO    SenderThread:32197 [dir_watcher.py:finish():406] scan save: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/requirements.txt requirements.txt
+2022-12-28 23:39:29,002 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 8
+2022-12-28 23:39:29,002 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:29,003 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:29,003 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-28 23:39:29,004 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:29,004 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-28 23:39:29,004 INFO    SenderThread:32197 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-28 23:39:29,106 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:29,106 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:30,111 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:30,118 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:30,268 INFO    Thread-17 :32197 [upload_job.py:push():143] Uploaded file /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/config.yaml
+2022-12-28 23:39:30,759 INFO    Thread-20 :32197 [upload_job.py:push():143] Uploaded file /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/wandb-summary.json
+2022-12-28 23:39:30,764 INFO    Thread-19 :32197 [upload_job.py:push():143] Uploaded file /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/output.log
+2022-12-28 23:39:30,809 INFO    Thread-18 :32197 [upload_job.py:push():143] Uploaded file /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/conda-environment.yaml
+2022-12-28 23:39:30,981 INFO    Thread-21 :32197 [upload_job.py:push():143] Uploaded file /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/files/requirements.txt
+2022-12-28 23:39:31,106 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:31,106 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:31,182 INFO    Thread-12 :32197 [sender.py:transition_state():463] send defer: 9
+2022-12-28 23:39:31,183 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:31,183 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-28 23:39:31,183 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:31,183 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-28 23:39:31,183 INFO    SenderThread:32197 [file_pusher.py:join():173] waiting for file pusher
+2022-12-28 23:39:31,184 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 10
+2022-12-28 23:39:31,184 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:31,184 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-28 23:39:31,184 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:31,184 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-28 23:39:31,407 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 11
+2022-12-28 23:39:31,408 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:31,408 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-28 23:39:31,408 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:31,408 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-28 23:39:31,408 INFO    SenderThread:32197 [sender.py:transition_state():463] send defer: 12
+2022-12-28 23:39:31,409 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: defer
+2022-12-28 23:39:31,409 INFO    HandlerThread:32197 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-28 23:39:31,409 DEBUG   SenderThread:32197 [sender.py:send():303] send: final
+2022-12-28 23:39:31,409 DEBUG   SenderThread:32197 [sender.py:send():303] send: footer
+2022-12-28 23:39:31,409 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: defer
+2022-12-28 23:39:31,409 INFO    SenderThread:32197 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-28 23:39:31,411 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:31,412 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:31,412 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-28 23:39:31,413 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: poll_exit
+2022-12-28 23:39:31,413 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: server_info
+2022-12-28 23:39:31,413 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-28 23:39:31,414 DEBUG   SenderThread:32197 [sender.py:send_request():317] send_request: server_info
+2022-12-28 23:39:31,414 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-28 23:39:32,124 INFO    MainThread:32197 [wandb_run.py:_footer_history_summary_info():3377] rendering history
+2022-12-28 23:39:32,125 INFO    MainThread:32197 [wandb_run.py:_footer_history_summary_info():3409] rendering summary
+2022-12-28 23:39:32,126 INFO    MainThread:32197 [wandb_run.py:_footer_sync_info():3333] logging synced files
+2022-12-28 23:39:32,126 DEBUG   HandlerThread:32197 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-28 23:39:32,126 INFO    HandlerThread:32197 [handler.py:finish():814] shutting down handler
+2022-12-28 23:39:32,409 INFO    WriterThread:32197 [datastore.py:close():279] close: /mnt/disk1/hapq/sparseFL/wandb/run-20221228_233838-tcqlr8y7/run-tcqlr8y7.wandb
+2022-12-28 23:39:33,124 INFO    SenderThread:32197 [sender.py:finish():1331] shutting down sender
+2022-12-28 23:39:33,124 INFO    SenderThread:32197 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-28 23:39:33,124 INFO    SenderThread:32197 [file_pusher.py:join():173] waiting for file pusher
+2022-12-28 23:39:33,130 INFO    MainThread:32197 [internal.py:handle_exit():78] Internal process exited

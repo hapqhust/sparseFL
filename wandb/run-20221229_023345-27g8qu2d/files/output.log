@@ -1,0 +1,4011 @@
+CONFIG => {'task': 'mnist_cluster_sparse_N50_K10_E8', 'algorithm': 'mp_fedavg', 'model': 'cnn', 'output_file_name': 'output.json', 'sample': 'uniform', 'aggregate': 'none', 'learning_rate_decay': 0.998, 'weight_decay': 0, 'lr_scheduler': -1, 'num_rounds': 500, 'proportion': 0.2, 'num_epochs': 8, 'learning_rate': 0.001, 'batch_size': 2, 'optimizer': 'SGD', 'momentum': 0, 'seed': 0, 'eval_interval': 1, 'num_threads': 1, 'num_threads_per_gpu': 1, 'num_gpus': 2, 'gpu': 0, 'net_drop': 0, 'net_active': 99999, 'capability': 0, 'learning_rate_lambda': 0, 'q': 0.0, 'epsilon': 0.0, 'eta': 1.0, 'tau': 0, 'alpha': 0.5, 'beta': 1.0, 'gamma': 0.0, 'mu': 0.1, 'dataidx_filename': 'mnist/cluster_sparse/50client/mnist_cluster_sparse.json', 'dataidx_path': 'none', 'server_gpu_id': 0, 'load_model_path': None, 'data_folder': './benchmark/mnist/data', 'log_folder': 'fedtask', 'wandb': 1, 'neg_fct': 1.0, 'neg_mrg': 5.0, 'temp': 1.0, 'kd_fct': 1.0, 'sthr': 0.975, 'cpg': 2, 'se': 4}
+--------------Round 0--------------
+Time Cost:                    21.4128s
+Training Loss:                2.3089
+Testing Loss:                 2.3078
+Testing Accuracy:             0.1013
+Validating Accuracy:          0.1114
+Mean of Client Accuracy:      0.1166
+Std of Client Accuracy:       0.2472
+--------------Round 1--------------
+Time Cost:                    0.9464s
+Training Loss:                2.3266
+Testing Loss:                 2.3279
+Testing Accuracy:             0.1010
+Validating Accuracy:          0.1114
+Mean of Client Accuracy:      0.1166
+Std of Client Accuracy:       0.2472
+--------------Round 2--------------
+Time Cost:                    0.8510s
+Training Loss:                2.2679
+Testing Loss:                 2.2837
+Testing Accuracy:             0.1062
+Validating Accuracy:          0.1136
+Mean of Client Accuracy:      0.1191
+Std of Client Accuracy:       0.2466
+--------------Round 3--------------
+Time Cost:                    0.7675s
+Training Loss:                2.3163
+Testing Loss:                 2.3122
+Testing Accuracy:             0.3130
+Validating Accuracy:          0.3000
+Mean of Client Accuracy:      0.3046
+Std of Client Accuracy:       0.3884
+--------------Round 4--------------
+Time Cost:                    0.8651s
+Training Loss:                2.2375
+Testing Loss:                 2.2370
+Testing Accuracy:             0.2559
+Validating Accuracy:          0.2727
+Mean of Client Accuracy:      0.2827
+Std of Client Accuracy:       0.2967
+--------------Round 5--------------
+Time Cost:                    0.9398s
+Training Loss:                2.1542
+Testing Loss:                 2.1559
+Testing Accuracy:             0.2980
+Validating Accuracy:          0.2864
+Mean of Client Accuracy:      0.2918
+Std of Client Accuracy:       0.3842
+--------------Round 6--------------
+Time Cost:                    0.8084s
+Training Loss:                2.1058
+Testing Loss:                 2.1099
+Testing Accuracy:             0.2827
+Validating Accuracy:          0.2659
+Mean of Client Accuracy:      0.2689
+Std of Client Accuracy:       0.3618
+--------------Round 7--------------
+Time Cost:                    1.0222s
+Training Loss:                2.3317
+Testing Loss:                 2.3134
+Testing Accuracy:             0.2051
+Validating Accuracy:          0.1864
+Mean of Client Accuracy:      0.1918
+Std of Client Accuracy:       0.3849
+--------------Round 8--------------
+Time Cost:                    0.8013s
+Training Loss:                2.0071
+Testing Loss:                 2.0220
+Testing Accuracy:             0.4189
+Validating Accuracy:          0.4136
+Mean of Client Accuracy:      0.4142
+Std of Client Accuracy:       0.3768
+--------------Round 9--------------
+Time Cost:                    0.8928s
+Training Loss:                1.8843
+Testing Loss:                 1.8925
+Testing Accuracy:             0.4656
+Validating Accuracy:          0.4682
+Mean of Client Accuracy:      0.4634
+Std of Client Accuracy:       0.3721
+--------------Round 10--------------
+Time Cost:                    0.7006s
+Training Loss:                1.9404
+Testing Loss:                 1.9480
+Testing Accuracy:             0.3925
+Validating Accuracy:          0.3841
+Mean of Client Accuracy:      0.3849
+Std of Client Accuracy:       0.3682
+--------------Round 11--------------
+Time Cost:                    0.7991s
+Training Loss:                1.8829
+Testing Loss:                 1.8747
+Testing Accuracy:             0.2908
+Validating Accuracy:          0.2841
+Mean of Client Accuracy:      0.2901
+Std of Client Accuracy:       0.3468
+--------------Round 12--------------
+Time Cost:                    0.9087s
+Training Loss:                1.8107
+Testing Loss:                 1.8423
+Testing Accuracy:             0.4113
+Validating Accuracy:          0.4364
+Mean of Client Accuracy:      0.4331
+Std of Client Accuracy:       0.3817
+--------------Round 13--------------
+Time Cost:                    0.8040s
+Training Loss:                1.8743
+Testing Loss:                 1.9205
+Testing Accuracy:             0.3833
+Validating Accuracy:          0.4432
+Mean of Client Accuracy:      0.4313
+Std of Client Accuracy:       0.2963
+--------------Round 14--------------
+Time Cost:                    1.0743s
+Training Loss:                1.9709
+Testing Loss:                 2.0182
+Testing Accuracy:             0.2629
+Validating Accuracy:          0.2795
+Mean of Client Accuracy:      0.2788
+Std of Client Accuracy:       0.3768
+--------------Round 15--------------
+Time Cost:                    0.9293s
+Training Loss:                2.4331
+Testing Loss:                 2.5475
+Testing Accuracy:             0.1758
+Validating Accuracy:          0.2023
+Mean of Client Accuracy:      0.1940
+Std of Client Accuracy:       0.3419
+--------------Round 16--------------
+Time Cost:                    0.8571s
+Training Loss:                1.8537
+Testing Loss:                 1.9263
+Testing Accuracy:             0.4246
+Validating Accuracy:          0.4568
+Mean of Client Accuracy:      0.4450
+Std of Client Accuracy:       0.3686
+--------------Round 17--------------
+Time Cost:                    1.1706s
+Training Loss:                1.6084
+Testing Loss:                 1.6438
+Testing Accuracy:             0.5329
+Validating Accuracy:          0.5523
+Mean of Client Accuracy:      0.5350
+Std of Client Accuracy:       0.3012
+--------------Round 18--------------
+Time Cost:                    0.7750s
+Training Loss:                1.5951
+Testing Loss:                 1.6563
+Testing Accuracy:             0.3791
+Validating Accuracy:          0.4318
+Mean of Client Accuracy:      0.4223
+Std of Client Accuracy:       0.3172
+--------------Round 19--------------
+Time Cost:                    0.8166s
+Training Loss:                1.6941
+Testing Loss:                 1.7566
+Testing Accuracy:             0.3743
+Validating Accuracy:          0.3795
+Mean of Client Accuracy:      0.3715
+Std of Client Accuracy:       0.3558
+--------------Round 20--------------
+Time Cost:                    0.8631s
+Training Loss:                1.4314
+Testing Loss:                 1.4701
+Testing Accuracy:             0.5687
+Validating Accuracy:          0.6000
+Mean of Client Accuracy:      0.5871
+Std of Client Accuracy:       0.3367
+--------------Round 21--------------
+Time Cost:                    0.6919s
+Training Loss:                1.4915
+Testing Loss:                 1.5565
+Testing Accuracy:             0.5207
+Validating Accuracy:          0.5409
+Mean of Client Accuracy:      0.5281
+Std of Client Accuracy:       0.3462
+--------------Round 22--------------
+Time Cost:                    0.7497s
+Training Loss:                1.3232
+Testing Loss:                 1.3672
+Testing Accuracy:             0.6220
+Validating Accuracy:          0.6409
+Mean of Client Accuracy:      0.6331
+Std of Client Accuracy:       0.2273
+--------------Round 23--------------
+Time Cost:                    0.8438s
+Training Loss:                1.3433
+Testing Loss:                 1.4110
+Testing Accuracy:             0.6549
+Validating Accuracy:          0.6841
+Mean of Client Accuracy:      0.6760
+Std of Client Accuracy:       0.2170
+--------------Round 24--------------
+Time Cost:                    0.9029s
+Training Loss:                1.3860
+Testing Loss:                 1.4233
+Testing Accuracy:             0.4591
+Validating Accuracy:          0.4727
+Mean of Client Accuracy:      0.4669
+Std of Client Accuracy:       0.3218
+--------------Round 25--------------
+Time Cost:                    0.7906s
+Training Loss:                1.5229
+Testing Loss:                 1.5554
+Testing Accuracy:             0.3941
+Validating Accuracy:          0.3955
+Mean of Client Accuracy:      0.3927
+Std of Client Accuracy:       0.3457
+--------------Round 26--------------
+Time Cost:                    1.0183s
+Training Loss:                1.5136
+Testing Loss:                 1.5923
+Testing Accuracy:             0.4584
+Validating Accuracy:          0.4909
+Mean of Client Accuracy:      0.4835
+Std of Client Accuracy:       0.3989
+--------------Round 27--------------
+Time Cost:                    1.0343s
+Training Loss:                1.2244
+Testing Loss:                 1.2532
+Testing Accuracy:             0.5922
+Validating Accuracy:          0.6091
+Mean of Client Accuracy:      0.6012
+Std of Client Accuracy:       0.2964
+--------------Round 28--------------
+Time Cost:                    0.9028s
+Training Loss:                1.2609
+Testing Loss:                 1.2978
+Testing Accuracy:             0.6170
+Validating Accuracy:          0.6000
+Mean of Client Accuracy:      0.6034
+Std of Client Accuracy:       0.2853
+--------------Round 29--------------
+Time Cost:                    0.8021s
+Training Loss:                1.4298
+Testing Loss:                 1.4496
+Testing Accuracy:             0.5364
+Validating Accuracy:          0.5432
+Mean of Client Accuracy:      0.5403
+Std of Client Accuracy:       0.4157
+--------------Round 30--------------
+Time Cost:                    0.7907s
+Training Loss:                1.2671
+Testing Loss:                 1.2983
+Testing Accuracy:             0.5817
+Validating Accuracy:          0.5841
+Mean of Client Accuracy:      0.5792
+Std of Client Accuracy:       0.3284
+--------------Round 31--------------
+Time Cost:                    0.8609s
+Training Loss:                1.3129
+Testing Loss:                 1.3445
+Testing Accuracy:             0.5250
+Validating Accuracy:          0.5318
+Mean of Client Accuracy:      0.5340
+Std of Client Accuracy:       0.2769
+--------------Round 32--------------
+Time Cost:                    0.7723s
+Training Loss:                1.1402
+Testing Loss:                 1.1923
+Testing Accuracy:             0.5852
+Validating Accuracy:          0.6341
+Mean of Client Accuracy:      0.6224
+Std of Client Accuracy:       0.3060
+--------------Round 33--------------
+Time Cost:                    0.8078s
+Training Loss:                1.2713
+Testing Loss:                 1.2857
+Testing Accuracy:             0.5382
+Validating Accuracy:          0.5523
+Mean of Client Accuracy:      0.5492
+Std of Client Accuracy:       0.2937
+--------------Round 34--------------
+Time Cost:                    0.9254s
+Training Loss:                1.2348
+Testing Loss:                 1.2457
+Testing Accuracy:             0.6315
+Validating Accuracy:          0.6250
+Mean of Client Accuracy:      0.6232
+Std of Client Accuracy:       0.2920
+--------------Round 35--------------
+Time Cost:                    0.8528s
+Training Loss:                1.0387
+Testing Loss:                 1.0658
+Testing Accuracy:             0.7013
+Validating Accuracy:          0.7182
+Mean of Client Accuracy:      0.7081
+Std of Client Accuracy:       0.1908
+--------------Round 36--------------
+Time Cost:                    0.8043s
+Training Loss:                0.9581
+Testing Loss:                 1.0086
+Testing Accuracy:             0.6855
+Validating Accuracy:          0.7159
+Mean of Client Accuracy:      0.7086
+Std of Client Accuracy:       0.2342
+--------------Round 37--------------
+Time Cost:                    0.8136s
+Training Loss:                1.0955
+Testing Loss:                 1.1269
+Testing Accuracy:             0.5888
+Validating Accuracy:          0.6023
+Mean of Client Accuracy:      0.5992
+Std of Client Accuracy:       0.2949
+--------------Round 38--------------
+Time Cost:                    0.8388s
+Training Loss:                0.9449
+Testing Loss:                 0.9969
+Testing Accuracy:             0.6980
+Validating Accuracy:          0.7273
+Mean of Client Accuracy:      0.7240
+Std of Client Accuracy:       0.2056
+--------------Round 39--------------
+Time Cost:                    0.7458s
+Training Loss:                1.1726
+Testing Loss:                 1.2171
+Testing Accuracy:             0.5283
+Validating Accuracy:          0.5545
+Mean of Client Accuracy:      0.5480
+Std of Client Accuracy:       0.3159
+--------------Round 40--------------
+Time Cost:                    0.7921s
+Training Loss:                0.9017
+Testing Loss:                 0.9410
+Testing Accuracy:             0.7189
+Validating Accuracy:          0.7341
+Mean of Client Accuracy:      0.7266
+Std of Client Accuracy:       0.2105
+--------------Round 41--------------
+Time Cost:                    0.7522s
+Training Loss:                0.9384
+Testing Loss:                 0.9861
+Testing Accuracy:             0.6860
+Validating Accuracy:          0.7023
+Mean of Client Accuracy:      0.6997
+Std of Client Accuracy:       0.1908
+--------------Round 42--------------
+Time Cost:                    0.6477s
+Training Loss:                0.8919
+Testing Loss:                 0.9475
+Testing Accuracy:             0.7103
+Validating Accuracy:          0.7341
+Mean of Client Accuracy:      0.7322
+Std of Client Accuracy:       0.1739
+--------------Round 43--------------
+Time Cost:                    0.8224s
+Training Loss:                0.9569
+Testing Loss:                 1.0046
+Testing Accuracy:             0.6389
+Validating Accuracy:          0.6773
+Mean of Client Accuracy:      0.6709
+Std of Client Accuracy:       0.2325
+--------------Round 44--------------
+Time Cost:                    0.7200s
+Training Loss:                1.0362
+Testing Loss:                 1.0714
+Testing Accuracy:             0.6190
+Validating Accuracy:          0.6341
+Mean of Client Accuracy:      0.6245
+Std of Client Accuracy:       0.2405
+--------------Round 45--------------
+Time Cost:                    0.8073s
+Training Loss:                0.9053
+Testing Loss:                 0.9655
+Testing Accuracy:             0.6746
+Validating Accuracy:          0.6886
+Mean of Client Accuracy:      0.6860
+Std of Client Accuracy:       0.1803
+--------------Round 46--------------
+Time Cost:                    0.9168s
+Training Loss:                0.9578
+Testing Loss:                 1.0207
+Testing Accuracy:             0.6630
+Validating Accuracy:          0.6818
+Mean of Client Accuracy:      0.6799
+Std of Client Accuracy:       0.2098
+--------------Round 47--------------
+Time Cost:                    0.9581s
+Training Loss:                0.8152
+Testing Loss:                 0.8627
+Testing Accuracy:             0.7406
+Validating Accuracy:          0.7886
+Mean of Client Accuracy:      0.7797
+Std of Client Accuracy:       0.2205
+--------------Round 48--------------
+Time Cost:                    0.8337s
+Training Loss:                0.8148
+Testing Loss:                 0.8667
+Testing Accuracy:             0.7322
+Validating Accuracy:          0.7727
+Mean of Client Accuracy:      0.7614
+Std of Client Accuracy:       0.2031
+--------------Round 49--------------
+Time Cost:                    0.7129s
+Training Loss:                0.8056
+Testing Loss:                 0.8619
+Testing Accuracy:             0.7340
+Validating Accuracy:          0.7386
+Mean of Client Accuracy:      0.7273
+Std of Client Accuracy:       0.2112
+--------------Round 50--------------
+Time Cost:                    0.8136s
+Training Loss:                0.7726
+Testing Loss:                 0.8447
+Testing Accuracy:             0.7402
+Validating Accuracy:          0.7614
+Mean of Client Accuracy:      0.7550
+Std of Client Accuracy:       0.1636
+--------------Round 51--------------
+Time Cost:                    0.7013s
+Training Loss:                0.8130
+Testing Loss:                 0.8786
+Testing Accuracy:             0.7102
+Validating Accuracy:          0.7477
+Mean of Client Accuracy:      0.7359
+Std of Client Accuracy:       0.2335
+--------------Round 52--------------
+Time Cost:                    0.7974s
+Training Loss:                0.7801
+Testing Loss:                 0.8749
+Testing Accuracy:             0.7202
+Validating Accuracy:          0.7545
+Mean of Client Accuracy:      0.7454
+Std of Client Accuracy:       0.1749
+--------------Round 53--------------
+Time Cost:                    0.9166s
+Training Loss:                0.8258
+Testing Loss:                 0.9142
+Testing Accuracy:             0.7004
+Validating Accuracy:          0.7068
+Mean of Client Accuracy:      0.7032
+Std of Client Accuracy:       0.1971
+--------------Round 54--------------
+Time Cost:                    0.8296s
+Training Loss:                0.8138
+Testing Loss:                 0.9118
+Testing Accuracy:             0.6908
+Validating Accuracy:          0.7273
+Mean of Client Accuracy:      0.7158
+Std of Client Accuracy:       0.2020
+--------------Round 55--------------
+Time Cost:                    0.9709s
+Training Loss:                0.7981
+Testing Loss:                 0.9051
+Testing Accuracy:             0.7085
+Validating Accuracy:          0.7364
+Mean of Client Accuracy:      0.7279
+Std of Client Accuracy:       0.2170
+--------------Round 56--------------
+Time Cost:                    0.8509s
+Training Loss:                0.7398
+Testing Loss:                 0.8271
+Testing Accuracy:             0.7351
+Validating Accuracy:          0.7682
+Mean of Client Accuracy:      0.7597
+Std of Client Accuracy:       0.1818
+--------------Round 57--------------
+Time Cost:                    1.0390s
+Training Loss:                0.8043
+Testing Loss:                 0.9201
+Testing Accuracy:             0.6563
+Validating Accuracy:          0.7068
+Mean of Client Accuracy:      0.7038
+Std of Client Accuracy:       0.2320
+--------------Round 58--------------
+Time Cost:                    0.8404s
+Training Loss:                0.7416
+Testing Loss:                 0.8252
+Testing Accuracy:             0.7368
+Validating Accuracy:          0.7591
+Mean of Client Accuracy:      0.7575
+Std of Client Accuracy:       0.2096
+--------------Round 59--------------
+Time Cost:                    0.7470s
+Training Loss:                0.7365
+Testing Loss:                 0.8235
+Testing Accuracy:             0.7188
+Validating Accuracy:          0.7727
+Mean of Client Accuracy:      0.7682
+Std of Client Accuracy:       0.2170
+--------------Round 60--------------
+Time Cost:                    0.8126s
+Training Loss:                0.7225
+Testing Loss:                 0.8004
+Testing Accuracy:             0.7399
+Validating Accuracy:          0.7909
+Mean of Client Accuracy:      0.7800
+Std of Client Accuracy:       0.1914
+--------------Round 61--------------
+Time Cost:                    0.7265s
+Training Loss:                0.7353
+Testing Loss:                 0.8184
+Testing Accuracy:             0.7355
+Validating Accuracy:          0.7568
+Mean of Client Accuracy:      0.7457
+Std of Client Accuracy:       0.1840
+--------------Round 62--------------
+Time Cost:                    0.7894s
+Training Loss:                0.8106
+Testing Loss:                 0.8884
+Testing Accuracy:             0.7064
+Validating Accuracy:          0.7159
+Mean of Client Accuracy:      0.7162
+Std of Client Accuracy:       0.2574
+--------------Round 63--------------
+Time Cost:                    0.7377s
+Training Loss:                0.7719
+Testing Loss:                 0.8630
+Testing Accuracy:             0.6922
+Validating Accuracy:          0.7045
+Mean of Client Accuracy:      0.7041
+Std of Client Accuracy:       0.2238
+--------------Round 64--------------
+Time Cost:                    0.8835s
+Training Loss:                0.6819
+Testing Loss:                 0.7596
+Testing Accuracy:             0.7581
+Validating Accuracy:          0.8091
+Mean of Client Accuracy:      0.8020
+Std of Client Accuracy:       0.1883
+--------------Round 65--------------
+Time Cost:                    0.8708s
+Training Loss:                0.6858
+Testing Loss:                 0.7549
+Testing Accuracy:             0.7551
+Validating Accuracy:          0.7818
+Mean of Client Accuracy:      0.7736
+Std of Client Accuracy:       0.2098
+--------------Round 66--------------
+Time Cost:                    0.7349s
+Training Loss:                0.7475
+Testing Loss:                 0.8366
+Testing Accuracy:             0.7130
+Validating Accuracy:          0.7750
+Mean of Client Accuracy:      0.7657
+Std of Client Accuracy:       0.2647
+--------------Round 67--------------
+Time Cost:                    0.8284s
+Training Loss:                0.7831
+Testing Loss:                 0.8612
+Testing Accuracy:             0.6917
+Validating Accuracy:          0.7205
+Mean of Client Accuracy:      0.7078
+Std of Client Accuracy:       0.2372
+--------------Round 68--------------
+Time Cost:                    0.9372s
+Training Loss:                1.0721
+Testing Loss:                 1.2502
+Testing Accuracy:             0.5508
+Validating Accuracy:          0.6000
+Mean of Client Accuracy:      0.5957
+Std of Client Accuracy:       0.2971
+--------------Round 69--------------
+Time Cost:                    0.8999s
+Training Loss:                0.7485
+Testing Loss:                 0.8620
+Testing Accuracy:             0.6768
+Validating Accuracy:          0.7295
+Mean of Client Accuracy:      0.7213
+Std of Client Accuracy:       0.2604
+--------------Round 70--------------
+Time Cost:                    0.8460s
+Training Loss:                0.6462
+Testing Loss:                 0.7411
+Testing Accuracy:             0.7625
+Validating Accuracy:          0.7909
+Mean of Client Accuracy:      0.7857
+Std of Client Accuracy:       0.1926
+--------------Round 71--------------
+Time Cost:                    0.7866s
+Training Loss:                0.7002
+Testing Loss:                 0.8099
+Testing Accuracy:             0.7226
+Validating Accuracy:          0.7432
+Mean of Client Accuracy:      0.7352
+Std of Client Accuracy:       0.1698
+--------------Round 72--------------
+Time Cost:                    0.6784s
+Training Loss:                0.6018
+Testing Loss:                 0.6979
+Testing Accuracy:             0.7898
+Validating Accuracy:          0.8114
+Mean of Client Accuracy:      0.8085
+Std of Client Accuracy:       0.1245
+--------------Round 73--------------
+Time Cost:                    0.7165s
+Training Loss:                0.7773
+Testing Loss:                 0.8520
+Testing Accuracy:             0.6969
+Validating Accuracy:          0.7023
+Mean of Client Accuracy:      0.7021
+Std of Client Accuracy:       0.2506
+--------------Round 74--------------
+Time Cost:                    0.9942s
+Training Loss:                0.6184
+Testing Loss:                 0.7380
+Testing Accuracy:             0.7560
+Validating Accuracy:          0.7864
+Mean of Client Accuracy:      0.7799
+Std of Client Accuracy:       0.1675
+--------------Round 75--------------
+Time Cost:                    0.8132s
+Training Loss:                0.7338
+Testing Loss:                 0.8427
+Testing Accuracy:             0.6897
+Validating Accuracy:          0.7182
+Mean of Client Accuracy:      0.7055
+Std of Client Accuracy:       0.2153
+--------------Round 76--------------
+Time Cost:                    0.8029s
+Training Loss:                0.7110
+Testing Loss:                 0.8529
+Testing Accuracy:             0.7299
+Validating Accuracy:          0.7705
+Mean of Client Accuracy:      0.7653
+Std of Client Accuracy:       0.1610
+--------------Round 77--------------
+Time Cost:                    0.9481s
+Training Loss:                0.6124
+Testing Loss:                 0.7187
+Testing Accuracy:             0.7707
+Validating Accuracy:          0.8159
+Mean of Client Accuracy:      0.8025
+Std of Client Accuracy:       0.1377
+--------------Round 78--------------
+Time Cost:                    0.9650s
+Training Loss:                0.6084
+Testing Loss:                 0.7046
+Testing Accuracy:             0.7702
+Validating Accuracy:          0.7909
+Mean of Client Accuracy:      0.7794
+Std of Client Accuracy:       0.2036
+--------------Round 79--------------
+Time Cost:                    0.7131s
+Training Loss:                0.9411
+Testing Loss:                 1.0919
+Testing Accuracy:             0.6109
+Validating Accuracy:          0.6364
+Mean of Client Accuracy:      0.6306
+Std of Client Accuracy:       0.1962
+--------------Round 80--------------
+Time Cost:                    0.7072s
+Training Loss:                0.6996
+Testing Loss:                 0.8175
+Testing Accuracy:             0.7171
+Validating Accuracy:          0.7432
+Mean of Client Accuracy:      0.7393
+Std of Client Accuracy:       0.1753
+--------------Round 81--------------
+Time Cost:                    0.7208s
+Training Loss:                0.6121
+Testing Loss:                 0.7249
+Testing Accuracy:             0.7496
+Validating Accuracy:          0.8000
+Mean of Client Accuracy:      0.7907
+Std of Client Accuracy:       0.2062
+--------------Round 82--------------
+Time Cost:                    0.7015s
+Training Loss:                0.6263
+Testing Loss:                 0.7585
+Testing Accuracy:             0.7381
+Validating Accuracy:          0.7614
+Mean of Client Accuracy:      0.7524
+Std of Client Accuracy:       0.1631
+--------------Round 83--------------
+Time Cost:                    0.6426s
+Training Loss:                0.5861
+Testing Loss:                 0.7133
+Testing Accuracy:             0.7610
+Validating Accuracy:          0.7932
+Mean of Client Accuracy:      0.7836
+Std of Client Accuracy:       0.1826
+--------------Round 84--------------
+Time Cost:                    0.8023s
+Training Loss:                0.8006
+Testing Loss:                 0.9724
+Testing Accuracy:             0.6559
+Validating Accuracy:          0.7045
+Mean of Client Accuracy:      0.6999
+Std of Client Accuracy:       0.2307
+--------------Round 85--------------
+Time Cost:                    0.8821s
+Training Loss:                0.6459
+Testing Loss:                 0.7954
+Testing Accuracy:             0.7461
+Validating Accuracy:          0.7886
+Mean of Client Accuracy:      0.7854
+Std of Client Accuracy:       0.1707
+--------------Round 86--------------
+Time Cost:                    0.9309s
+Training Loss:                0.6274
+Testing Loss:                 0.7691
+Testing Accuracy:             0.7473
+Validating Accuracy:          0.7909
+Mean of Client Accuracy:      0.7919
+Std of Client Accuracy:       0.1674
+--------------Round 87--------------
+Time Cost:                    0.8866s
+Training Loss:                0.5937
+Testing Loss:                 0.7287
+Testing Accuracy:             0.7558
+Validating Accuracy:          0.7977
+Mean of Client Accuracy:      0.7958
+Std of Client Accuracy:       0.1719
+--------------Round 88--------------
+Time Cost:                    0.7401s
+Training Loss:                0.6385
+Testing Loss:                 0.7869
+Testing Accuracy:             0.7439
+Validating Accuracy:          0.7818
+Mean of Client Accuracy:      0.7825
+Std of Client Accuracy:       0.1842
+--------------Round 89--------------
+Time Cost:                    0.9493s
+Training Loss:                0.6156
+Testing Loss:                 0.7576
+Testing Accuracy:             0.7475
+Validating Accuracy:          0.7864
+Mean of Client Accuracy:      0.7784
+Std of Client Accuracy:       0.2070
+--------------Round 90--------------
+Time Cost:                    0.8211s
+Training Loss:                0.5626
+Testing Loss:                 0.6982
+Testing Accuracy:             0.7661
+Validating Accuracy:          0.8068
+Mean of Client Accuracy:      0.7985
+Std of Client Accuracy:       0.1778
+--------------Round 91--------------
+Time Cost:                    0.7925s
+Training Loss:                0.5633
+Testing Loss:                 0.6815
+Testing Accuracy:             0.7700
+Validating Accuracy:          0.8182
+Mean of Client Accuracy:      0.8107
+Std of Client Accuracy:       0.1958
+--------------Round 92--------------
+Time Cost:                    0.7343s
+Training Loss:                0.5898
+Testing Loss:                 0.7237
+Testing Accuracy:             0.7446
+Validating Accuracy:          0.7977
+Mean of Client Accuracy:      0.7881
+Std of Client Accuracy:       0.1541
+--------------Round 93--------------
+Time Cost:                    0.8405s
+Training Loss:                0.5552
+Testing Loss:                 0.6941
+Testing Accuracy:             0.7604
+Validating Accuracy:          0.8023
+Mean of Client Accuracy:      0.7944
+Std of Client Accuracy:       0.1465
+--------------Round 94--------------
+Time Cost:                    0.8498s
+Training Loss:                0.5787
+Testing Loss:                 0.7267
+Testing Accuracy:             0.7468
+Validating Accuracy:          0.7955
+Mean of Client Accuracy:      0.7890
+Std of Client Accuracy:       0.1664
+--------------Round 95--------------
+Time Cost:                    0.9515s
+Training Loss:                0.5576
+Testing Loss:                 0.7044
+Testing Accuracy:             0.7570
+Validating Accuracy:          0.7886
+Mean of Client Accuracy:      0.7867
+Std of Client Accuracy:       0.1608
+--------------Round 96--------------
+Time Cost:                    0.7915s
+Training Loss:                0.5592
+Testing Loss:                 0.6856
+Testing Accuracy:             0.7634
+Validating Accuracy:          0.8091
+Mean of Client Accuracy:      0.7997
+Std of Client Accuracy:       0.2105
+--------------Round 97--------------
+Time Cost:                    0.8906s
+Training Loss:                0.5351
+Testing Loss:                 0.6706
+Testing Accuracy:             0.7771
+Validating Accuracy:          0.8227
+Mean of Client Accuracy:      0.8141
+Std of Client Accuracy:       0.2017
+--------------Round 98--------------
+Time Cost:                    0.7484s
+Training Loss:                0.4915
+Testing Loss:                 0.6096
+Testing Accuracy:             0.8139
+Validating Accuracy:          0.8500
+Mean of Client Accuracy:      0.8367
+Std of Client Accuracy:       0.1671
+--------------Round 99--------------
+Time Cost:                    0.8135s
+Training Loss:                0.6025
+Testing Loss:                 0.7570
+Testing Accuracy:             0.7449
+Validating Accuracy:          0.7773
+Mean of Client Accuracy:      0.7739
+Std of Client Accuracy:       0.1703
+--------------Round 100--------------
+Time Cost:                    0.7648s
+Training Loss:                0.5498
+Testing Loss:                 0.7019
+Testing Accuracy:             0.7624
+Validating Accuracy:          0.8114
+Mean of Client Accuracy:      0.8039
+Std of Client Accuracy:       0.1697
+--------------Round 101--------------
+Time Cost:                    0.9086s
+Training Loss:                0.5530
+Testing Loss:                 0.6828
+Testing Accuracy:             0.7699
+Validating Accuracy:          0.8273
+Mean of Client Accuracy:      0.8178
+Std of Client Accuracy:       0.1571
+--------------Round 102--------------
+Time Cost:                    0.6808s
+Training Loss:                0.5903
+Testing Loss:                 0.7162
+Testing Accuracy:             0.7628
+Validating Accuracy:          0.7932
+Mean of Client Accuracy:      0.7868
+Std of Client Accuracy:       0.1700
+--------------Round 103--------------
+Time Cost:                    0.7480s
+Training Loss:                0.6863
+Testing Loss:                 0.8108
+Testing Accuracy:             0.7266
+Validating Accuracy:          0.7591
+Mean of Client Accuracy:      0.7578
+Std of Client Accuracy:       0.2120
+--------------Round 104--------------
+Time Cost:                    0.9900s
+Training Loss:                0.6226
+Testing Loss:                 0.7423
+Testing Accuracy:             0.7546
+Validating Accuracy:          0.7886
+Mean of Client Accuracy:      0.7874
+Std of Client Accuracy:       0.2103
+--------------Round 105--------------
+Time Cost:                    0.8302s
+Training Loss:                0.5408
+Testing Loss:                 0.6680
+Testing Accuracy:             0.7789
+Validating Accuracy:          0.8136
+Mean of Client Accuracy:      0.8050
+Std of Client Accuracy:       0.1884
+--------------Round 106--------------
+Time Cost:                    0.9494s
+Training Loss:                0.4501
+Testing Loss:                 0.5929
+Testing Accuracy:             0.8179
+Validating Accuracy:          0.8614
+Mean of Client Accuracy:      0.8523
+Std of Client Accuracy:       0.1246
+--------------Round 107--------------
+Time Cost:                    0.7757s
+Training Loss:                0.4794
+Testing Loss:                 0.6155
+Testing Accuracy:             0.7986
+Validating Accuracy:          0.8386
+Mean of Client Accuracy:      0.8320
+Std of Client Accuracy:       0.1535
+--------------Round 108--------------
+Time Cost:                    0.7754s
+Training Loss:                0.7006
+Testing Loss:                 0.8792
+Testing Accuracy:             0.6958
+Validating Accuracy:          0.7227
+Mean of Client Accuracy:      0.7240
+Std of Client Accuracy:       0.2022
+--------------Round 109--------------
+Time Cost:                    0.8559s
+Training Loss:                0.4852
+Testing Loss:                 0.6248
+Testing Accuracy:             0.7974
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8322
+Std of Client Accuracy:       0.1386
+--------------Round 110--------------
+Time Cost:                    0.8307s
+Training Loss:                0.5457
+Testing Loss:                 0.6856
+Testing Accuracy:             0.7605
+Validating Accuracy:          0.8000
+Mean of Client Accuracy:      0.7964
+Std of Client Accuracy:       0.1884
+--------------Round 111--------------
+Time Cost:                    0.8740s
+Training Loss:                0.4811
+Testing Loss:                 0.6250
+Testing Accuracy:             0.8069
+Validating Accuracy:          0.8409
+Mean of Client Accuracy:      0.8389
+Std of Client Accuracy:       0.1439
+--------------Round 112--------------
+Time Cost:                    0.8389s
+Training Loss:                0.4753
+Testing Loss:                 0.6245
+Testing Accuracy:             0.8012
+Validating Accuracy:          0.8455
+Mean of Client Accuracy:      0.8400
+Std of Client Accuracy:       0.1511
+--------------Round 113--------------
+Time Cost:                    0.8500s
+Training Loss:                0.4738
+Testing Loss:                 0.6194
+Testing Accuracy:             0.8001
+Validating Accuracy:          0.8386
+Mean of Client Accuracy:      0.8309
+Std of Client Accuracy:       0.1560
+--------------Round 114--------------
+Time Cost:                    0.9589s
+Training Loss:                0.4525
+Testing Loss:                 0.6057
+Testing Accuracy:             0.8067
+Validating Accuracy:          0.8636
+Mean of Client Accuracy:      0.8590
+Std of Client Accuracy:       0.1283
+--------------Round 115--------------
+Time Cost:                    0.9396s
+Training Loss:                0.4651
+Testing Loss:                 0.6103
+Testing Accuracy:             0.8031
+Validating Accuracy:          0.8477
+Mean of Client Accuracy:      0.8412
+Std of Client Accuracy:       0.1413
+--------------Round 116--------------
+Time Cost:                    0.8214s
+Training Loss:                0.4877
+Testing Loss:                 0.6377
+Testing Accuracy:             0.7809
+Validating Accuracy:          0.8318
+Mean of Client Accuracy:      0.8239
+Std of Client Accuracy:       0.1529
+--------------Round 117--------------
+Time Cost:                    0.9856s
+Training Loss:                0.5157
+Testing Loss:                 0.6583
+Testing Accuracy:             0.7797
+Validating Accuracy:          0.8409
+Mean of Client Accuracy:      0.8349
+Std of Client Accuracy:       0.1618
+--------------Round 118--------------
+Time Cost:                    0.7288s
+Training Loss:                0.7691
+Testing Loss:                 0.9212
+Testing Accuracy:             0.6754
+Validating Accuracy:          0.7068
+Mean of Client Accuracy:      0.6944
+Std of Client Accuracy:       0.2345
+--------------Round 119--------------
+Time Cost:                    0.8117s
+Training Loss:                0.4695
+Testing Loss:                 0.6339
+Testing Accuracy:             0.7877
+Validating Accuracy:          0.8477
+Mean of Client Accuracy:      0.8411
+Std of Client Accuracy:       0.1449
+--------------Round 120--------------
+Time Cost:                    0.6646s
+Training Loss:                0.4557
+Testing Loss:                 0.6045
+Testing Accuracy:             0.8146
+Validating Accuracy:          0.8455
+Mean of Client Accuracy:      0.8354
+Std of Client Accuracy:       0.1549
+--------------Round 121--------------
+Time Cost:                    0.7530s
+Training Loss:                0.4563
+Testing Loss:                 0.6229
+Testing Accuracy:             0.7985
+Validating Accuracy:          0.8568
+Mean of Client Accuracy:      0.8477
+Std of Client Accuracy:       0.1503
+--------------Round 122--------------
+Time Cost:                    0.6544s
+Training Loss:                0.5255
+Testing Loss:                 0.6890
+Testing Accuracy:             0.7680
+Validating Accuracy:          0.8000
+Mean of Client Accuracy:      0.7976
+Std of Client Accuracy:       0.1528
+--------------Round 123--------------
+Time Cost:                    0.7837s
+Training Loss:                0.4282
+Testing Loss:                 0.5766
+Testing Accuracy:             0.8194
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8588
+Std of Client Accuracy:       0.1217
+--------------Round 124--------------
+Time Cost:                    0.9640s
+Training Loss:                0.4224
+Testing Loss:                 0.5847
+Testing Accuracy:             0.8156
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8680
+Std of Client Accuracy:       0.1233
+--------------Round 125--------------
+Time Cost:                    0.8494s
+Training Loss:                0.4284
+Testing Loss:                 0.5789
+Testing Accuracy:             0.8233
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8745
+Std of Client Accuracy:       0.1223
+--------------Round 126--------------
+Time Cost:                    0.7136s
+Training Loss:                0.4437
+Testing Loss:                 0.6215
+Testing Accuracy:             0.7872
+Validating Accuracy:          0.8636
+Mean of Client Accuracy:      0.8557
+Std of Client Accuracy:       0.1395
+--------------Round 127--------------
+Time Cost:                    0.9514s
+Training Loss:                0.4636
+Testing Loss:                 0.6410
+Testing Accuracy:             0.7814
+Validating Accuracy:          0.8227
+Mean of Client Accuracy:      0.8185
+Std of Client Accuracy:       0.1517
+--------------Round 128--------------
+Time Cost:                    0.7413s
+Training Loss:                0.4479
+Testing Loss:                 0.6135
+Testing Accuracy:             0.8007
+Validating Accuracy:          0.8614
+Mean of Client Accuracy:      0.8481
+Std of Client Accuracy:       0.1713
+--------------Round 129--------------
+Time Cost:                    0.8987s
+Training Loss:                0.4370
+Testing Loss:                 0.6018
+Testing Accuracy:             0.8108
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8521
+Std of Client Accuracy:       0.1726
+--------------Round 130--------------
+Time Cost:                    0.8562s
+Training Loss:                0.4275
+Testing Loss:                 0.5959
+Testing Accuracy:             0.8077
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8688
+Std of Client Accuracy:       0.1455
+--------------Round 131--------------
+Time Cost:                    0.7912s
+Training Loss:                0.4193
+Testing Loss:                 0.5826
+Testing Accuracy:             0.8117
+Validating Accuracy:          0.8841
+Mean of Client Accuracy:      0.8718
+Std of Client Accuracy:       0.1615
+--------------Round 132--------------
+Time Cost:                    0.7625s
+Training Loss:                0.4129
+Testing Loss:                 0.5873
+Testing Accuracy:             0.8140
+Validating Accuracy:          0.8750
+Mean of Client Accuracy:      0.8644
+Std of Client Accuracy:       0.1387
+--------------Round 133--------------
+Time Cost:                    0.9640s
+Training Loss:                0.4371
+Testing Loss:                 0.5927
+Testing Accuracy:             0.8063
+Validating Accuracy:          0.8545
+Mean of Client Accuracy:      0.8475
+Std of Client Accuracy:       0.1457
+--------------Round 134--------------
+Time Cost:                    0.9166s
+Training Loss:                0.4187
+Testing Loss:                 0.5858
+Testing Accuracy:             0.8092
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8559
+Std of Client Accuracy:       0.1525
+--------------Round 135--------------
+Time Cost:                    0.8266s
+Training Loss:                0.4115
+Testing Loss:                 0.5834
+Testing Accuracy:             0.8121
+Validating Accuracy:          0.8818
+Mean of Client Accuracy:      0.8712
+Std of Client Accuracy:       0.1329
+--------------Round 136--------------
+Time Cost:                    0.9399s
+Training Loss:                0.4527
+Testing Loss:                 0.6195
+Testing Accuracy:             0.7936
+Validating Accuracy:          0.8477
+Mean of Client Accuracy:      0.8393
+Std of Client Accuracy:       0.1562
+--------------Round 137--------------
+Time Cost:                    0.7462s
+Training Loss:                0.4595
+Testing Loss:                 0.6395
+Testing Accuracy:             0.7803
+Validating Accuracy:          0.8341
+Mean of Client Accuracy:      0.8277
+Std of Client Accuracy:       0.1520
+--------------Round 138--------------
+Time Cost:                    0.8404s
+Training Loss:                0.4631
+Testing Loss:                 0.6380
+Testing Accuracy:             0.7915
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8264
+Std of Client Accuracy:       0.1782
+--------------Round 139--------------
+Time Cost:                    0.7744s
+Training Loss:                0.4771
+Testing Loss:                 0.6314
+Testing Accuracy:             0.7932
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8327
+Std of Client Accuracy:       0.1649
+--------------Round 140--------------
+Time Cost:                    0.7728s
+Training Loss:                0.3929
+Testing Loss:                 0.5521
+Testing Accuracy:             0.8285
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8704
+Std of Client Accuracy:       0.1202
+--------------Round 141--------------
+Time Cost:                    0.8128s
+Training Loss:                0.4233
+Testing Loss:                 0.5974
+Testing Accuracy:             0.8071
+Validating Accuracy:          0.8636
+Mean of Client Accuracy:      0.8523
+Std of Client Accuracy:       0.1578
+--------------Round 142--------------
+Time Cost:                    0.6291s
+Training Loss:                0.3971
+Testing Loss:                 0.5589
+Testing Accuracy:             0.8277
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8698
+Std of Client Accuracy:       0.1058
+--------------Round 143--------------
+Time Cost:                    0.7065s
+Training Loss:                0.4182
+Testing Loss:                 0.5847
+Testing Accuracy:             0.8104
+Validating Accuracy:          0.8545
+Mean of Client Accuracy:      0.8510
+Std of Client Accuracy:       0.1294
+--------------Round 144--------------
+Time Cost:                    0.8970s
+Training Loss:                0.4536
+Testing Loss:                 0.6474
+Testing Accuracy:             0.7798
+Validating Accuracy:          0.8227
+Mean of Client Accuracy:      0.8161
+Std of Client Accuracy:       0.1612
+--------------Round 145--------------
+Time Cost:                    0.8117s
+Training Loss:                0.3976
+Testing Loss:                 0.5575
+Testing Accuracy:             0.8274
+Validating Accuracy:          0.8614
+Mean of Client Accuracy:      0.8572
+Std of Client Accuracy:       0.1191
+--------------Round 146--------------
+Time Cost:                    0.8728s
+Training Loss:                0.4460
+Testing Loss:                 0.6219
+Testing Accuracy:             0.7977
+Validating Accuracy:          0.8455
+Mean of Client Accuracy:      0.8401
+Std of Client Accuracy:       0.1496
+--------------Round 147--------------
+Time Cost:                    0.7951s
+Training Loss:                0.3964
+Testing Loss:                 0.5667
+Testing Accuracy:             0.8173
+Validating Accuracy:          0.8591
+Mean of Client Accuracy:      0.8570
+Std of Client Accuracy:       0.1407
+--------------Round 148--------------
+Time Cost:                    0.8200s
+Training Loss:                0.4716
+Testing Loss:                 0.6283
+Testing Accuracy:             0.7921
+Validating Accuracy:          0.8455
+Mean of Client Accuracy:      0.8389
+Std of Client Accuracy:       0.1625
+--------------Round 149--------------
+Time Cost:                    0.8642s
+Training Loss:                0.4045
+Testing Loss:                 0.5741
+Testing Accuracy:             0.8155
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8702
+Std of Client Accuracy:       0.1487
+--------------Round 150--------------
+Time Cost:                    0.8228s
+Training Loss:                0.4038
+Testing Loss:                 0.5912
+Testing Accuracy:             0.8048
+Validating Accuracy:          0.8545
+Mean of Client Accuracy:      0.8449
+Std of Client Accuracy:       0.1396
+--------------Round 151--------------
+Time Cost:                    0.9050s
+Training Loss:                0.3825
+Testing Loss:                 0.5535
+Testing Accuracy:             0.8252
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8781
+Std of Client Accuracy:       0.1325
+--------------Round 152--------------
+Time Cost:                    0.7252s
+Training Loss:                0.3890
+Testing Loss:                 0.5737
+Testing Accuracy:             0.8127
+Validating Accuracy:          0.8750
+Mean of Client Accuracy:      0.8628
+Std of Client Accuracy:       0.1349
+--------------Round 153--------------
+Time Cost:                    0.8537s
+Training Loss:                0.4608
+Testing Loss:                 0.6634
+Testing Accuracy:             0.7752
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8319
+Std of Client Accuracy:       0.1735
+--------------Round 154--------------
+Time Cost:                    1.0313s
+Training Loss:                0.3969
+Testing Loss:                 0.5698
+Testing Accuracy:             0.8140
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8698
+Std of Client Accuracy:       0.1465
+--------------Round 155--------------
+Time Cost:                    0.7613s
+Training Loss:                0.4506
+Testing Loss:                 0.6408
+Testing Accuracy:             0.7910
+Validating Accuracy:          0.8591
+Mean of Client Accuracy:      0.8473
+Std of Client Accuracy:       0.1671
+--------------Round 156--------------
+Time Cost:                    0.7651s
+Training Loss:                0.4868
+Testing Loss:                 0.6627
+Testing Accuracy:             0.7776
+Validating Accuracy:          0.8500
+Mean of Client Accuracy:      0.8405
+Std of Client Accuracy:       0.2005
+--------------Round 157--------------
+Time Cost:                    0.6589s
+Training Loss:                0.5494
+Testing Loss:                 0.7258
+Testing Accuracy:             0.7536
+Validating Accuracy:          0.8068
+Mean of Client Accuracy:      0.8000
+Std of Client Accuracy:       0.2495
+--------------Round 158--------------
+Time Cost:                    0.9168s
+Training Loss:                0.4963
+Testing Loss:                 0.6664
+Testing Accuracy:             0.7747
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8283
+Std of Client Accuracy:       0.1874
+--------------Round 159--------------
+Time Cost:                    0.7602s
+Training Loss:                0.4586
+Testing Loss:                 0.6242
+Testing Accuracy:             0.7913
+Validating Accuracy:          0.8341
+Mean of Client Accuracy:      0.8303
+Std of Client Accuracy:       0.1730
+--------------Round 160--------------
+Time Cost:                    0.8740s
+Training Loss:                0.3555
+Testing Loss:                 0.5441
+Testing Accuracy:             0.8364
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8911
+Std of Client Accuracy:       0.0921
+--------------Round 161--------------
+Time Cost:                    0.7909s
+Training Loss:                0.3706
+Testing Loss:                 0.5764
+Testing Accuracy:             0.8113
+Validating Accuracy:          0.8773
+Mean of Client Accuracy:      0.8653
+Std of Client Accuracy:       0.1365
+--------------Round 162--------------
+Time Cost:                    0.9312s
+Training Loss:                0.3576
+Testing Loss:                 0.5588
+Testing Accuracy:             0.8236
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8824
+Std of Client Accuracy:       0.1176
+--------------Round 163--------------
+Time Cost:                    0.9890s
+Training Loss:                0.3687
+Testing Loss:                 0.5555
+Testing Accuracy:             0.8224
+Validating Accuracy:          0.8818
+Mean of Client Accuracy:      0.8740
+Std of Client Accuracy:       0.1300
+--------------Round 164--------------
+Time Cost:                    0.7329s
+Training Loss:                0.4970
+Testing Loss:                 0.6787
+Testing Accuracy:             0.7683
+Validating Accuracy:          0.8023
+Mean of Client Accuracy:      0.8050
+Std of Client Accuracy:       0.1729
+--------------Round 165--------------
+Time Cost:                    0.7799s
+Training Loss:                0.4974
+Testing Loss:                 0.6872
+Testing Accuracy:             0.7685
+Validating Accuracy:          0.8364
+Mean of Client Accuracy:      0.8263
+Std of Client Accuracy:       0.1594
+--------------Round 166--------------
+Time Cost:                    0.9173s
+Training Loss:                0.3927
+Testing Loss:                 0.5657
+Testing Accuracy:             0.8185
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8696
+Std of Client Accuracy:       0.1411
+--------------Round 167--------------
+Time Cost:                    0.8033s
+Training Loss:                0.3770
+Testing Loss:                 0.5668
+Testing Accuracy:             0.8165
+Validating Accuracy:          0.8841
+Mean of Client Accuracy:      0.8715
+Std of Client Accuracy:       0.1326
+--------------Round 168--------------
+Time Cost:                    0.7569s
+Training Loss:                0.3775
+Testing Loss:                 0.5732
+Testing Accuracy:             0.8149
+Validating Accuracy:          0.8705
+Mean of Client Accuracy:      0.8579
+Std of Client Accuracy:       0.1379
+--------------Round 169--------------
+Time Cost:                    0.8648s
+Training Loss:                0.4091
+Testing Loss:                 0.5884
+Testing Accuracy:             0.8118
+Validating Accuracy:          0.8523
+Mean of Client Accuracy:      0.8477
+Std of Client Accuracy:       0.1312
+--------------Round 170--------------
+Time Cost:                    0.8747s
+Training Loss:                0.3710
+Testing Loss:                 0.5647
+Testing Accuracy:             0.8122
+Validating Accuracy:          0.8705
+Mean of Client Accuracy:      0.8617
+Std of Client Accuracy:       0.1265
+--------------Round 171--------------
+Time Cost:                    0.8576s
+Training Loss:                0.3723
+Testing Loss:                 0.5412
+Testing Accuracy:             0.8274
+Validating Accuracy:          0.8818
+Mean of Client Accuracy:      0.8776
+Std of Client Accuracy:       0.1380
+--------------Round 172--------------
+Time Cost:                    0.7249s
+Training Loss:                0.3430
+Testing Loss:                 0.5331
+Testing Accuracy:             0.8255
+Validating Accuracy:          0.8955
+Mean of Client Accuracy:      0.8851
+Std of Client Accuracy:       0.1218
+--------------Round 173--------------
+Time Cost:                    0.7689s
+Training Loss:                0.3446
+Testing Loss:                 0.5216
+Testing Accuracy:             0.8354
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8803
+Std of Client Accuracy:       0.1319
+--------------Round 174--------------
+Time Cost:                    1.0921s
+Training Loss:                0.3642
+Testing Loss:                 0.5626
+Testing Accuracy:             0.8135
+Validating Accuracy:          0.8773
+Mean of Client Accuracy:      0.8670
+Std of Client Accuracy:       0.1374
+--------------Round 175--------------
+Time Cost:                    0.7900s
+Training Loss:                0.3520
+Testing Loss:                 0.5489
+Testing Accuracy:             0.8220
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8729
+Std of Client Accuracy:       0.1272
+--------------Round 176--------------
+Time Cost:                    0.7598s
+Training Loss:                0.4406
+Testing Loss:                 0.6150
+Testing Accuracy:             0.7999
+Validating Accuracy:          0.8477
+Mean of Client Accuracy:      0.8388
+Std of Client Accuracy:       0.1873
+--------------Round 177--------------
+Time Cost:                    0.7956s
+Training Loss:                0.3518
+Testing Loss:                 0.5340
+Testing Accuracy:             0.8305
+Validating Accuracy:          0.8841
+Mean of Client Accuracy:      0.8805
+Std of Client Accuracy:       0.1247
+--------------Round 178--------------
+Time Cost:                    0.9172s
+Training Loss:                0.3392
+Testing Loss:                 0.5386
+Testing Accuracy:             0.8275
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8833
+Std of Client Accuracy:       0.1132
+--------------Round 179--------------
+Time Cost:                    0.8152s
+Training Loss:                0.3143
+Testing Loss:                 0.5065
+Testing Accuracy:             0.8415
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.9007
+Std of Client Accuracy:       0.1090
+--------------Round 180--------------
+Time Cost:                    0.7457s
+Training Loss:                0.3087
+Testing Loss:                 0.5022
+Testing Accuracy:             0.8440
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8938
+Std of Client Accuracy:       0.1108
+--------------Round 181--------------
+Time Cost:                    0.8066s
+Training Loss:                0.3121
+Testing Loss:                 0.5058
+Testing Accuracy:             0.8440
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8925
+Std of Client Accuracy:       0.1198
+--------------Round 182--------------
+Time Cost:                    0.8645s
+Training Loss:                0.3630
+Testing Loss:                 0.5606
+Testing Accuracy:             0.8251
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8676
+Std of Client Accuracy:       0.1339
+--------------Round 183--------------
+Time Cost:                    1.2025s
+Training Loss:                0.3234
+Testing Loss:                 0.5241
+Testing Accuracy:             0.8345
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8951
+Std of Client Accuracy:       0.1061
+--------------Round 184--------------
+Time Cost:                    0.8691s
+Training Loss:                0.3357
+Testing Loss:                 0.5269
+Testing Accuracy:             0.8359
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8862
+Std of Client Accuracy:       0.1326
+--------------Round 185--------------
+Time Cost:                    0.8968s
+Training Loss:                0.3880
+Testing Loss:                 0.5647
+Testing Accuracy:             0.8147
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8592
+Std of Client Accuracy:       0.1683
+--------------Round 186--------------
+Time Cost:                    0.9095s
+Training Loss:                0.3938
+Testing Loss:                 0.5902
+Testing Accuracy:             0.8056
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8566
+Std of Client Accuracy:       0.1633
+--------------Round 187--------------
+Time Cost:                    0.7234s
+Training Loss:                0.3037
+Testing Loss:                 0.4976
+Testing Accuracy:             0.8460
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.9008
+Std of Client Accuracy:       0.1153
+--------------Round 188--------------
+Time Cost:                    0.6710s
+Training Loss:                0.3587
+Testing Loss:                 0.5654
+Testing Accuracy:             0.8174
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8648
+Std of Client Accuracy:       0.1435
+--------------Round 189--------------
+Time Cost:                    0.7405s
+Training Loss:                0.3910
+Testing Loss:                 0.5928
+Testing Accuracy:             0.8134
+Validating Accuracy:          0.8545
+Mean of Client Accuracy:      0.8468
+Std of Client Accuracy:       0.1541
+--------------Round 190--------------
+Time Cost:                    0.8488s
+Training Loss:                0.3139
+Testing Loss:                 0.5154
+Testing Accuracy:             0.8366
+Validating Accuracy:          0.8909
+Mean of Client Accuracy:      0.8812
+Std of Client Accuracy:       0.1258
+--------------Round 191--------------
+Time Cost:                    0.7807s
+Training Loss:                0.3129
+Testing Loss:                 0.5140
+Testing Accuracy:             0.8425
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8950
+Std of Client Accuracy:       0.1040
+--------------Round 192--------------
+Time Cost:                    0.9088s
+Training Loss:                0.3263
+Testing Loss:                 0.5340
+Testing Accuracy:             0.8308
+Validating Accuracy:          0.8932
+Mean of Client Accuracy:      0.8854
+Std of Client Accuracy:       0.1178
+--------------Round 193--------------
+Time Cost:                    0.8373s
+Training Loss:                0.3509
+Testing Loss:                 0.5448
+Testing Accuracy:             0.8303
+Validating Accuracy:          0.8750
+Mean of Client Accuracy:      0.8762
+Std of Client Accuracy:       0.1181
+--------------Round 194--------------
+Time Cost:                    1.1255s
+Training Loss:                0.3108
+Testing Loss:                 0.5011
+Testing Accuracy:             0.8439
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8970
+Std of Client Accuracy:       0.1254
+--------------Round 195--------------
+Time Cost:                    0.9449s
+Training Loss:                0.3577
+Testing Loss:                 0.5622
+Testing Accuracy:             0.8139
+Validating Accuracy:          0.8705
+Mean of Client Accuracy:      0.8658
+Std of Client Accuracy:       0.1433
+--------------Round 196--------------
+Time Cost:                    0.8418s
+Training Loss:                0.3236
+Testing Loss:                 0.5141
+Testing Accuracy:             0.8413
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8752
+Std of Client Accuracy:       0.1473
+--------------Round 197--------------
+Time Cost:                    0.9832s
+Training Loss:                0.3140
+Testing Loss:                 0.5027
+Testing Accuracy:             0.8451
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8904
+Std of Client Accuracy:       0.1238
+--------------Round 198--------------
+Time Cost:                    0.9983s
+Training Loss:                0.3269
+Testing Loss:                 0.5100
+Testing Accuracy:             0.8414
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8784
+Std of Client Accuracy:       0.1517
+--------------Round 199--------------
+Time Cost:                    0.8332s
+Training Loss:                0.4109
+Testing Loss:                 0.6082
+Testing Accuracy:             0.8022
+Validating Accuracy:          0.8568
+Mean of Client Accuracy:      0.8465
+Std of Client Accuracy:       0.1773
+--------------Round 200--------------
+Time Cost:                    1.0413s
+Training Loss:                0.3952
+Testing Loss:                 0.6151
+Testing Accuracy:             0.7967
+Validating Accuracy:          0.8614
+Mean of Client Accuracy:      0.8508
+Std of Client Accuracy:       0.1504
+--------------Round 201--------------
+Time Cost:                    1.1379s
+Training Loss:                0.4113
+Testing Loss:                 0.6497
+Testing Accuracy:             0.7839
+Validating Accuracy:          0.8318
+Mean of Client Accuracy:      0.8293
+Std of Client Accuracy:       0.1705
+--------------Round 202--------------
+Time Cost:                    1.3436s
+Training Loss:                0.3240
+Testing Loss:                 0.5058
+Testing Accuracy:             0.8447
+Validating Accuracy:          0.8932
+Mean of Client Accuracy:      0.8840
+Std of Client Accuracy:       0.1416
+--------------Round 203--------------
+Time Cost:                    1.0092s
+Training Loss:                0.3545
+Testing Loss:                 0.5321
+Testing Accuracy:             0.8297
+Validating Accuracy:          0.8841
+Mean of Client Accuracy:      0.8771
+Std of Client Accuracy:       0.1584
+--------------Round 204--------------
+Time Cost:                    1.0223s
+Training Loss:                0.3679
+Testing Loss:                 0.5443
+Testing Accuracy:             0.8233
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8807
+Std of Client Accuracy:       0.1541
+--------------Round 205--------------
+Time Cost:                    1.6156s
+Training Loss:                0.3132
+Testing Loss:                 0.5010
+Testing Accuracy:             0.8416
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8919
+Std of Client Accuracy:       0.1341
+--------------Round 206--------------
+Time Cost:                    0.8998s
+Training Loss:                0.3735
+Testing Loss:                 0.5749
+Testing Accuracy:             0.8197
+Validating Accuracy:          0.8909
+Mean of Client Accuracy:      0.8804
+Std of Client Accuracy:       0.1718
+--------------Round 207--------------
+Time Cost:                    1.0712s
+Training Loss:                0.3603
+Testing Loss:                 0.5531
+Testing Accuracy:             0.8229
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8898
+Std of Client Accuracy:       0.1486
+--------------Round 208--------------
+Time Cost:                    1.0116s
+Training Loss:                0.3492
+Testing Loss:                 0.5446
+Testing Accuracy:             0.8282
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8802
+Std of Client Accuracy:       0.1507
+--------------Round 209--------------
+Time Cost:                    1.0302s
+Training Loss:                0.3206
+Testing Loss:                 0.5329
+Testing Accuracy:             0.8289
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8756
+Std of Client Accuracy:       0.1447
+--------------Round 210--------------
+Time Cost:                    0.8669s
+Training Loss:                0.3601
+Testing Loss:                 0.5658
+Testing Accuracy:             0.8184
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8871
+Std of Client Accuracy:       0.1486
+--------------Round 211--------------
+Time Cost:                    0.8791s
+Training Loss:                0.3492
+Testing Loss:                 0.5412
+Testing Accuracy:             0.8262
+Validating Accuracy:          0.8909
+Mean of Client Accuracy:      0.8823
+Std of Client Accuracy:       0.1568
+--------------Round 212--------------
+Time Cost:                    1.0402s
+Training Loss:                0.3618
+Testing Loss:                 0.5539
+Testing Accuracy:             0.8217
+Validating Accuracy:          0.8932
+Mean of Client Accuracy:      0.8848
+Std of Client Accuracy:       0.1502
+--------------Round 213--------------
+Time Cost:                    1.0572s
+Training Loss:                0.3855
+Testing Loss:                 0.5767
+Testing Accuracy:             0.8128
+Validating Accuracy:          0.8727
+Mean of Client Accuracy:      0.8675
+Std of Client Accuracy:       0.1571
+--------------Round 214--------------
+Time Cost:                    1.5151s
+Training Loss:                0.3141
+Testing Loss:                 0.5092
+Testing Accuracy:             0.8389
+Validating Accuracy:          0.8955
+Mean of Client Accuracy:      0.8883
+Std of Client Accuracy:       0.1254
+--------------Round 215--------------
+Time Cost:                    0.9934s
+Training Loss:                0.3386
+Testing Loss:                 0.5560
+Testing Accuracy:             0.8216
+Validating Accuracy:          0.8955
+Mean of Client Accuracy:      0.8841
+Std of Client Accuracy:       0.1361
+--------------Round 216--------------
+Time Cost:                    1.1897s
+Training Loss:                0.3306
+Testing Loss:                 0.5496
+Testing Accuracy:             0.8248
+Validating Accuracy:          0.8864
+Mean of Client Accuracy:      0.8814
+Std of Client Accuracy:       0.1364
+--------------Round 217--------------
+Time Cost:                    1.1291s
+Training Loss:                0.3233
+Testing Loss:                 0.5142
+Testing Accuracy:             0.8371
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8965
+Std of Client Accuracy:       0.1511
+--------------Round 218--------------
+Time Cost:                    0.7924s
+Training Loss:                0.3725
+Testing Loss:                 0.5568
+Testing Accuracy:             0.8255
+Validating Accuracy:          0.8818
+Mean of Client Accuracy:      0.8790
+Std of Client Accuracy:       0.1476
+--------------Round 219--------------
+Time Cost:                    1.0207s
+Training Loss:                0.3475
+Testing Loss:                 0.5388
+Testing Accuracy:             0.8282
+Validating Accuracy:          0.8795
+Mean of Client Accuracy:      0.8742
+Std of Client Accuracy:       0.1368
+--------------Round 220--------------
+Time Cost:                    0.9310s
+Training Loss:                0.3711
+Testing Loss:                 0.6113
+Testing Accuracy:             0.7977
+Validating Accuracy:          0.8659
+Mean of Client Accuracy:      0.8608
+Std of Client Accuracy:       0.1502
+--------------Round 221--------------
+Time Cost:                    0.9345s
+Training Loss:                0.3394
+Testing Loss:                 0.5606
+Testing Accuracy:             0.8210
+Validating Accuracy:          0.8909
+Mean of Client Accuracy:      0.8760
+Std of Client Accuracy:       0.1496
+--------------Round 222--------------
+Time Cost:                    0.9291s
+Training Loss:                0.3232
+Testing Loss:                 0.5351
+Testing Accuracy:             0.8339
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.8985
+Std of Client Accuracy:       0.1334
+--------------Round 223--------------
+Time Cost:                    1.2403s
+Training Loss:                0.3061
+Testing Loss:                 0.5212
+Testing Accuracy:             0.8345
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.8997
+Std of Client Accuracy:       0.1261
+--------------Round 224--------------
+Time Cost:                    1.2942s
+Training Loss:                0.3964
+Testing Loss:                 0.6019
+Testing Accuracy:             0.8051
+Validating Accuracy:          0.8636
+Mean of Client Accuracy:      0.8614
+Std of Client Accuracy:       0.1583
+--------------Round 225--------------
+Time Cost:                    1.3386s
+Training Loss:                0.2881
+Testing Loss:                 0.4899
+Testing Accuracy:             0.8444
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9038
+Std of Client Accuracy:       0.1307
+--------------Round 226--------------
+Time Cost:                    1.3062s
+Training Loss:                0.3455
+Testing Loss:                 0.5694
+Testing Accuracy:             0.8189
+Validating Accuracy:          0.8705
+Mean of Client Accuracy:      0.8601
+Std of Client Accuracy:       0.1457
+--------------Round 227--------------
+Time Cost:                    0.9880s
+Training Loss:                0.2797
+Testing Loss:                 0.5029
+Testing Accuracy:             0.8438
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9048
+Std of Client Accuracy:       0.1076
+--------------Round 228--------------
+Time Cost:                    0.9758s
+Training Loss:                0.3017
+Testing Loss:                 0.5142
+Testing Accuracy:             0.8380
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8819
+Std of Client Accuracy:       0.1319
+--------------Round 229--------------
+Time Cost:                    1.1832s
+Training Loss:                0.3182
+Testing Loss:                 0.5430
+Testing Accuracy:             0.8291
+Validating Accuracy:          0.8818
+Mean of Client Accuracy:      0.8728
+Std of Client Accuracy:       0.1362
+--------------Round 230--------------
+Time Cost:                    1.1017s
+Training Loss:                0.3082
+Testing Loss:                 0.5275
+Testing Accuracy:             0.8370
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8935
+Std of Client Accuracy:       0.1402
+--------------Round 231--------------
+Time Cost:                    1.1245s
+Training Loss:                0.2940
+Testing Loss:                 0.5248
+Testing Accuracy:             0.8346
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8911
+Std of Client Accuracy:       0.1180
+--------------Round 232--------------
+Time Cost:                    1.0611s
+Training Loss:                0.3026
+Testing Loss:                 0.5366
+Testing Accuracy:             0.8345
+Validating Accuracy:          0.8886
+Mean of Client Accuracy:      0.8795
+Std of Client Accuracy:       0.1203
+--------------Round 233--------------
+Time Cost:                    1.0449s
+Training Loss:                0.3040
+Testing Loss:                 0.5418
+Testing Accuracy:             0.8328
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.8959
+Std of Client Accuracy:       0.1303
+--------------Round 234--------------
+Time Cost:                    1.1316s
+Training Loss:                0.3048
+Testing Loss:                 0.5452
+Testing Accuracy:             0.8288
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8948
+Std of Client Accuracy:       0.1222
+--------------Round 235--------------
+Time Cost:                    0.7920s
+Training Loss:                0.2619
+Testing Loss:                 0.4910
+Testing Accuracy:             0.8485
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9147
+Std of Client Accuracy:       0.0920
+--------------Round 236--------------
+Time Cost:                    0.9082s
+Training Loss:                0.2815
+Testing Loss:                 0.4984
+Testing Accuracy:             0.8475
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9049
+Std of Client Accuracy:       0.1208
+--------------Round 237--------------
+Time Cost:                    1.0011s
+Training Loss:                0.2586
+Testing Loss:                 0.4808
+Testing Accuracy:             0.8537
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9035
+Std of Client Accuracy:       0.1161
+--------------Round 238--------------
+Time Cost:                    0.7769s
+Training Loss:                0.2994
+Testing Loss:                 0.5053
+Testing Accuracy:             0.8469
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8984
+Std of Client Accuracy:       0.1291
+--------------Round 239--------------
+Time Cost:                    1.0239s
+Training Loss:                0.2541
+Testing Loss:                 0.4747
+Testing Accuracy:             0.8540
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9177
+Std of Client Accuracy:       0.1116
+--------------Round 240--------------
+Time Cost:                    0.8742s
+Training Loss:                0.2570
+Testing Loss:                 0.4811
+Testing Accuracy:             0.8541
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9245
+Std of Client Accuracy:       0.1015
+--------------Round 241--------------
+Time Cost:                    1.0608s
+Training Loss:                0.2624
+Testing Loss:                 0.4750
+Testing Accuracy:             0.8537
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9144
+Std of Client Accuracy:       0.1233
+--------------Round 242--------------
+Time Cost:                    0.7801s
+Training Loss:                0.2808
+Testing Loss:                 0.4896
+Testing Accuracy:             0.8505
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8994
+Std of Client Accuracy:       0.1260
+--------------Round 243--------------
+Time Cost:                    0.9071s
+Training Loss:                0.2723
+Testing Loss:                 0.4906
+Testing Accuracy:             0.8502
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.9084
+Std of Client Accuracy:       0.1076
+--------------Round 244--------------
+Time Cost:                    0.7647s
+Training Loss:                0.2440
+Testing Loss:                 0.4599
+Testing Accuracy:             0.8596
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9245
+Std of Client Accuracy:       0.0939
+--------------Round 245--------------
+Time Cost:                    0.9767s
+Training Loss:                0.2471
+Testing Loss:                 0.4662
+Testing Accuracy:             0.8585
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9243
+Std of Client Accuracy:       0.0908
+--------------Round 246--------------
+Time Cost:                    0.7255s
+Training Loss:                0.2731
+Testing Loss:                 0.4856
+Testing Accuracy:             0.8525
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8944
+Std of Client Accuracy:       0.1304
+--------------Round 247--------------
+Time Cost:                    0.8442s
+Training Loss:                0.2478
+Testing Loss:                 0.4632
+Testing Accuracy:             0.8583
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9160
+Std of Client Accuracy:       0.1009
+--------------Round 248--------------
+Time Cost:                    0.7920s
+Training Loss:                0.2430
+Testing Loss:                 0.4574
+Testing Accuracy:             0.8605
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9179
+Std of Client Accuracy:       0.1076
+--------------Round 249--------------
+Time Cost:                    0.8385s
+Training Loss:                0.2623
+Testing Loss:                 0.4852
+Testing Accuracy:             0.8493
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9083
+Std of Client Accuracy:       0.1025
+--------------Round 250--------------
+Time Cost:                    0.8688s
+Training Loss:                0.2803
+Testing Loss:                 0.4988
+Testing Accuracy:             0.8432
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.8937
+Std of Client Accuracy:       0.1175
+--------------Round 251--------------
+Time Cost:                    0.8503s
+Training Loss:                0.2851
+Testing Loss:                 0.5158
+Testing Accuracy:             0.8340
+Validating Accuracy:          0.8955
+Mean of Client Accuracy:      0.8881
+Std of Client Accuracy:       0.1179
+--------------Round 252--------------
+Time Cost:                    0.8283s
+Training Loss:                0.3213
+Testing Loss:                 0.5235
+Testing Accuracy:             0.8359
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8911
+Std of Client Accuracy:       0.1268
+--------------Round 253--------------
+Time Cost:                    0.8825s
+Training Loss:                0.2629
+Testing Loss:                 0.4809
+Testing Accuracy:             0.8531
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9127
+Std of Client Accuracy:       0.1090
+--------------Round 254--------------
+Time Cost:                    1.0029s
+Training Loss:                0.2517
+Testing Loss:                 0.4620
+Testing Accuracy:             0.8607
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9206
+Std of Client Accuracy:       0.1184
+--------------Round 255--------------
+Time Cost:                    0.8452s
+Training Loss:                0.2745
+Testing Loss:                 0.5211
+Testing Accuracy:             0.8362
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.8954
+Std of Client Accuracy:       0.1269
+--------------Round 256--------------
+Time Cost:                    1.0003s
+Training Loss:                0.2694
+Testing Loss:                 0.4934
+Testing Accuracy:             0.8487
+Validating Accuracy:          0.9159
+Mean of Client Accuracy:      0.9099
+Std of Client Accuracy:       0.1247
+--------------Round 257--------------
+Time Cost:                    0.7508s
+Training Loss:                0.3077
+Testing Loss:                 0.5178
+Testing Accuracy:             0.8397
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.8990
+Std of Client Accuracy:       0.1335
+--------------Round 258--------------
+Time Cost:                    0.6840s
+Training Loss:                0.2997
+Testing Loss:                 0.5079
+Testing Accuracy:             0.8406
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.9043
+Std of Client Accuracy:       0.1371
+--------------Round 259--------------
+Time Cost:                    0.8176s
+Training Loss:                0.2474
+Testing Loss:                 0.4811
+Testing Accuracy:             0.8521
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9254
+Std of Client Accuracy:       0.1024
+--------------Round 260--------------
+Time Cost:                    0.7195s
+Training Loss:                0.2751
+Testing Loss:                 0.5013
+Testing Accuracy:             0.8460
+Validating Accuracy:          0.9114
+Mean of Client Accuracy:      0.9087
+Std of Client Accuracy:       0.1157
+--------------Round 261--------------
+Time Cost:                    0.7132s
+Training Loss:                0.2396
+Testing Loss:                 0.4614
+Testing Accuracy:             0.8603
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9208
+Std of Client Accuracy:       0.1125
+--------------Round 262--------------
+Time Cost:                    0.7660s
+Training Loss:                0.3032
+Testing Loss:                 0.5170
+Testing Accuracy:             0.8388
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.8996
+Std of Client Accuracy:       0.1439
+--------------Round 263--------------
+Time Cost:                    0.7772s
+Training Loss:                0.2712
+Testing Loss:                 0.4892
+Testing Accuracy:             0.8495
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9137
+Std of Client Accuracy:       0.1294
+--------------Round 264--------------
+Time Cost:                    0.8916s
+Training Loss:                0.2447
+Testing Loss:                 0.4752
+Testing Accuracy:             0.8543
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9166
+Std of Client Accuracy:       0.1095
+--------------Round 265--------------
+Time Cost:                    0.9550s
+Training Loss:                0.2469
+Testing Loss:                 0.4837
+Testing Accuracy:             0.8514
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9254
+Std of Client Accuracy:       0.0975
+--------------Round 266--------------
+Time Cost:                    0.9535s
+Training Loss:                0.2495
+Testing Loss:                 0.4794
+Testing Accuracy:             0.8577
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9175
+Std of Client Accuracy:       0.1015
+--------------Round 267--------------
+Time Cost:                    0.8139s
+Training Loss:                0.2443
+Testing Loss:                 0.4813
+Testing Accuracy:             0.8533
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9223
+Std of Client Accuracy:       0.0988
+--------------Round 268--------------
+Time Cost:                    0.8193s
+Training Loss:                0.2456
+Testing Loss:                 0.4698
+Testing Accuracy:             0.8586
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9237
+Std of Client Accuracy:       0.1097
+--------------Round 269--------------
+Time Cost:                    0.7323s
+Training Loss:                0.3814
+Testing Loss:                 0.6449
+Testing Accuracy:             0.7932
+Validating Accuracy:          0.8636
+Mean of Client Accuracy:      0.8578
+Std of Client Accuracy:       0.1299
+--------------Round 270--------------
+Time Cost:                    0.9036s
+Training Loss:                0.2456
+Testing Loss:                 0.4775
+Testing Accuracy:             0.8560
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9165
+Std of Client Accuracy:       0.1028
+--------------Round 271--------------
+Time Cost:                    0.9132s
+Training Loss:                0.2619
+Testing Loss:                 0.5013
+Testing Accuracy:             0.8472
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.8992
+Std of Client Accuracy:       0.1239
+--------------Round 272--------------
+Time Cost:                    0.8055s
+Training Loss:                0.2634
+Testing Loss:                 0.4956
+Testing Accuracy:             0.8506
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8937
+Std of Client Accuracy:       0.1246
+--------------Round 273--------------
+Time Cost:                    0.9204s
+Training Loss:                0.2318
+Testing Loss:                 0.4613
+Testing Accuracy:             0.8581
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9137
+Std of Client Accuracy:       0.1129
+--------------Round 274--------------
+Time Cost:                    0.9215s
+Training Loss:                0.2412
+Testing Loss:                 0.4759
+Testing Accuracy:             0.8551
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9269
+Std of Client Accuracy:       0.1016
+--------------Round 275--------------
+Time Cost:                    0.7540s
+Training Loss:                0.3094
+Testing Loss:                 0.5442
+Testing Accuracy:             0.8337
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8984
+Std of Client Accuracy:       0.1280
+--------------Round 276--------------
+Time Cost:                    0.8820s
+Training Loss:                0.2722
+Testing Loss:                 0.5159
+Testing Accuracy:             0.8410
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.9022
+Std of Client Accuracy:       0.1042
+--------------Round 277--------------
+Time Cost:                    0.7413s
+Training Loss:                0.2456
+Testing Loss:                 0.4896
+Testing Accuracy:             0.8523
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9166
+Std of Client Accuracy:       0.1093
+--------------Round 278--------------
+Time Cost:                    0.7183s
+Training Loss:                0.2475
+Testing Loss:                 0.5003
+Testing Accuracy:             0.8446
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9215
+Std of Client Accuracy:       0.0992
+--------------Round 279--------------
+Time Cost:                    0.7657s
+Training Loss:                0.2344
+Testing Loss:                 0.4862
+Testing Accuracy:             0.8490
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9177
+Std of Client Accuracy:       0.1013
+--------------Round 280--------------
+Time Cost:                    0.7938s
+Training Loss:                0.2653
+Testing Loss:                 0.5046
+Testing Accuracy:             0.8442
+Validating Accuracy:          0.9136
+Mean of Client Accuracy:      0.9044
+Std of Client Accuracy:       0.1171
+--------------Round 281--------------
+Time Cost:                    0.7741s
+Training Loss:                0.2673
+Testing Loss:                 0.5025
+Testing Accuracy:             0.8466
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9143
+Std of Client Accuracy:       0.1226
+--------------Round 282--------------
+Time Cost:                    0.9453s
+Training Loss:                0.2333
+Testing Loss:                 0.4840
+Testing Accuracy:             0.8528
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9255
+Std of Client Accuracy:       0.1082
+--------------Round 283--------------
+Time Cost:                    0.9967s
+Training Loss:                0.2290
+Testing Loss:                 0.4885
+Testing Accuracy:             0.8524
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9139
+Std of Client Accuracy:       0.1028
+--------------Round 284--------------
+Time Cost:                    1.0761s
+Training Loss:                0.2731
+Testing Loss:                 0.5463
+Testing Accuracy:             0.8287
+Validating Accuracy:          0.9045
+Mean of Client Accuracy:      0.8982
+Std of Client Accuracy:       0.1190
+--------------Round 285--------------
+Time Cost:                    0.8991s
+Training Loss:                0.2494
+Testing Loss:                 0.5204
+Testing Accuracy:             0.8390
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9208
+Std of Client Accuracy:       0.1031
+--------------Round 286--------------
+Time Cost:                    0.8575s
+Training Loss:                0.2147
+Testing Loss:                 0.4547
+Testing Accuracy:             0.8639
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9322
+Std of Client Accuracy:       0.1032
+--------------Round 287--------------
+Time Cost:                    0.7978s
+Training Loss:                0.2465
+Testing Loss:                 0.5027
+Testing Accuracy:             0.8457
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9280
+Std of Client Accuracy:       0.0922
+--------------Round 288--------------
+Time Cost:                    0.8037s
+Training Loss:                0.2158
+Testing Loss:                 0.4589
+Testing Accuracy:             0.8628
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9288
+Std of Client Accuracy:       0.0983
+--------------Round 289--------------
+Time Cost:                    0.9458s
+Training Loss:                0.2416
+Testing Loss:                 0.5085
+Testing Accuracy:             0.8451
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9197
+Std of Client Accuracy:       0.1027
+--------------Round 290--------------
+Time Cost:                    0.7572s
+Training Loss:                0.2396
+Testing Loss:                 0.5106
+Testing Accuracy:             0.8458
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9146
+Std of Client Accuracy:       0.1018
+--------------Round 291--------------
+Time Cost:                    0.7598s
+Training Loss:                0.2589
+Testing Loss:                 0.5049
+Testing Accuracy:             0.8482
+Validating Accuracy:          0.9159
+Mean of Client Accuracy:      0.9053
+Std of Client Accuracy:       0.1385
+--------------Round 292--------------
+Time Cost:                    1.1428s
+Training Loss:                0.2534
+Testing Loss:                 0.4913
+Testing Accuracy:             0.8499
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9132
+Std of Client Accuracy:       0.1390
+--------------Round 293--------------
+Time Cost:                    0.9019s
+Training Loss:                0.2548
+Testing Loss:                 0.4844
+Testing Accuracy:             0.8542
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9137
+Std of Client Accuracy:       0.1313
+--------------Round 294--------------
+Time Cost:                    0.8799s
+Training Loss:                0.2298
+Testing Loss:                 0.4895
+Testing Accuracy:             0.8530
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9203
+Std of Client Accuracy:       0.1121
+--------------Round 295--------------
+Time Cost:                    0.8777s
+Training Loss:                0.2583
+Testing Loss:                 0.4964
+Testing Accuracy:             0.8501
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9105
+Std of Client Accuracy:       0.1321
+--------------Round 296--------------
+Time Cost:                    0.6970s
+Training Loss:                0.2271
+Testing Loss:                 0.4694
+Testing Accuracy:             0.8584
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9196
+Std of Client Accuracy:       0.1115
+--------------Round 297--------------
+Time Cost:                    0.7740s
+Training Loss:                0.2674
+Testing Loss:                 0.5086
+Testing Accuracy:             0.8458
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.9002
+Std of Client Accuracy:       0.1256
+--------------Round 298--------------
+Time Cost:                    0.7770s
+Training Loss:                0.2250
+Testing Loss:                 0.4730
+Testing Accuracy:             0.8592
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9265
+Std of Client Accuracy:       0.0980
+--------------Round 299--------------
+Time Cost:                    0.6997s
+Training Loss:                0.2618
+Testing Loss:                 0.4970
+Testing Accuracy:             0.8494
+Validating Accuracy:          0.9136
+Mean of Client Accuracy:      0.9064
+Std of Client Accuracy:       0.1325
+--------------Round 300--------------
+Time Cost:                    0.9077s
+Training Loss:                0.2500
+Testing Loss:                 0.4888
+Testing Accuracy:             0.8536
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9213
+Std of Client Accuracy:       0.1266
+--------------Round 301--------------
+Time Cost:                    0.9209s
+Training Loss:                0.2343
+Testing Loss:                 0.4805
+Testing Accuracy:             0.8556
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9287
+Std of Client Accuracy:       0.1143
+--------------Round 302--------------
+Time Cost:                    0.8380s
+Training Loss:                0.2815
+Testing Loss:                 0.5422
+Testing Accuracy:             0.8322
+Validating Accuracy:          0.9000
+Mean of Client Accuracy:      0.8913
+Std of Client Accuracy:       0.1280
+--------------Round 303--------------
+Time Cost:                    0.8930s
+Training Loss:                0.2717
+Testing Loss:                 0.5102
+Testing Accuracy:             0.8445
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.8999
+Std of Client Accuracy:       0.1189
+--------------Round 304--------------
+Time Cost:                    0.7649s
+Training Loss:                0.2896
+Testing Loss:                 0.5385
+Testing Accuracy:             0.8369
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.8975
+Std of Client Accuracy:       0.1297
+--------------Round 305--------------
+Time Cost:                    0.9832s
+Training Loss:                0.3055
+Testing Loss:                 0.5523
+Testing Accuracy:             0.8333
+Validating Accuracy:          0.8955
+Mean of Client Accuracy:      0.8838
+Std of Client Accuracy:       0.1573
+--------------Round 306--------------
+Time Cost:                    0.7761s
+Training Loss:                0.3374
+Testing Loss:                 0.6120
+Testing Accuracy:             0.8151
+Validating Accuracy:          0.8977
+Mean of Client Accuracy:      0.8824
+Std of Client Accuracy:       0.1599
+--------------Round 307--------------
+Time Cost:                    0.7611s
+Training Loss:                0.2533
+Testing Loss:                 0.5090
+Testing Accuracy:             0.8477
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9080
+Std of Client Accuracy:       0.1297
+--------------Round 308--------------
+Time Cost:                    0.7333s
+Training Loss:                0.2209
+Testing Loss:                 0.4892
+Testing Accuracy:             0.8543
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9228
+Std of Client Accuracy:       0.1010
+--------------Round 309--------------
+Time Cost:                    0.9773s
+Training Loss:                0.2157
+Testing Loss:                 0.4641
+Testing Accuracy:             0.8613
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9319
+Std of Client Accuracy:       0.1110
+--------------Round 310--------------
+Time Cost:                    0.8724s
+Training Loss:                0.2097
+Testing Loss:                 0.4717
+Testing Accuracy:             0.8590
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9352
+Std of Client Accuracy:       0.0870
+--------------Round 311--------------
+Time Cost:                    0.9555s
+Training Loss:                0.2112
+Testing Loss:                 0.4611
+Testing Accuracy:             0.8614
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9342
+Std of Client Accuracy:       0.1043
+--------------Round 312--------------
+Time Cost:                    0.6563s
+Training Loss:                0.2286
+Testing Loss:                 0.4776
+Testing Accuracy:             0.8570
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9263
+Std of Client Accuracy:       0.1205
+--------------Round 313--------------
+Time Cost:                    1.0474s
+Training Loss:                0.2079
+Testing Loss:                 0.4749
+Testing Accuracy:             0.8598
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9273
+Std of Client Accuracy:       0.1026
+--------------Round 314--------------
+Time Cost:                    0.9102s
+Training Loss:                0.2737
+Testing Loss:                 0.5287
+Testing Accuracy:             0.8402
+Validating Accuracy:          0.9068
+Mean of Client Accuracy:      0.9035
+Std of Client Accuracy:       0.1151
+--------------Round 315--------------
+Time Cost:                    0.8029s
+Training Loss:                0.2688
+Testing Loss:                 0.5134
+Testing Accuracy:             0.8440
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8947
+Std of Client Accuracy:       0.1352
+--------------Round 316--------------
+Time Cost:                    0.7544s
+Training Loss:                0.2052
+Testing Loss:                 0.4612
+Testing Accuracy:             0.8622
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9242
+Std of Client Accuracy:       0.1071
+--------------Round 317--------------
+Time Cost:                    0.9538s
+Training Loss:                0.2089
+Testing Loss:                 0.4811
+Testing Accuracy:             0.8547
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9422
+Std of Client Accuracy:       0.0846
+--------------Round 318--------------
+Time Cost:                    0.9125s
+Training Loss:                0.2137
+Testing Loss:                 0.4726
+Testing Accuracy:             0.8570
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9300
+Std of Client Accuracy:       0.1056
+--------------Round 319--------------
+Time Cost:                    0.8154s
+Training Loss:                0.2170
+Testing Loss:                 0.4671
+Testing Accuracy:             0.8608
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9302
+Std of Client Accuracy:       0.1197
+--------------Round 320--------------
+Time Cost:                    0.8014s
+Training Loss:                0.2249
+Testing Loss:                 0.4729
+Testing Accuracy:             0.8596
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9219
+Std of Client Accuracy:       0.1100
+--------------Round 321--------------
+Time Cost:                    0.8283s
+Training Loss:                0.1978
+Testing Loss:                 0.4546
+Testing Accuracy:             0.8666
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9379
+Std of Client Accuracy:       0.0947
+--------------Round 322--------------
+Time Cost:                    0.8555s
+Training Loss:                0.2006
+Testing Loss:                 0.4525
+Testing Accuracy:             0.8676
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9357
+Std of Client Accuracy:       0.0979
+--------------Round 323--------------
+Time Cost:                    1.0089s
+Training Loss:                0.2318
+Testing Loss:                 0.4796
+Testing Accuracy:             0.8569
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9203
+Std of Client Accuracy:       0.1209
+--------------Round 324--------------
+Time Cost:                    0.9385s
+Training Loss:                0.2648
+Testing Loss:                 0.5173
+Testing Accuracy:             0.8430
+Validating Accuracy:          0.9159
+Mean of Client Accuracy:      0.9042
+Std of Client Accuracy:       0.1474
+--------------Round 325--------------
+Time Cost:                    0.8391s
+Training Loss:                0.3004
+Testing Loss:                 0.5550
+Testing Accuracy:             0.8337
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.8973
+Std of Client Accuracy:       0.1577
+--------------Round 326--------------
+Time Cost:                    0.8643s
+Training Loss:                0.2017
+Testing Loss:                 0.4648
+Testing Accuracy:             0.8625
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9332
+Std of Client Accuracy:       0.0923
+--------------Round 327--------------
+Time Cost:                    0.8722s
+Training Loss:                0.2330
+Testing Loss:                 0.4940
+Testing Accuracy:             0.8525
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9221
+Std of Client Accuracy:       0.1184
+--------------Round 328--------------
+Time Cost:                    0.9339s
+Training Loss:                0.2193
+Testing Loss:                 0.4892
+Testing Accuracy:             0.8546
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9290
+Std of Client Accuracy:       0.1010
+--------------Round 329--------------
+Time Cost:                    0.7982s
+Training Loss:                0.2215
+Testing Loss:                 0.5115
+Testing Accuracy:             0.8457
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9151
+Std of Client Accuracy:       0.1185
+--------------Round 330--------------
+Time Cost:                    0.8638s
+Training Loss:                0.2105
+Testing Loss:                 0.4786
+Testing Accuracy:             0.8570
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9208
+Std of Client Accuracy:       0.1034
+--------------Round 331--------------
+Time Cost:                    0.7896s
+Training Loss:                0.2500
+Testing Loss:                 0.4943
+Testing Accuracy:             0.8523
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9223
+Std of Client Accuracy:       0.1147
+--------------Round 332--------------
+Time Cost:                    0.7362s
+Training Loss:                0.2360
+Testing Loss:                 0.4925
+Testing Accuracy:             0.8524
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9287
+Std of Client Accuracy:       0.1047
+--------------Round 333--------------
+Time Cost:                    0.9214s
+Training Loss:                0.1923
+Testing Loss:                 0.4536
+Testing Accuracy:             0.8678
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9402
+Std of Client Accuracy:       0.0957
+--------------Round 334--------------
+Time Cost:                    1.0721s
+Training Loss:                0.2043
+Testing Loss:                 0.4588
+Testing Accuracy:             0.8644
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9367
+Std of Client Accuracy:       0.1044
+--------------Round 335--------------
+Time Cost:                    0.7986s
+Training Loss:                0.2594
+Testing Loss:                 0.5206
+Testing Accuracy:             0.8477
+Validating Accuracy:          0.9159
+Mean of Client Accuracy:      0.9086
+Std of Client Accuracy:       0.1258
+--------------Round 336--------------
+Time Cost:                    0.7245s
+Training Loss:                0.2116
+Testing Loss:                 0.4651
+Testing Accuracy:             0.8629
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9323
+Std of Client Accuracy:       0.1025
+--------------Round 337--------------
+Time Cost:                    0.8033s
+Training Loss:                0.1954
+Testing Loss:                 0.4637
+Testing Accuracy:             0.8660
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9360
+Std of Client Accuracy:       0.0967
+--------------Round 338--------------
+Time Cost:                    0.7582s
+Training Loss:                0.1995
+Testing Loss:                 0.4661
+Testing Accuracy:             0.8638
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9286
+Std of Client Accuracy:       0.1001
+--------------Round 339--------------
+Time Cost:                    0.9592s
+Training Loss:                0.1890
+Testing Loss:                 0.4668
+Testing Accuracy:             0.8624
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9307
+Std of Client Accuracy:       0.0969
+--------------Round 340--------------
+Time Cost:                    0.7248s
+Training Loss:                0.1813
+Testing Loss:                 0.4608
+Testing Accuracy:             0.8636
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9375
+Std of Client Accuracy:       0.0850
+--------------Round 341--------------
+Time Cost:                    0.9984s
+Training Loss:                0.1837
+Testing Loss:                 0.4504
+Testing Accuracy:             0.8671
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9342
+Std of Client Accuracy:       0.0994
+--------------Round 342--------------
+Time Cost:                    0.8430s
+Training Loss:                0.1836
+Testing Loss:                 0.4591
+Testing Accuracy:             0.8643
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9351
+Std of Client Accuracy:       0.0871
+--------------Round 343--------------
+Time Cost:                    0.8665s
+Training Loss:                0.2074
+Testing Loss:                 0.5053
+Testing Accuracy:             0.8501
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9189
+Std of Client Accuracy:       0.0992
+--------------Round 344--------------
+Time Cost:                    0.9212s
+Training Loss:                0.2154
+Testing Loss:                 0.5134
+Testing Accuracy:             0.8454
+Validating Accuracy:          0.9273
+Mean of Client Accuracy:      0.9174
+Std of Client Accuracy:       0.1243
+--------------Round 345--------------
+Time Cost:                    0.8574s
+Training Loss:                0.1808
+Testing Loss:                 0.4472
+Testing Accuracy:             0.8696
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9401
+Std of Client Accuracy:       0.0948
+--------------Round 346--------------
+Time Cost:                    0.7311s
+Training Loss:                0.1896
+Testing Loss:                 0.4747
+Testing Accuracy:             0.8605
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9351
+Std of Client Accuracy:       0.0919
+--------------Round 347--------------
+Time Cost:                    0.6736s
+Training Loss:                0.2150
+Testing Loss:                 0.4833
+Testing Accuracy:             0.8570
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9162
+Std of Client Accuracy:       0.1186
+--------------Round 348--------------
+Time Cost:                    0.8022s
+Training Loss:                0.2419
+Testing Loss:                 0.5067
+Testing Accuracy:             0.8517
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9148
+Std of Client Accuracy:       0.1271
+--------------Round 349--------------
+Time Cost:                    0.9376s
+Training Loss:                0.2095
+Testing Loss:                 0.4681
+Testing Accuracy:             0.8619
+Validating Accuracy:          0.9295
+Mean of Client Accuracy:      0.9244
+Std of Client Accuracy:       0.1195
+--------------Round 350--------------
+Time Cost:                    0.7835s
+Training Loss:                0.2159
+Testing Loss:                 0.4766
+Testing Accuracy:             0.8589
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9301
+Std of Client Accuracy:       0.1230
+--------------Round 351--------------
+Time Cost:                    0.9557s
+Training Loss:                0.2063
+Testing Loss:                 0.4663
+Testing Accuracy:             0.8620
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9258
+Std of Client Accuracy:       0.1128
+--------------Round 352--------------
+Time Cost:                    0.9456s
+Training Loss:                0.1764
+Testing Loss:                 0.4492
+Testing Accuracy:             0.8679
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9522
+Std of Client Accuracy:       0.0882
+--------------Round 353--------------
+Time Cost:                    0.7428s
+Training Loss:                0.1861
+Testing Loss:                 0.4604
+Testing Accuracy:             0.8661
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9379
+Std of Client Accuracy:       0.0959
+--------------Round 354--------------
+Time Cost:                    0.7481s
+Training Loss:                0.2220
+Testing Loss:                 0.4829
+Testing Accuracy:             0.8573
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9184
+Std of Client Accuracy:       0.1107
+--------------Round 355--------------
+Time Cost:                    0.8163s
+Training Loss:                0.2271
+Testing Loss:                 0.4938
+Testing Accuracy:             0.8561
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9318
+Std of Client Accuracy:       0.1062
+--------------Round 356--------------
+Time Cost:                    0.7332s
+Training Loss:                0.1819
+Testing Loss:                 0.4588
+Testing Accuracy:             0.8648
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9433
+Std of Client Accuracy:       0.0834
+--------------Round 357--------------
+Time Cost:                    0.8761s
+Training Loss:                0.1882
+Testing Loss:                 0.4585
+Testing Accuracy:             0.8661
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9489
+Std of Client Accuracy:       0.0963
+--------------Round 358--------------
+Time Cost:                    0.8529s
+Training Loss:                0.1787
+Testing Loss:                 0.4555
+Testing Accuracy:             0.8672
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9410
+Std of Client Accuracy:       0.0961
+--------------Round 359--------------
+Time Cost:                    0.7743s
+Training Loss:                0.1946
+Testing Loss:                 0.4565
+Testing Accuracy:             0.8670
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9403
+Std of Client Accuracy:       0.0975
+--------------Round 360--------------
+Time Cost:                    0.7321s
+Training Loss:                0.2054
+Testing Loss:                 0.4909
+Testing Accuracy:             0.8572
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9312
+Std of Client Accuracy:       0.1007
+--------------Round 361--------------
+Time Cost:                    0.8146s
+Training Loss:                0.2067
+Testing Loss:                 0.4843
+Testing Accuracy:             0.8586
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9279
+Std of Client Accuracy:       0.1085
+--------------Round 362--------------
+Time Cost:                    0.7880s
+Training Loss:                0.1806
+Testing Loss:                 0.4674
+Testing Accuracy:             0.8647
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9444
+Std of Client Accuracy:       0.0911
+--------------Round 363--------------
+Time Cost:                    1.0373s
+Training Loss:                0.2037
+Testing Loss:                 0.4716
+Testing Accuracy:             0.8640
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9406
+Std of Client Accuracy:       0.1035
+--------------Round 364--------------
+Time Cost:                    0.9506s
+Training Loss:                0.1966
+Testing Loss:                 0.4715
+Testing Accuracy:             0.8634
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9369
+Std of Client Accuracy:       0.0971
+--------------Round 365--------------
+Time Cost:                    0.8452s
+Training Loss:                0.2217
+Testing Loss:                 0.4974
+Testing Accuracy:             0.8548
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9186
+Std of Client Accuracy:       0.1060
+--------------Round 366--------------
+Time Cost:                    0.6796s
+Training Loss:                0.2516
+Testing Loss:                 0.5400
+Testing Accuracy:             0.8408
+Validating Accuracy:          0.9136
+Mean of Client Accuracy:      0.9103
+Std of Client Accuracy:       0.1204
+--------------Round 367--------------
+Time Cost:                    0.6451s
+Training Loss:                0.2784
+Testing Loss:                 0.5367
+Testing Accuracy:             0.8446
+Validating Accuracy:          0.8932
+Mean of Client Accuracy:      0.8922
+Std of Client Accuracy:       0.1417
+--------------Round 368--------------
+Time Cost:                    0.7556s
+Training Loss:                0.1981
+Testing Loss:                 0.4876
+Testing Accuracy:             0.8562
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9378
+Std of Client Accuracy:       0.0917
+--------------Round 369--------------
+Time Cost:                    0.8472s
+Training Loss:                0.2181
+Testing Loss:                 0.5333
+Testing Accuracy:             0.8408
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9250
+Std of Client Accuracy:       0.1073
+--------------Round 370--------------
+Time Cost:                    0.6972s
+Training Loss:                0.1639
+Testing Loss:                 0.4475
+Testing Accuracy:             0.8695
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9442
+Std of Client Accuracy:       0.0852
+--------------Round 371--------------
+Time Cost:                    0.8197s
+Training Loss:                0.1868
+Testing Loss:                 0.4665
+Testing Accuracy:             0.8642
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9392
+Std of Client Accuracy:       0.0959
+--------------Round 372--------------
+Time Cost:                    0.7237s
+Training Loss:                0.2124
+Testing Loss:                 0.4809
+Testing Accuracy:             0.8579
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9241
+Std of Client Accuracy:       0.1230
+--------------Round 373--------------
+Time Cost:                    0.8016s
+Training Loss:                0.2446
+Testing Loss:                 0.5095
+Testing Accuracy:             0.8492
+Validating Accuracy:          0.9227
+Mean of Client Accuracy:      0.9111
+Std of Client Accuracy:       0.1442
+--------------Round 374--------------
+Time Cost:                    0.9320s
+Training Loss:                0.2158
+Testing Loss:                 0.4826
+Testing Accuracy:             0.8585
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9309
+Std of Client Accuracy:       0.1292
+--------------Round 375--------------
+Time Cost:                    0.6738s
+Training Loss:                0.2445
+Testing Loss:                 0.5129
+Testing Accuracy:             0.8489
+Validating Accuracy:          0.9250
+Mean of Client Accuracy:      0.9195
+Std of Client Accuracy:       0.1395
+--------------Round 376--------------
+Time Cost:                    0.6469s
+Training Loss:                0.2232
+Testing Loss:                 0.4990
+Testing Accuracy:             0.8504
+Validating Accuracy:          0.9182
+Mean of Client Accuracy:      0.9104
+Std of Client Accuracy:       0.1189
+--------------Round 377--------------
+Time Cost:                    0.7611s
+Training Loss:                0.1791
+Testing Loss:                 0.4561
+Testing Accuracy:             0.8677
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9323
+Std of Client Accuracy:       0.1042
+--------------Round 378--------------
+Time Cost:                    0.8048s
+Training Loss:                0.1786
+Testing Loss:                 0.4539
+Testing Accuracy:             0.8677
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9440
+Std of Client Accuracy:       0.0937
+--------------Round 379--------------
+Time Cost:                    0.8580s
+Training Loss:                0.2031
+Testing Loss:                 0.4763
+Testing Accuracy:             0.8610
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9294
+Std of Client Accuracy:       0.1123
+--------------Round 380--------------
+Time Cost:                    0.6765s
+Training Loss:                0.1823
+Testing Loss:                 0.4708
+Testing Accuracy:             0.8662
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9415
+Std of Client Accuracy:       0.1046
+--------------Round 381--------------
+Time Cost:                    1.0196s
+Training Loss:                0.1833
+Testing Loss:                 0.5013
+Testing Accuracy:             0.8550
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9318
+Std of Client Accuracy:       0.0993
+--------------Round 382--------------
+Time Cost:                    1.0044s
+Training Loss:                0.1543
+Testing Loss:                 0.4460
+Testing Accuracy:             0.8707
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9572
+Std of Client Accuracy:       0.0836
+--------------Round 383--------------
+Time Cost:                    0.8309s
+Training Loss:                0.1875
+Testing Loss:                 0.4731
+Testing Accuracy:             0.8638
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9411
+Std of Client Accuracy:       0.0983
+--------------Round 384--------------
+Time Cost:                    1.0005s
+Training Loss:                0.1663
+Testing Loss:                 0.4545
+Testing Accuracy:             0.8679
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9476
+Std of Client Accuracy:       0.0893
+--------------Round 385--------------
+Time Cost:                    0.7141s
+Training Loss:                0.1657
+Testing Loss:                 0.4652
+Testing Accuracy:             0.8651
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9436
+Std of Client Accuracy:       0.0894
+--------------Round 386--------------
+Time Cost:                    0.8930s
+Training Loss:                0.1586
+Testing Loss:                 0.4552
+Testing Accuracy:             0.8696
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9478
+Std of Client Accuracy:       0.0849
+--------------Round 387--------------
+Time Cost:                    0.7897s
+Training Loss:                0.1767
+Testing Loss:                 0.4930
+Testing Accuracy:             0.8589
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9500
+Std of Client Accuracy:       0.0788
+--------------Round 388--------------
+Time Cost:                    0.9132s
+Training Loss:                0.1748
+Testing Loss:                 0.4567
+Testing Accuracy:             0.8690
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9442
+Std of Client Accuracy:       0.0936
+--------------Round 389--------------
+Time Cost:                    0.7371s
+Training Loss:                0.1642
+Testing Loss:                 0.4552
+Testing Accuracy:             0.8693
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9481
+Std of Client Accuracy:       0.0911
+--------------Round 390--------------
+Time Cost:                    0.7616s
+Training Loss:                0.1580
+Testing Loss:                 0.4562
+Testing Accuracy:             0.8659
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9445
+Std of Client Accuracy:       0.0831
+--------------Round 391--------------
+Time Cost:                    0.8488s
+Training Loss:                0.1662
+Testing Loss:                 0.4490
+Testing Accuracy:             0.8707
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9522
+Std of Client Accuracy:       0.0869
+--------------Round 392--------------
+Time Cost:                    0.8942s
+Training Loss:                0.1819
+Testing Loss:                 0.4828
+Testing Accuracy:             0.8598
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9378
+Std of Client Accuracy:       0.0950
+--------------Round 393--------------
+Time Cost:                    0.8382s
+Training Loss:                0.1797
+Testing Loss:                 0.4620
+Testing Accuracy:             0.8669
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9330
+Std of Client Accuracy:       0.1044
+--------------Round 394--------------
+Time Cost:                    0.7079s
+Training Loss:                0.2204
+Testing Loss:                 0.5278
+Testing Accuracy:             0.8455
+Validating Accuracy:          0.9205
+Mean of Client Accuracy:      0.9205
+Std of Client Accuracy:       0.1045
+--------------Round 395--------------
+Time Cost:                    0.8077s
+Training Loss:                0.2028
+Testing Loss:                 0.5220
+Testing Accuracy:             0.8478
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9327
+Std of Client Accuracy:       0.0996
+--------------Round 396--------------
+Time Cost:                    0.9523s
+Training Loss:                0.1524
+Testing Loss:                 0.4532
+Testing Accuracy:             0.8701
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9563
+Std of Client Accuracy:       0.0752
+--------------Round 397--------------
+Time Cost:                    0.8558s
+Training Loss:                0.1691
+Testing Loss:                 0.4651
+Testing Accuracy:             0.8684
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9463
+Std of Client Accuracy:       0.0903
+--------------Round 398--------------
+Time Cost:                    0.7642s
+Training Loss:                0.1553
+Testing Loss:                 0.4667
+Testing Accuracy:             0.8649
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9396
+Std of Client Accuracy:       0.0969
+--------------Round 399--------------
+Time Cost:                    0.6899s
+Training Loss:                0.1648
+Testing Loss:                 0.4659
+Testing Accuracy:             0.8675
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9492
+Std of Client Accuracy:       0.0827
+--------------Round 400--------------
+Time Cost:                    0.6785s
+Training Loss:                0.1586
+Testing Loss:                 0.4522
+Testing Accuracy:             0.8702
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9597
+Std of Client Accuracy:       0.0778
+--------------Round 401--------------
+Time Cost:                    0.8475s
+Training Loss:                0.1671
+Testing Loss:                 0.4560
+Testing Accuracy:             0.8692
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9457
+Std of Client Accuracy:       0.0907
+--------------Round 402--------------
+Time Cost:                    0.7745s
+Training Loss:                0.1778
+Testing Loss:                 0.5031
+Testing Accuracy:             0.8562
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9320
+Std of Client Accuracy:       0.0990
+--------------Round 403--------------
+Time Cost:                    0.7169s
+Training Loss:                0.1452
+Testing Loss:                 0.4427
+Testing Accuracy:             0.8743
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9538
+Std of Client Accuracy:       0.0885
+--------------Round 404--------------
+Time Cost:                    0.8445s
+Training Loss:                0.1829
+Testing Loss:                 0.4723
+Testing Accuracy:             0.8635
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9355
+Std of Client Accuracy:       0.1100
+--------------Round 405--------------
+Time Cost:                    0.7718s
+Training Loss:                0.1522
+Testing Loss:                 0.4533
+Testing Accuracy:             0.8697
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9525
+Std of Client Accuracy:       0.0823
+--------------Round 406--------------
+Time Cost:                    0.6532s
+Training Loss:                0.1532
+Testing Loss:                 0.4526
+Testing Accuracy:             0.8727
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9623
+Std of Client Accuracy:       0.0738
+--------------Round 407--------------
+Time Cost:                    0.9370s
+Training Loss:                0.1697
+Testing Loss:                 0.4922
+Testing Accuracy:             0.8595
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9336
+Std of Client Accuracy:       0.0981
+--------------Round 408--------------
+Time Cost:                    0.6566s
+Training Loss:                0.1739
+Testing Loss:                 0.4915
+Testing Accuracy:             0.8605
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9527
+Std of Client Accuracy:       0.0792
+--------------Round 409--------------
+Time Cost:                    0.7889s
+Training Loss:                0.1707
+Testing Loss:                 0.4799
+Testing Accuracy:             0.8610
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9391
+Std of Client Accuracy:       0.1009
+--------------Round 410--------------
+Time Cost:                    0.9676s
+Training Loss:                0.1612
+Testing Loss:                 0.4753
+Testing Accuracy:             0.8638
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9606
+Std of Client Accuracy:       0.0761
+--------------Round 411--------------
+Time Cost:                    1.0149s
+Training Loss:                0.1772
+Testing Loss:                 0.4686
+Testing Accuracy:             0.8634
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9374
+Std of Client Accuracy:       0.1077
+--------------Round 412--------------
+Time Cost:                    0.7357s
+Training Loss:                0.1572
+Testing Loss:                 0.4547
+Testing Accuracy:             0.8714
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9601
+Std of Client Accuracy:       0.0776
+--------------Round 413--------------
+Time Cost:                    0.9966s
+Training Loss:                0.1593
+Testing Loss:                 0.4588
+Testing Accuracy:             0.8691
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9490
+Std of Client Accuracy:       0.0861
+--------------Round 414--------------
+Time Cost:                    0.8094s
+Training Loss:                0.1551
+Testing Loss:                 0.4532
+Testing Accuracy:             0.8736
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9475
+Std of Client Accuracy:       0.0889
+--------------Round 415--------------
+Time Cost:                    0.6738s
+Training Loss:                0.1756
+Testing Loss:                 0.4716
+Testing Accuracy:             0.8651
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9334
+Std of Client Accuracy:       0.1079
+--------------Round 416--------------
+Time Cost:                    0.8464s
+Training Loss:                0.1539
+Testing Loss:                 0.4600
+Testing Accuracy:             0.8750
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9526
+Std of Client Accuracy:       0.0824
+--------------Round 417--------------
+Time Cost:                    0.6747s
+Training Loss:                0.1693
+Testing Loss:                 0.4716
+Testing Accuracy:             0.8672
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9437
+Std of Client Accuracy:       0.0869
+--------------Round 418--------------
+Time Cost:                    0.8353s
+Training Loss:                0.1792
+Testing Loss:                 0.4715
+Testing Accuracy:             0.8654
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9424
+Std of Client Accuracy:       0.0984
+--------------Round 419--------------
+Time Cost:                    0.8420s
+Training Loss:                0.1902
+Testing Loss:                 0.4785
+Testing Accuracy:             0.8653
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9305
+Std of Client Accuracy:       0.1097
+--------------Round 420--------------
+Time Cost:                    0.8731s
+Training Loss:                0.1586
+Testing Loss:                 0.4570
+Testing Accuracy:             0.8730
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9497
+Std of Client Accuracy:       0.0919
+--------------Round 421--------------
+Time Cost:                    0.8056s
+Training Loss:                0.1525
+Testing Loss:                 0.4564
+Testing Accuracy:             0.8680
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9457
+Std of Client Accuracy:       0.0907
+--------------Round 422--------------
+Time Cost:                    0.7288s
+Training Loss:                0.1640
+Testing Loss:                 0.4907
+Testing Accuracy:             0.8599
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9446
+Std of Client Accuracy:       0.0845
+--------------Round 423--------------
+Time Cost:                    0.9674s
+Training Loss:                0.1719
+Testing Loss:                 0.4762
+Testing Accuracy:             0.8653
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9540
+Std of Client Accuracy:       0.0858
+--------------Round 424--------------
+Time Cost:                    0.9526s
+Training Loss:                0.1542
+Testing Loss:                 0.4724
+Testing Accuracy:             0.8678
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9590
+Std of Client Accuracy:       0.0780
+--------------Round 425--------------
+Time Cost:                    0.8234s
+Training Loss:                0.1837
+Testing Loss:                 0.4828
+Testing Accuracy:             0.8641
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9448
+Std of Client Accuracy:       0.1116
+--------------Round 426--------------
+Time Cost:                    0.7388s
+Training Loss:                0.1408
+Testing Loss:                 0.4584
+Testing Accuracy:             0.8716
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9515
+Std of Client Accuracy:       0.0834
+--------------Round 427--------------
+Time Cost:                    0.7264s
+Training Loss:                0.1669
+Testing Loss:                 0.4792
+Testing Accuracy:             0.8652
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9397
+Std of Client Accuracy:       0.0953
+--------------Round 428--------------
+Time Cost:                    0.7339s
+Training Loss:                0.1533
+Testing Loss:                 0.4766
+Testing Accuracy:             0.8652
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9444
+Std of Client Accuracy:       0.0822
+--------------Round 429--------------
+Time Cost:                    0.9751s
+Training Loss:                0.1740
+Testing Loss:                 0.4786
+Testing Accuracy:             0.8640
+Validating Accuracy:          0.9409
+Mean of Client Accuracy:      0.9324
+Std of Client Accuracy:       0.0990
+--------------Round 430--------------
+Time Cost:                    0.9106s
+Training Loss:                0.1442
+Testing Loss:                 0.4589
+Testing Accuracy:             0.8693
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9498
+Std of Client Accuracy:       0.0832
+--------------Round 431--------------
+Time Cost:                    0.8396s
+Training Loss:                0.1725
+Testing Loss:                 0.4692
+Testing Accuracy:             0.8677
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9352
+Std of Client Accuracy:       0.1056
+--------------Round 432--------------
+Time Cost:                    1.0554s
+Training Loss:                0.1414
+Testing Loss:                 0.4513
+Testing Accuracy:             0.8710
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9548
+Std of Client Accuracy:       0.0784
+--------------Round 433--------------
+Time Cost:                    0.8595s
+Training Loss:                0.2512
+Testing Loss:                 0.6094
+Testing Accuracy:             0.8215
+Validating Accuracy:          0.9023
+Mean of Client Accuracy:      0.8932
+Std of Client Accuracy:       0.1374
+--------------Round 434--------------
+Time Cost:                    0.9190s
+Training Loss:                0.1682
+Testing Loss:                 0.5064
+Testing Accuracy:             0.8576
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9369
+Std of Client Accuracy:       0.0954
+--------------Round 435--------------
+Time Cost:                    0.9071s
+Training Loss:                0.1392
+Testing Loss:                 0.4602
+Testing Accuracy:             0.8709
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9558
+Std of Client Accuracy:       0.0771
+--------------Round 436--------------
+Time Cost:                    0.8391s
+Training Loss:                0.1395
+Testing Loss:                 0.4545
+Testing Accuracy:             0.8738
+Validating Accuracy:          0.9659
+Mean of Client Accuracy:      0.9637
+Std of Client Accuracy:       0.0799
+--------------Round 437--------------
+Time Cost:                    0.8455s
+Training Loss:                0.1361
+Testing Loss:                 0.4637
+Testing Accuracy:             0.8686
+Validating Accuracy:          0.9659
+Mean of Client Accuracy:      0.9638
+Std of Client Accuracy:       0.0705
+--------------Round 438--------------
+Time Cost:                    0.6898s
+Training Loss:                0.1427
+Testing Loss:                 0.4511
+Testing Accuracy:             0.8727
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9494
+Std of Client Accuracy:       0.0892
+--------------Round 439--------------
+Time Cost:                    0.9922s
+Training Loss:                0.1419
+Testing Loss:                 0.4509
+Testing Accuracy:             0.8739
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9513
+Std of Client Accuracy:       0.0890
+--------------Round 440--------------
+Time Cost:                    1.0059s
+Training Loss:                0.1401
+Testing Loss:                 0.4566
+Testing Accuracy:             0.8724
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9486
+Std of Client Accuracy:       0.0840
+--------------Round 441--------------
+Time Cost:                    1.0048s
+Training Loss:                0.1417
+Testing Loss:                 0.4665
+Testing Accuracy:             0.8696
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9579
+Std of Client Accuracy:       0.0737
+--------------Round 442--------------
+Time Cost:                    0.9971s
+Training Loss:                0.1482
+Testing Loss:                 0.4581
+Testing Accuracy:             0.8703
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9521
+Std of Client Accuracy:       0.0861
+--------------Round 443--------------
+Time Cost:                    0.7587s
+Training Loss:                0.1485
+Testing Loss:                 0.4640
+Testing Accuracy:             0.8691
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9626
+Std of Client Accuracy:       0.0726
+--------------Round 444--------------
+Time Cost:                    0.7944s
+Training Loss:                0.1344
+Testing Loss:                 0.4505
+Testing Accuracy:             0.8736
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9561
+Std of Client Accuracy:       0.0788
+--------------Round 445--------------
+Time Cost:                    0.8604s
+Training Loss:                0.1809
+Testing Loss:                 0.4823
+Testing Accuracy:             0.8628
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9446
+Std of Client Accuracy:       0.1054
+--------------Round 446--------------
+Time Cost:                    0.8180s
+Training Loss:                0.1573
+Testing Loss:                 0.4660
+Testing Accuracy:             0.8677
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9391
+Std of Client Accuracy:       0.0992
+--------------Round 447--------------
+Time Cost:                    1.0921s
+Training Loss:                0.1491
+Testing Loss:                 0.4740
+Testing Accuracy:             0.8670
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9523
+Std of Client Accuracy:       0.0800
+--------------Round 448--------------
+Time Cost:                    0.8764s
+Training Loss:                0.1654
+Testing Loss:                 0.4701
+Testing Accuracy:             0.8678
+Validating Accuracy:          0.9500
+Mean of Client Accuracy:      0.9453
+Std of Client Accuracy:       0.0941
+--------------Round 449--------------
+Time Cost:                    0.9400s
+Training Loss:                0.2035
+Testing Loss:                 0.5113
+Testing Accuracy:             0.8537
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9400
+Std of Client Accuracy:       0.1155
+--------------Round 450--------------
+Time Cost:                    0.8910s
+Training Loss:                0.1939
+Testing Loss:                 0.5040
+Testing Accuracy:             0.8596
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9440
+Std of Client Accuracy:       0.1081
+--------------Round 451--------------
+Time Cost:                    0.7293s
+Training Loss:                0.1415
+Testing Loss:                 0.4576
+Testing Accuracy:             0.8721
+Validating Accuracy:          0.9682
+Mean of Client Accuracy:      0.9663
+Std of Client Accuracy:       0.0690
+--------------Round 452--------------
+Time Cost:                    0.8519s
+Training Loss:                0.1392
+Testing Loss:                 0.4573
+Testing Accuracy:             0.8725
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9559
+Std of Client Accuracy:       0.0773
+--------------Round 453--------------
+Time Cost:                    0.7673s
+Training Loss:                0.1802
+Testing Loss:                 0.4998
+Testing Accuracy:             0.8610
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9309
+Std of Client Accuracy:       0.1077
+--------------Round 454--------------
+Time Cost:                    0.8518s
+Training Loss:                0.1453
+Testing Loss:                 0.4678
+Testing Accuracy:             0.8704
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9528
+Std of Client Accuracy:       0.0914
+--------------Round 455--------------
+Time Cost:                    0.7954s
+Training Loss:                0.1713
+Testing Loss:                 0.4915
+Testing Accuracy:             0.8638
+Validating Accuracy:          0.9364
+Mean of Client Accuracy:      0.9298
+Std of Client Accuracy:       0.1109
+--------------Round 456--------------
+Time Cost:                    0.7886s
+Training Loss:                0.1994
+Testing Loss:                 0.5017
+Testing Accuracy:             0.8580
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9302
+Std of Client Accuracy:       0.1099
+--------------Round 457--------------
+Time Cost:                    1.0626s
+Training Loss:                0.1492
+Testing Loss:                 0.4581
+Testing Accuracy:             0.8723
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9618
+Std of Client Accuracy:       0.0771
+--------------Round 458--------------
+Time Cost:                    0.9317s
+Training Loss:                0.1438
+Testing Loss:                 0.4580
+Testing Accuracy:             0.8719
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9581
+Std of Client Accuracy:       0.0813
+--------------Round 459--------------
+Time Cost:                    0.9947s
+Training Loss:                0.1592
+Testing Loss:                 0.4706
+Testing Accuracy:             0.8674
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9391
+Std of Client Accuracy:       0.1009
+--------------Round 460--------------
+Time Cost:                    0.8823s
+Training Loss:                0.1360
+Testing Loss:                 0.4506
+Testing Accuracy:             0.8755
+Validating Accuracy:          0.9659
+Mean of Client Accuracy:      0.9643
+Std of Client Accuracy:       0.0759
+--------------Round 461--------------
+Time Cost:                    0.8938s
+Training Loss:                0.1349
+Testing Loss:                 0.4616
+Testing Accuracy:             0.8715
+Validating Accuracy:          0.9727
+Mean of Client Accuracy:      0.9712
+Std of Client Accuracy:       0.0664
+--------------Round 462--------------
+Time Cost:                    0.7863s
+Training Loss:                0.1584
+Testing Loss:                 0.5108
+Testing Accuracy:             0.8558
+Validating Accuracy:          0.9432
+Mean of Client Accuracy:      0.9358
+Std of Client Accuracy:       0.0978
+--------------Round 463--------------
+Time Cost:                    0.7972s
+Training Loss:                0.1414
+Testing Loss:                 0.4899
+Testing Accuracy:             0.8644
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9392
+Std of Client Accuracy:       0.0961
+--------------Round 464--------------
+Time Cost:                    0.8567s
+Training Loss:                0.1437
+Testing Loss:                 0.4748
+Testing Accuracy:             0.8669
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9594
+Std of Client Accuracy:       0.0779
+--------------Round 465--------------
+Time Cost:                    0.8429s
+Training Loss:                0.1716
+Testing Loss:                 0.4830
+Testing Accuracy:             0.8647
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9514
+Std of Client Accuracy:       0.0945
+--------------Round 466--------------
+Time Cost:                    0.9322s
+Training Loss:                0.1442
+Testing Loss:                 0.4630
+Testing Accuracy:             0.8726
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9652
+Std of Client Accuracy:       0.0742
+--------------Round 467--------------
+Time Cost:                    0.8619s
+Training Loss:                0.1307
+Testing Loss:                 0.4613
+Testing Accuracy:             0.8723
+Validating Accuracy:          0.9682
+Mean of Client Accuracy:      0.9633
+Std of Client Accuracy:       0.0755
+--------------Round 468--------------
+Time Cost:                    0.8268s
+Training Loss:                0.1320
+Testing Loss:                 0.4531
+Testing Accuracy:             0.8745
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9579
+Std of Client Accuracy:       0.0828
+--------------Round 469--------------
+Time Cost:                    0.8046s
+Training Loss:                0.1523
+Testing Loss:                 0.4801
+Testing Accuracy:             0.8665
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9576
+Std of Client Accuracy:       0.0812
+--------------Round 470--------------
+Time Cost:                    0.7939s
+Training Loss:                0.1632
+Testing Loss:                 0.4823
+Testing Accuracy:             0.8675
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9426
+Std of Client Accuracy:       0.1001
+--------------Round 471--------------
+Time Cost:                    0.8531s
+Training Loss:                0.1399
+Testing Loss:                 0.4638
+Testing Accuracy:             0.8706
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9596
+Std of Client Accuracy:       0.0811
+--------------Round 472--------------
+Time Cost:                    0.9582s
+Training Loss:                0.1539
+Testing Loss:                 0.4819
+Testing Accuracy:             0.8658
+Validating Accuracy:          0.9455
+Mean of Client Accuracy:      0.9404
+Std of Client Accuracy:       0.1001
+--------------Round 473--------------
+Time Cost:                    1.0906s
+Training Loss:                0.1266
+Testing Loss:                 0.4544
+Testing Accuracy:             0.8751
+Validating Accuracy:          0.9682
+Mean of Client Accuracy:      0.9629
+Std of Client Accuracy:       0.0748
+--------------Round 474--------------
+Time Cost:                    1.0429s
+Training Loss:                0.1276
+Testing Loss:                 0.4602
+Testing Accuracy:             0.8748
+Validating Accuracy:          0.9636
+Mean of Client Accuracy:      0.9616
+Std of Client Accuracy:       0.0711
+--------------Round 475--------------
+Time Cost:                    0.8428s
+Training Loss:                0.1187
+Testing Loss:                 0.4476
+Testing Accuracy:             0.8769
+Validating Accuracy:          0.9705
+Mean of Client Accuracy:      0.9671
+Std of Client Accuracy:       0.0704
+--------------Round 476--------------
+Time Cost:                    0.8501s
+Training Loss:                0.1211
+Testing Loss:                 0.4490
+Testing Accuracy:             0.8768
+Validating Accuracy:          0.9750
+Mean of Client Accuracy:      0.9737
+Std of Client Accuracy:       0.0651
+--------------Round 477--------------
+Time Cost:                    0.8717s
+Training Loss:                0.1479
+Testing Loss:                 0.4700
+Testing Accuracy:             0.8694
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9555
+Std of Client Accuracy:       0.0847
+--------------Round 478--------------
+Time Cost:                    0.8940s
+Training Loss:                0.1511
+Testing Loss:                 0.4699
+Testing Accuracy:             0.8696
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9587
+Std of Client Accuracy:       0.0858
+--------------Round 479--------------
+Time Cost:                    1.0841s
+Training Loss:                0.1380
+Testing Loss:                 0.4718
+Testing Accuracy:             0.8689
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9558
+Std of Client Accuracy:       0.0838
+--------------Round 480--------------
+Time Cost:                    0.8950s
+Training Loss:                0.1632
+Testing Loss:                 0.4921
+Testing Accuracy:             0.8641
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9527
+Std of Client Accuracy:       0.0874
+--------------Round 481--------------
+Time Cost:                    0.9463s
+Training Loss:                0.2288
+Testing Loss:                 0.6069
+Testing Accuracy:             0.8272
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.9037
+Std of Client Accuracy:       0.1410
+--------------Round 482--------------
+Time Cost:                    1.1251s
+Training Loss:                0.1542
+Testing Loss:                 0.4726
+Testing Accuracy:             0.8674
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9464
+Std of Client Accuracy:       0.1015
+--------------Round 483--------------
+Time Cost:                    0.9610s
+Training Loss:                0.1419
+Testing Loss:                 0.4784
+Testing Accuracy:             0.8676
+Validating Accuracy:          0.9682
+Mean of Client Accuracy:      0.9612
+Std of Client Accuracy:       0.0779
+--------------Round 484--------------
+Time Cost:                    1.1156s
+Training Loss:                0.2638
+Testing Loss:                 0.6393
+Testing Accuracy:             0.8186
+Validating Accuracy:          0.9091
+Mean of Client Accuracy:      0.8999
+Std of Client Accuracy:       0.1330
+--------------Round 485--------------
+Time Cost:                    0.8573s
+Training Loss:                0.1485
+Testing Loss:                 0.4947
+Testing Accuracy:             0.8619
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9507
+Std of Client Accuracy:       0.0873
+--------------Round 486--------------
+Time Cost:                    0.7228s
+Training Loss:                0.1533
+Testing Loss:                 0.4748
+Testing Accuracy:             0.8686
+Validating Accuracy:          0.9477
+Mean of Client Accuracy:      0.9459
+Std of Client Accuracy:       0.0936
+--------------Round 487--------------
+Time Cost:                    0.7768s
+Training Loss:                0.1395
+Testing Loss:                 0.4852
+Testing Accuracy:             0.8638
+Validating Accuracy:          0.9568
+Mean of Client Accuracy:      0.9462
+Std of Client Accuracy:       0.0937
+--------------Round 488--------------
+Time Cost:                    0.8700s
+Training Loss:                0.1271
+Testing Loss:                 0.4524
+Testing Accuracy:             0.8756
+Validating Accuracy:          0.9659
+Mean of Client Accuracy:      0.9594
+Std of Client Accuracy:       0.0780
+--------------Round 489--------------
+Time Cost:                    0.8758s
+Training Loss:                0.1393
+Testing Loss:                 0.4707
+Testing Accuracy:             0.8678
+Validating Accuracy:          0.9523
+Mean of Client Accuracy:      0.9462
+Std of Client Accuracy:       0.0952
+--------------Round 490--------------
+Time Cost:                    1.1355s
+Training Loss:                0.1552
+Testing Loss:                 0.5162
+Testing Accuracy:             0.8549
+Validating Accuracy:          0.9386
+Mean of Client Accuracy:      0.9306
+Std of Client Accuracy:       0.1049
+--------------Round 491--------------
+Time Cost:                    1.2183s
+Training Loss:                0.1301
+Testing Loss:                 0.4774
+Testing Accuracy:             0.8680
+Validating Accuracy:          0.9727
+Mean of Client Accuracy:      0.9687
+Std of Client Accuracy:       0.0709
+--------------Round 492--------------
+Time Cost:                    1.0692s
+Training Loss:                0.1444
+Testing Loss:                 0.4844
+Testing Accuracy:             0.8665
+Validating Accuracy:          0.9591
+Mean of Client Accuracy:      0.9530
+Std of Client Accuracy:       0.0891
+--------------Round 493--------------
+Time Cost:                    0.9482s
+Training Loss:                0.1456
+Testing Loss:                 0.5068
+Testing Accuracy:             0.8591
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9571
+Std of Client Accuracy:       0.0773
+--------------Round 494--------------
+Time Cost:                    0.9487s
+Training Loss:                0.1626
+Testing Loss:                 0.5280
+Testing Accuracy:             0.8535
+Validating Accuracy:          0.9341
+Mean of Client Accuracy:      0.9238
+Std of Client Accuracy:       0.1080
+--------------Round 495--------------
+Time Cost:                    0.8486s
+Training Loss:                0.1341
+Testing Loss:                 0.4881
+Testing Accuracy:             0.8628
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9544
+Std of Client Accuracy:       0.0903
+--------------Round 496--------------
+Time Cost:                    0.8020s
+Training Loss:                0.1368
+Testing Loss:                 0.4903
+Testing Accuracy:             0.8633
+Validating Accuracy:          0.9614
+Mean of Client Accuracy:      0.9536
+Std of Client Accuracy:       0.0924
+--------------Round 497--------------
+Time Cost:                    0.7980s
+Training Loss:                0.1519
+Testing Loss:                 0.4763
+Testing Accuracy:             0.8677
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9523
+Std of Client Accuracy:       0.0954
+--------------Round 498--------------
+Time Cost:                    0.7532s
+Training Loss:                0.1500
+Testing Loss:                 0.4823
+Testing Accuracy:             0.8662
+Validating Accuracy:          0.9545
+Mean of Client Accuracy:      0.9523
+Std of Client Accuracy:       0.0921
+--------------Round 499--------------
+Time Cost:                    0.9991s
+Training Loss:                0.1917
+Testing Loss:                 0.5118
+Testing Accuracy:             0.8560
+Validating Accuracy:          0.9318
+Mean of Client Accuracy:      0.9294
+Std of Client Accuracy:       0.1109
+--------------Round 500--------------
+Time Cost:                    0.9100s
+Training Loss:                0.1251
+Testing Loss:                 0.4590
+Testing Accuracy:             0.8729
+Validating Accuracy:          0.9682
+Mean of Client Accuracy:      0.9611
+Std of Client Accuracy:       0.0780
+=================End==================
+Total Time Cost:              1781.5067s
