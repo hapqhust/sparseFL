@@ -1,4 +1,4 @@
-from .fedbase import BasicServer, BasicClient
+from ..fedbase import BasicServer, BasicClient
 import copy
 from utils import fmodule
 import time, wandb
