@@ -27,16 +27,6 @@ class Server(BasicServer):
         models = [p["model"] for p in pkgs]
         return dys, dcs, models
     
-    def clustering(self, client_ids, dys1):
-        clt = [dy[-1].detach().numpy() for dy in dys1]
-
-        # clt = torch.FloatTensor(np.array(clt))
-        data = np.asarray(clt, dtype=float)
-        data = self.unit_scaler(data)
-        N = len(data)
-        label, num_clusters = self.classifier(data, N, threshold=1.25)
-        return 
-
     def iterate(self, t):
         # sample clients
         self.selected_clients = sorted(self.sample())
@@ -57,6 +47,28 @@ class Server(BasicServer):
         # aggregate
         self.model, self.cg = self.aggregate(dys, dcs)
         return
+
+    def clustering(self, client_ids, dys1):
+        clt = [dy[-1].detach().numpy() for dy in dys1]
+
+        # clt = torch.FloatTensor(np.array(clt))
+        data = np.asarray(clt, dtype=float)
+        data = self.unit_scaler(data)
+        N = len(data)
+        label, num_clusters = self.classifier(data, N, threshold=1.25)
+
+        pairings = self.pairing_clients(
+            clients=client_ids, group_label=label, num_clusters=num_clusters, clients_per_group=2)
+        print(pairings)
+
+        shuffled_list_ids = copy.deepcopy(client_ids)
+        for pair in pairings:
+            if(len(pair) == 2):
+                idx1 = client_ids.index(pair[0])
+                idx2 = client_ids.index(pair[1])
+                shuffled_list_ids[idx1] = pair[1]
+                shuffled_list_ids[idx2] = pair[0]
+        return shuffled_list_ids
     
     def unit_scaler(self, data):
         """
@@ -153,6 +165,30 @@ class Server(BasicServer):
             else:
                 break
         return label, num_cluster-1
+
+    def pairing_clients(self, clients, group_label, num_clusters, clients_per_group=2):
+        # participants = clients.copy()
+        pairs = []
+        rest = []
+        for i in range(num_clusters):
+            group = np.where(group_label == i+1)
+            participants = [clients[i] for i in group[0]]
+            while len(participants) > 1:
+                one_pair = list(np.random.choice(
+                    participants, clients_per_group, replace=False))
+                pairs.append(one_pair)
+                participants = list(set(participants) - set(one_pair))
+            if len(participants):
+                pairs.append(participants)
+        
+        # while len(rest) > 1:
+        #     # print(rest[0])
+        #     one_pair = list(np.random.choice(rest, clients_per_group, replace=False))
+        #     pairs.append(one_pair)
+        #     rest = list(set(rest) - set(one_pair))
+        # if len(rest):
+        #     pairs.append(rest)
+        return pairs
 
     def aggregate(self, dys, dcs):  # c_list is c_i^+
         dw = fmodule._model_average(dys)
