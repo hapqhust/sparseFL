@@ -1,4 +1,5 @@
 import math
+from multiprocessing.pool import ThreadPool
 import random
 from ..fedbase import BasicServer, BasicClient
 import copy
@@ -30,10 +31,20 @@ class Server(BasicServer):
     def iterate(self, t):
         # sample clients
         self.selected_clients = sorted(self.sample())
+        print(self.selected_clients)
         # local training
         dys1, dcs1, models_phase_1 = self.communicate(self.selected_clients)
         
-        shuffled_list = self.random(self.selected_clients)
+        pairings = self.pairing_clients(self.selected_clients)
+        shuffled_list = copy.deepcopy(self.selected_clients)
+        print(pairings)
+        for pair in pairings:
+            if(len(pair) == 2):
+                idx1 = self.selected_clients.index(pair[0])
+                idx2 = self.selected_clients.index(pair[1])
+                shuffled_list[idx1] = pair[1]
+                shuffled_list[idx2] = pair[0]
+        print(shuffled_list)
         
         dys2, dcs2, models_phase_2 = self.communicate_phase2(zip(shuffled_list, models_phase_1))
         
@@ -48,18 +59,65 @@ class Server(BasicServer):
         self.model, self.cg = self.aggregate(dys, dcs)
         return
 
-    def random(self, client_ids):
-        new_list = copy.deepcopy(client_ids)
-        list_ids = copy.deepcopy(client_ids)
+    def pairing_clients(self, clients, clients_per_group=2):
+        """
+        clients = [0,1,2,3,4,5,6,....] the list of client's id
+        """
+        participants = clients.copy()
+        pairs = []
         
-        for idx in range(len(new_list)):
-            while(True):
-                client_id = random.choice(list_ids)
-                if (new_list[idx] != client_id):
-                    break
-            new_list[idx] = client_id
-            list_ids.remove[client_id]
-        return  new_list
+        while len(participants) > 1:
+            one_pair = list(np.random.choice(participants, clients_per_group, replace=False))
+            pairs.append(one_pair)
+            participants = list(set(participants) - set(one_pair))
+        
+        if len(participants):
+            pairs.append(participants)
+        
+        return pairs
+    
+    # def random(self, client_ids):
+    #     new_list = copy.deepcopy(client_ids)
+    #     list_ids = copy.deepcopy(client_ids)
+        
+    #     for idx in range(len(new_list)):
+    #         while(True):
+    #             client_id = random.choice(list_ids)
+    #             if (new_list[idx] != client_id):
+    #                 print(list_ids)
+    #                 break
+    #         new_list[idx] = client_id
+    #         list_ids.remove(client_id)
+    #     return  new_list
+    
+    def communicate_phase2(self, groups):
+        packages_received_from_clients = []
+        if self.num_threads <= 1:
+            # computing iteratively
+            for group in groups:
+                response_from_client_id = self.communicate_with_phase2(group)
+                packages_received_from_clients.append(response_from_client_id)
+        else:
+            # computing in parallel
+            pool = ThreadPool(min(self.num_threads, len(groups)))
+            packages_received_from_clients = pool.map(self.communicate_with_phase2, groups)
+            pool.close()
+            pool.join()
+        # count the clients not dropping
+        # self.selected_clients = [selected_clients[i] for i in range(len(selected_clients)) if packages_received_from_clients[i]]
+        packages_received_from_clients = [pi for pi in packages_received_from_clients if pi]
+        return self.unpack(packages_received_from_clients)
+    
+    def communicate_with_phase2(self, group):
+        client_id, model = group
+        # package the necessary information
+        svr_pkg = {
+            "model": copy.deepcopy(model),
+            "cg": self.cg,
+        }
+        # listen for the client's response and return None if the client drops out
+        if self.clients[client_id].is_drop(): return None
+        return self.clients[client_id].reply(svr_pkg)
 
     def aggregate(self, dys, dcs):  # c_list is c_i^+
         dw = fmodule._model_average(dys)

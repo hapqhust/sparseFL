@@ -1,4 +1,5 @@
 import math
+from multiprocessing.pool import ThreadPool
 import random
 from ..fedbase import BasicServer, BasicClient
 import copy
@@ -30,6 +31,8 @@ class Server(BasicServer):
     def iterate(self, t):
         # sample clients
         self.selected_clients = sorted(self.sample())
+        
+        print(self.selected_clients)
         # local training
         dys1, dcs1, models_phase_1 = self.communicate(self.selected_clients)
         
@@ -49,14 +52,22 @@ class Server(BasicServer):
         return
 
     def clustering(self, client_ids, dys1):
-        clt = [dy[-1].detach().numpy() for dy in dys1]
+        clt = []
+        for model in dys1:
+            trained_model = [param[:]
+                             for name, param in model.named_parameters()]
+            
+            res = trained_model[-1].cpu().detach().numpy()
+            clt.append(res)
+        # clt = [dy.name_parameters()['param'][-1].detach().numpy() for dy in dys1]
 
         # clt = torch.FloatTensor(np.array(clt))
         data = np.asarray(clt, dtype=float)
         data = self.unit_scaler(data)
         N = len(data)
         label, num_clusters = self.classifier(data, N, threshold=1.25)
-
+        print(label)
+        
         pairings = self.pairing_clients(
             clients=client_ids, group_label=label, num_clusters=num_clusters, clients_per_group=2)
         print(pairings)
@@ -189,6 +200,35 @@ class Server(BasicServer):
         # if len(rest):
         #     pairs.append(rest)
         return pairs
+    
+    def communicate_phase2(self, groups):
+        packages_received_from_clients = []
+        if self.num_threads <= 1:
+            # computing iteratively
+            for group in groups:
+                response_from_client_id = self.communicate_with_phase2(group)
+                packages_received_from_clients.append(response_from_client_id)
+        else:
+            # computing in parallel
+            pool = ThreadPool(min(self.num_threads, len(groups)))
+            packages_received_from_clients = pool.map(self.communicate_with_phase2, groups)
+            pool.close()
+            pool.join()
+        # count the clients not dropping
+        # self.selected_clients = [selected_clients[i] for i in range(len(selected_clients)) if packages_received_from_clients[i]]
+        packages_received_from_clients = [pi for pi in packages_received_from_clients if pi]
+        return self.unpack(packages_received_from_clients)
+    
+    def communicate_with_phase2(self, group):
+        client_id, model = group
+        # package the necessary information
+        svr_pkg = {
+            "model": copy.deepcopy(model),
+            "cg": self.cg,
+        }
+        # listen for the client's response and return None if the client drops out
+        if self.clients[client_id].is_drop(): return None
+        return self.clients[client_id].reply(svr_pkg)
 
     def aggregate(self, dys, dcs):  # c_list is c_i^+
         dw = fmodule._model_average(dys)

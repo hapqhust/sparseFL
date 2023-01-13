@@ -110,16 +110,18 @@ def initialize(option):
     train_datas, test_data, num_clients = task_reader.read_data()
     print("done")
 
+    algorithm_group = option['algorithm'].split('_')[0]
+    
     # init client
     print('init clients...', end='')
-    client_path = '%s.%s' % ('algorithm', option['algorithm'])
+    client_path = '%s.%s.%s' % ('algorithm', algorithm_group, option['algorithm'])
     Client=getattr(importlib.import_module(client_path), 'Client')
     clients = [Client(option, name = cid, train_data = train_datas[cid]) for cid in range(num_clients)]
     print('done')
 
     # init server
     print("init server...", end='')
-    server_path = '%s.%s' % ('algorithm', option['algorithm'])
+    server_path = '%s.%s.%s' % ('algorithm', algorithm_group, option['algorithm'])
     server = getattr(importlib.import_module(server_path), 'Server')(option, utils.fmodule.Model().to(utils.fmodule.device), clients, test_data = test_data)
     print('done')
     return server
