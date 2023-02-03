@@ -1,0 +1,16 @@
+mkdir fedtask
+
+CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_cluster_sparse_N10_K10 --wandb 0 --model cnn --algorithm mp_proposal_4_v2 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/cluster_sparse/10client/mnist_sparse.json --num_rounds 200 --num_epochs 4 --proportion 1 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_cluster_sparse_N10_K10 --wandb 0 --model cnn --algorithm mp_proposal_4 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/cluster_sparse/10client/mnist_sparse.json --num_rounds 200 --num_epochs 4 --proportion 1 --batch_size 2 --se 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_cluster_sparse_N50_K10 --wandb 0 --model cnn --algorithm mp_fedavg --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/cluster_sparse/50client/mnist_sparse.json --num_rounds 500 --num_epochs 4 --proportion 0.2 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+
+# MNIST sparse dataset N100_K10
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N100_K10 --wandb 0 --model cnn --algorithm mp_proposal_4_v2 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/100client/mnist_sparse.json --num_rounds 1000 --num_epochs 8 --proportion 0.1 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N100_K10 --wandb 0 --model cnn --algorithm mp_proposal_4 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/100client/mnist_sparse.json --num_rounds 1000 --num_epochs 8 --proportion 0.1 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N100_K10 --wandb 0 --model cnn --algorithm mp_fedavg --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/100client/mnist_sparse.json --num_rounds 1000 --num_epochs 8 --proportion 0.1 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+
+
+# MNIST sparse dataset N500_K20
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N500_K20 --wandb 0 --model cnn --algorithm mp_proposal_4_v2 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/500client/mnist_sparse.json --num_rounds 2000 --num_epochs 8 --proportion 0.04 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N500_K20 --wandb 0 --model cnn --algorithm mp_proposal_4 --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/500client/mnist_sparse.json --num_rounds 2000 --num_epochs 8 --proportion 0.04 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
+# CUDA_VISIBLE_DEVICES=1,0 python main.py --task mnist_sparse_N500_K20 --wandb 0 --model cnn --algorithm mp_fedavg --data_folder ./benchmark/mnist/data --log_folder fedtask --dataidx_filename mnist/sparse/500client/mnist_sparse.json --num_rounds 2000 --num_epochs 8 --proportion 0.04 --batch_size 2 --num_threads_per_gpu 1  --num_gpus 2 --server_gpu_id 0
