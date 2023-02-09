@@ -5,17 +5,21 @@ cudas = ",".join([str(i) for i in visible_cudas])
 task_file = "main.py"
 
 dataset = "mnist"
-dataset_types = ["sparse", "sparse5_dense5", "sparse3_dense7", "sparse7_dense3"]
-# dataset_types = ["sparse"]
-N = 200
-K = 20
+dataset_types = ["sparse_dir0.1", "sparse_dir0.5", "sparse_dir100"]
+
+# config parameters
+N = 300
+rate = 0.2
+K = int(N*rate)
+
 E = 8
+batch_size = 8
 num_round = 1000
-batch_size = 2
 
 model = "cnn"
-algos = ["mp_proposal_random_matching", "mp_proposal_cluster_matching_v1", "mp_proposal_cluster_matching_v2"]
-# algos = ["scaffold", "mp_proposal_random_matching", "mp_proposal_cluster_matching", "mp_fedavg", "mp_fedprox", "fedfa", "fedfv"]
+
+# algos = ["mp_proposal_random_matching", "mp_proposal_cluster_matching_v1", "mp_proposal_cluster_matching_v2"]
+algos = ["scaffold", "scaffold_with_random", "mp_fedavg", "fedavg_mp_with_random", "mp_fedprox", "mp_fedprox_with_random", "fedfa", "fedfa_with_random", "fedfv", "fedfv_with_random"]
 data_folder = f"./benchmark/{dataset}/data"
 log_folder = f"motiv/{dataset}"
 
@@ -57,12 +61,12 @@ for dataset_type in dataset_types:
         ROUND={num_round}\n\
         EPOCH_PER_ROUND={E}\n\
         BATCH={batch_size}\n\
-        PROPOTION={K/N:>.2f}\n\
+        PROPOTION={rate}\n\
         NUM_THRESH_PER_GPU=1\n\
         NUM_GPUS=1\n\
         SERVER_GPU_ID=0\n\
         TASK=\"{task_name}\"\n\
-        DATA_IDX_FILE=\"{dataset}/{dataset_type}/{N}client/{dataset}_{dataset_type}.json\"\n\n\
+        DATA_IDX_FILE=\"{dataset}/{dataset_type}/{N}client/{dataset}_sparse.json\"\n\n\
         cd sparseFL\n\n\
         "
 
@@ -73,7 +77,7 @@ for dataset_type in dataset_types:
             
         body_text = "python main.py  --task ${TASK}  --model ${MODEL}  --algorithm ${ALG}  --wandb ${WANDB} --data_folder ${DATA_DIR}  --log_folder ${LOG_DIR}   --dataidx_filename ${DATA_IDX_FILE}   --num_rounds ${ROUND} --num_epochs ${EPOCH_PER_ROUND} --proportion ${PROPOTION} --batch_size ${BATCH} --num_threads_per_gpu ${NUM_THRESH_PER_GPU}  --num_gpus ${NUM_GPUS} --server_gpu_id ${SERVER_GPU_ID} "
 
-        dir_path = f"./run2/{dataset}/{dataset_type}/"
+        dir_path = f"./run3/{dataset}/{dataset_type}/"
         
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)

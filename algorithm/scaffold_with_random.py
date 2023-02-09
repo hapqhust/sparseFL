@@ -6,7 +6,6 @@ import copy
 from utils import fmodule
 import time, wandb
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
 
 class Server(BasicServer):
     def __init__(self, option, model, clients, test_data=None):
