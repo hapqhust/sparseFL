@@ -8,8 +8,8 @@ dataset = "mnist"
 dataset_types = ["sparse_dir0.1", "sparse_dir0.5", "sparse_dir100"]
 
 # config parameters
-N = 300
-rate = 0.2
+N = 100
+rate = 0.1
 K = int(N*rate)
 
 E = 8
@@ -18,8 +18,9 @@ num_round = 1000
 
 model = "cnn"
 
-# algos = ["mp_proposal_random_matching", "mp_proposal_cluster_matching_v1", "mp_proposal_cluster_matching_v2"]
-algos = ["scaffold", "scaffold_with_random", "mp_fedavg", "fedavg_mp_with_random", "mp_fedprox", "mp_fedprox_with_random", "fedfa", "fedfa_with_random", "fedfv", "fedfv_with_random"]
+algos = ["singleset"]
+# algos = ["scaffold", "scaffold_with_random", "mp_fedavg", "fedavg_mp_with_random", "mp_fedprox", "mp_fedprox_with_random", "fedfa", "fedfa_with_random", "fedfv", "fedfv_with_random"]
+
 data_folder = f"./benchmark/{dataset}/data"
 log_folder = f"motiv/{dataset}"
 

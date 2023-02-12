@@ -3,10 +3,12 @@ from .fedbase import BasicServer, BasicClient
 import numpy as np
 import copy
 import torch
-import time, wandb
+import time
+import wandb
+
 
 class Server(BasicServer):
-    def __init__(self, option, model, clients, test_data = None):
+    def __init__(self, option, model, clients, test_data=None):
         super(Server, self).__init__(option, model, clients, test_data)
         # self.m = fmodule._modeldict_zeroslike(self.model.state_dict())
         self.m = copy.deepcopy(self.model) * 0.0
@@ -14,7 +16,7 @@ class Server(BasicServer):
         self.alpha = 1.0 - self.beta
         self.gamma = option['gamma']
         self.eta = option['learning_rate']
-        self.paras_name=['beta','gamma']
+        self.paras_name = ['beta', 'gamma']
 
     def unpack(self, pkgs):
         ws = [p["model"] for p in pkgs]
@@ -28,11 +30,12 @@ class Server(BasicServer):
         self.selected_clients = self.sample()
         # training
         ws, losses, ACC, F = self.communicate(self.selected_clients)
-        if self.selected_clients == []: return
-        
+        if self.selected_clients == []:
+            return
+
         device0 = torch.device(f"cuda:{self.server_gpu_id}")
         ws = [i.to(device0) for i in ws]
-        
+
         # aggregate
         # calculate ACCi_inf, fi_inf
         sum_acc = np.sum(ACC)
@@ -44,13 +47,15 @@ class Server(BasicServer):
         ACCinf = [acc/sum_acc for acc in ACCinf]
         Finf = [f/sum_f for f in Finf]
         # calculate weight = αACCi_inf+βfi_inf
-        p = [self.alpha*accinf+self.beta*finf for accinf,finf in zip(ACCinf,Finf)]
+        p = [self.alpha*accinf+self.beta *
+             finf for accinf, finf in zip(ACCinf, Finf)]
         wnew = self.aggregate(ws, p)
         dw = wnew - self.model
         # calculate m = γm+(1-γ)dw
         self.m = self.gamma * self.m + (1 - self.gamma) * dw
         self.model = wnew - self.m * self.eta
         return
+
 
 class Client(BasicClient):
     def __init__(self, option, name='', train_data=None, valid_data=None):
@@ -60,7 +65,7 @@ class Client(BasicClient):
 
     def reply(self, svr_pkg):
         model = self.unpack(svr_pkg)
-        acc, loss = self.test(model,'train')
+        acc, loss = self.test(model, 'train')
         self.train(model)
         cpkg = self.pack(model, loss, acc)
         return cpkg
@@ -69,9 +74,8 @@ class Client(BasicClient):
         self.frequency += 1
 
         return {
-            "model":model,
-            "train_loss":loss,
-            "acc":acc,
-            "freq":self.frequency,
+            "model": model,
+            "train_loss": loss,
+            "acc": acc,
+            "freq": self.frequency,
         }
-        
