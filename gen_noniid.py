@@ -193,21 +193,21 @@ def pathological_non_iid_split(dataset, n_classes, n_clients, n_classes_per_clie
 
     return clients_indices
 
-training_data = datasets.CIFAR10(
-    root="./benchmark/cifar10/data/",
+training_data = datasets.CIFAR100(
+    root="./benchmark/cifar100/data/",
     train=True,
     download=False,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 )
 
-testing_data = datasets.CIFAR10(
-    root="./benchmark/cifar10/data/",
+testing_data = datasets.CIFAR100(
+    root="./benchmark/cifar100/data/",
     train=False,
     download=False,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 )
 
-num_clients=100
+num_clients=300
 # total_label=10
 
 labels = training_data.targets
@@ -248,7 +248,7 @@ for i in range(len(res)):
 
 
 # Produce json file
-dataset = "cifar10"
+dataset = "cifar100"
 
 dir_path = f"./dataset_idx/{dataset}/sparse_dir{dirichlet}/{num_clients}client/"
 if not os.path.exists(dir_path):
@@ -265,6 +265,6 @@ print("Stats generated successfully")
 dir_path_figures = f"figures/{dataset}/sparse_dir{dirichlet}/"
 if not os.path.exists(dir_path_figures):
     os.makedirs(dir_path_figures)
-plt.figure(figsize=(12,12))
+plt.figure(figsize=(45,15))
 sns.heatmap(dis_mtx[:20], annot= True, cmap="coolwarm")
 plt.savefig(f"figures/{dataset}/sparse_dir{dirichlet}/{num_clients}client.png")

@@ -81,7 +81,7 @@ class Server(BasicServer):
         if dataset_name == 'mnist': 
             train_dataset = datasets.MNIST(data_folder, 
                                            train=True, 
-                                           download=True, 
+                                           download=False, 
                                            transform=transforms.Compose([
                                                transforms.ToTensor(), 
                                                transforms.Normalize((0.1307,), (0.3081,))
@@ -91,7 +91,7 @@ class Server(BasicServer):
         elif dataset_name == 'cifar100':
             train_dataset = datasets.CIFAR100(data_folder, 
                                             train=True, 
-                                            download=True,
+                                            download=False,
                                             transform=transforms.Compose([
                                                 transforms.ToTensor(), 
                                                 transforms.Normalize((0.4914, 0.4822, 0.4465),
@@ -102,7 +102,7 @@ class Server(BasicServer):
         elif dataset_name == 'cifar10':
             train_dataset = datasets.CIFAR10(data_folder, 
                                             train=True, 
-                                            download=True,
+                                            download=False,
                                             transform=transforms.Compose([
                                                 transforms.ToTensor(), 
                                                 transforms.Normalize((0.4914, 0.4822, 0.4465),
