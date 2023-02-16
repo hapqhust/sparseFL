@@ -10,8 +10,9 @@ import utils.fflow as flw
 import wandb
 import torch
 
+
 class BasicServer():
-    def __init__(self, option, model, clients, test_data = None):
+    def __init__(self, option, model, clients, test_data=None):
         # basic setting
         self.output_file_name = option['output_file_name']
         self.task = option['task']
@@ -30,15 +31,16 @@ class BasicServer():
         # hyper-parameters during training process
         self.num_rounds = option['num_rounds']
         self.decay_rate = option['learning_rate_decay']
-        self.clients_per_round = max(int(self.num_clients * option['proportion']), 1)
+        self.clients_per_round = max(
+            int(self.num_clients * option['proportion']), 1)
         self.lr_scheduler_type = option['lr_scheduler']
         self.current_round = -1
         # sampling and aggregating methods
         self.sample_option = option['sample']
         self.agg_option = option['aggregate']
-        self.lr=option['learning_rate']
+        self.lr = option['learning_rate']
         # names of additional parameters
-        self.paras_name=[]
+        self.paras_name = []
         self.option = option
         # server calculator
         self.calculator = fmodule.TaskCalculator(fmodule.device)
@@ -61,15 +63,18 @@ class BasicServer():
             self.global_lr_scheduler(round)
 
             logger.time_end('Time Cost')
-            if logger.check_if_log(round, self.eval_interval): logger.log(self)
+            if logger.check_if_log(round, self.eval_interval):
+                logger.log(self)
 
         print("=================End==================")
         logger.time_end('Total Time Cost')
         # save results as .json file
-        filepath = os.path.join(self.log_folder, self.option['task'], self.option['dataidx_filename']).split('.')[0]
+        filepath = os.path.join(
+            self.log_folder, self.option['task'], self.option['dataidx_filename']).split('.')[0]
         if not Path(filepath).exists():
             os.system(f"mkdir -p {filepath}")
-        logger.save(os.path.join(filepath, flw.output_filename(self.option, self)))
+        logger.save(os.path.join(
+            filepath, flw.output_filename(self.option, self)))
 
     def iterate(self, t):
         """
@@ -83,9 +88,11 @@ class BasicServer():
         # training
         models, train_losses = self.communicate(self.selected_clients)
         # check whether all the clients have dropped out, because the dropped clients will be deleted from self.selected_clients
-        if not self.selected_clients: return
+        if not self.selected_clients:
+            return
         # aggregate: pk = 1/K as default where K=len(selected_clients)
-        self.model = self.aggregate(models, p = [1.0 * self.client_vols[cid]/self.data_vol for cid in self.selected_clients])
+        self.model = self.aggregate(models, p=[
+                                    1.0 * self.client_vols[cid]/self.data_vol for cid in self.selected_clients])
 
         return
 
@@ -107,12 +114,15 @@ class BasicServer():
         else:
             # computing in parallel
             pool = ThreadPool(min(self.num_threads, len(selected_clients)))
-            packages_received_from_clients = pool.map(self.communicate_with, selected_clients)
+            packages_received_from_clients = pool.map(
+                self.communicate_with, selected_clients)
             pool.close()
             pool.join()
         # count the clients not dropping
-        self.selected_clients = [selected_clients[i] for i in range(len(selected_clients)) if packages_received_from_clients[i]]
-        packages_received_from_clients = [pi for pi in packages_received_from_clients if pi]
+        self.selected_clients = [selected_clients[i] for i in range(
+            len(selected_clients)) if packages_received_from_clients[i]]
+        packages_received_from_clients = [
+            pi for pi in packages_received_from_clients if pi]
         return self.unpack(packages_received_from_clients)
 
     def communicate_with(self, client_id):
@@ -126,7 +136,8 @@ class BasicServer():
         # package the necessary information
         svr_pkg = self.pack(client_id)
         # listen for the client's response and return None if the client drops out
-        if self.clients[client_id].is_drop(): return None
+        if self.clients[client_id].is_drop():
+            return None
         return self.clients[client_id].reply(svr_pkg)
 
     def pack(self, client_id):
@@ -139,7 +150,7 @@ class BasicServer():
             a dict that only contains the global model as default.
         """
         return {
-            "model" : copy.deepcopy(self.model),
+            "model": copy.deepcopy(self.model),
         }
 
     def unpack(self, packages_received_from_clients):
@@ -152,7 +163,8 @@ class BasicServer():
             losses: a list of the losses of the global model on each training dataset
         """
         models = [cp["model"] for cp in packages_received_from_clients]
-        train_losses = [cp["train_loss"] for cp in packages_received_from_clients]
+        train_losses = [cp["train_loss"]
+                        for cp in packages_received_from_clients]
         return models, train_losses
 
     def global_lr_scheduler(self, current_round):
@@ -165,7 +177,7 @@ class BasicServer():
             return
         elif self.lr_scheduler_type == 0:
             """eta_{round+1} = DecayRate * eta_{round}"""
-            self.lr*=self.decay_rate
+            self.lr *= self.decay_rate
             for c in self.clients:
                 c.set_learning_rate(self.lr)
         elif self.lr_scheduler_type == 1:
@@ -185,20 +197,24 @@ class BasicServer():
         selected_clients = []
         # collect all the active clients at this round and wait for at least one client is active and
         active_clients = []
-        while(len(active_clients)<1):
-            active_clients = [cid for cid in range(self.num_clients) if self.clients[cid].is_active()]
+        while(len(active_clients) < 1):
+            active_clients = [cid for cid in range(
+                self.num_clients) if self.clients[cid].is_active()]
         # sample clients
         if self.sample_option == 'active':
             # select all the active clients without sampling
             selected_clients = active_clients
         if self.sample_option == 'uniform':
             # original sample proposed by fedavg
-            selected_clients = list(np.random.choice(all_clients, self.clients_per_round, replace=False))
-        elif self.sample_option =='md':
+            selected_clients = list(np.random.choice(
+                all_clients, self.clients_per_round, replace=False))
+        elif self.sample_option == 'md':
             # the default setting that is introduced by FedProx
-            selected_clients = list(np.random.choice(all_clients, self.clients_per_round, replace=True, p=[nk / self.data_vol for nk in self.client_vols]))
+            selected_clients = list(np.random.choice(all_clients, self.clients_per_round, replace=True, p=[
+                                    nk / self.data_vol for nk in self.client_vols]))
         # drop the selected but inactive clients
-        selected_clients = list(set(active_clients).intersection(selected_clients))
+        selected_clients = list(
+            set(active_clients).intersection(selected_clients))
         return selected_clients
 
     def aggregate(self, models, p=[]):
@@ -218,7 +234,7 @@ class BasicServer():
         ==============================================================================================|============================
         N/K * Σpk * model_k                 |1/K * Σmodel_k                  |(1-Σpk) * w_old + Σpk * model_k     |Σ(pk/Σpk) * model_k
         """
-        if not models: 
+        if not models:
             return self.model
         if self.agg_option == 'weighted_scale':
             K = len(models)
@@ -227,7 +243,8 @@ class BasicServer():
         elif self.agg_option == 'uniform':
             return fmodule._model_average(models, p=p)
         elif self.agg_option == 'weighted_com':
-            w = fmodule._model_sum([model_k * pk for model_k, pk in zip(models, p)])
+            w = fmodule._model_sum(
+                [model_k * pk for model_k, pk in zip(models, p)])
             return (1.0-sum(p))*self.model + w
         else:
             sump = sum(p)
@@ -259,21 +276,25 @@ class BasicServer():
         :return:
             the metric and loss of the model on the test data
         """
-        if model==None: model=self.model
+        if model == None:
+            model = self.model
         if self.test_data:
             model.eval()
             loss = 0
             eval_metric = 0
-            data_loader = self.calculator.get_data_loader(self.test_data, batch_size=64)
+            data_loader = self.calculator.get_data_loader(
+                self.test_data, batch_size=64)
             for batch_id, batch_data in enumerate(data_loader):
-                bmean_eval_metric, bmean_loss = self.calculator.test(model, batch_data, device)                
+                bmean_eval_metric, bmean_loss = self.calculator.test(
+                    model, batch_data, device)
                 loss += bmean_loss * len(batch_data[1])
                 eval_metric += bmean_eval_metric * len(batch_data[1])
             eval_metric /= len(self.test_data)
             loss /= len(self.test_data)
             return eval_metric, loss
-        else: 
-            return -1,-1
+        else:
+            return -1, -1
+
 
 class BasicClient():
     def __init__(self, option, name='', train_data=None, valid_data=None):
@@ -289,17 +310,19 @@ class BasicClient():
         self.optimizer_name = option['optimizer']
         self.epochs = option['num_epochs']
         self.learning_rate = option['learning_rate']
-        self.batch_size = len(self.train_data) if option['batch_size']==-1 else option['batch_size']
+        self.batch_size = len(
+            self.train_data) if option['batch_size'] == -1 else option['batch_size']
         self.momentum = option['momentum']
         self.weight_decay = option['weight_decay']
         self.model = None
         # system setting
         # the probability of dropout obey distribution beta(drop, 1). The larger 'drop' is, the more possible for a device to drop
-        self.drop_rate = 0 if option['net_drop']<0.01 else np.random.beta(option['net_drop'], 1, 1).item()
-        self.active_rate = 1 if option['net_active']>99998 else np.random.beta(option['net_active'], 1, 1).item()
+        self.drop_rate = 0 if option['net_drop'] < 0.01 else np.random.beta(
+            option['net_drop'], 1, 1).item()
+        self.active_rate = 1 if option['net_active'] > 99998 else np.random.beta(
+            option['net_active'], 1, 1).item()
         self.wandb = option['wandb']
         self.server_gpu_id = option['server_gpu_id']
-
 
     def train(self, model):
         """
@@ -309,10 +332,13 @@ class BasicClient():
         :return
         """
         model.train()
-        device = f"cuda:{self.server_gpu_id}" if torch.cuda.is_available() else 'cpu'
+        device = f"cuda:{self.server_gpu_id}" if torch.cuda.is_available(
+        ) else 'cpu'
         model = model.to(device)
-        data_loader = self.calculator.get_data_loader(self.train_data, batch_size=self.batch_size)
-        optimizer = self.calculator.get_optimizer(self.optimizer_name, model, lr = self.learning_rate, weight_decay=self.weight_decay, momentum=self.momentum)
+        data_loader = self.calculator.get_data_loader(
+            self.train_data, batch_size=self.batch_size)
+        optimizer = self.calculator.get_optimizer(
+            self.optimizer_name, model, lr=self.learning_rate, weight_decay=self.weight_decay, momentum=self.momentum)
         for iter in range(self.epochs):
             for batch_id, batch_data in enumerate(data_loader):
                 model.zero_grad()
@@ -338,10 +364,11 @@ class BasicClient():
         eval_metric = 0
         data_loader = self.calculator.get_data_loader(dataset, batch_size=32)
         for batch_id, batch_data in enumerate(data_loader):
-            bmean_eval_metric, bmean_loss = self.calculator.test(model, batch_data, device)
+            bmean_eval_metric, bmean_loss = self.calculator.test(
+                model, batch_data, device)
             loss += bmean_loss * len(batch_data[1])
             eval_metric += bmean_eval_metric * len(batch_data[1])
-        eval_metric =1.0 * eval_metric / len(dataset)
+        eval_metric = 1.0 * eval_metric / len(dataset)
         loss = 1.0 * loss / len(dataset)
         return eval_metric, loss
 
@@ -386,7 +413,7 @@ class BasicClient():
             package: a dict that contains the necessary information for the server
         """
         return {
-            "model" : model,
+            "model": model,
             "train_loss": loss,
         }
 
@@ -397,8 +424,10 @@ class BasicClient():
         :return
             True if the client is active according to the active_rate else False
         """
-        if self.active_rate==1: return True
-        else: return (np.random.rand() <= self.active_rate)
+        if self.active_rate == 1:
+            return True
+        else:
+            return (np.random.rand() <= self.active_rate)
 
     def is_drop(self):
         """
@@ -407,8 +436,10 @@ class BasicClient():
         :return
             True if the client drops out according to the drop_rate else False
         """
-        if self.drop_rate==0: return False
-        else: return (np.random.rand() < self.drop_rate)
+        if self.drop_rate == 0:
+            return False
+        else:
+            return (np.random.rand() < self.drop_rate)
 
     def train_loss(self, model):
         """
@@ -416,7 +447,7 @@ class BasicClient():
         :param model:
         :return:
         """
-        return self.test(model,'train')[1]
+        return self.test(model, 'train')[1]
 
     def valid_loss(self, model):
         """
@@ -434,7 +465,7 @@ class BasicClient():
         """
         self.model = model
 
-    def set_learning_rate(self, lr = 0):
+    def set_learning_rate(self, lr=0):
         """
         set the learning rate of local training
         :param lr:
