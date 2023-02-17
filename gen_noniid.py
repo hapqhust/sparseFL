@@ -188,78 +188,81 @@ def pathological_non_iid_split(dataset, n_classes, n_clients, n_classes_per_clie
 
     return clients_indices
 
-training_data = datasets.CIFAR100(
-    root="./benchmark/cifar100/data/",
+training_data = datasets.CIFAR10(
+    root="./benchmark/cifar10/data/",
     train=True,
-    download=False,
+    download=True,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 )
 
-testing_data = datasets.CIFAR100(
-    root="./benchmark/cifar100/data/",
+testing_data = datasets.CIFAR10(
+    root="./benchmark/cifar10/data/",
     train=False,
-    download=False,
+    download=True,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 )
 
-num_clients=300
+num_clients=100
 # total_label=10
 
 labels = training_data.targets
 total_label = len(np.unique(labels))
 dirichlet = 0.1
+Us = [5]
+# Us = [5, 10, 15, 20, 40, 60, 80, 100]
 # seed = random.randint(1,100) if dirichlet == 1 else 1
 
-count = 0
-while (True):
-    bl = 1
-    res = by_labels_non_iid_split(training_data, n_classes=total_label, n_clients=num_clients, n_clusters=-1, alpha=0.15, frac=0.2, seed=random.randint(1,100))
+for U in Us:
+    count = 0
+    while (count <= 100):
+        bl = 1
+        res = by_labels_non_iid_split(training_data, n_classes=total_label, n_clients=num_clients, n_clusters=-1, alpha=dirichlet, frac=U/100, seed=random.randint(1,1000))
 
-    dis_mtx = np.zeros([num_clients, total_label])
-    for client_id in range(len(res)):
-        for sample_id in res[client_id]:
-            # label = training_data.targets[sample_id].item()
-            label = training_data.targets[sample_id]
-            dis_mtx[client_id][label] += 1
-    
-    client_samples = np.sum(dis_mtx, 1)
-    for id in client_samples:
-        if(id == 0):
-            bl = 0
+        dis_mtx = np.zeros([num_clients, total_label])
+        for client_id in range(len(res)):
+            for sample_id in res[client_id]:
+                # label = training_data.targets[sample_id].item()
+                label = training_data.targets[sample_id]
+                dis_mtx[client_id][label] += 1
+        
+        client_samples = np.sum(dis_mtx, 1)
+        for id in client_samples:
+            if(id == 0):
+                bl = 0
+                break
+        count += 1
+        print(count)
+        if(bl == 1):
             break
-    count += 1
-    print(count)
-    if(bl == 1):
-        break
+    
+    if (count > 100):
+        continue
 
-print(np.sum(dis_mtx, 1))
-print(np.sum(dis_mtx, 0))
+    print(np.sum(dis_mtx, 1))
+    print(np.sum(dis_mtx, 0))
 
-res_dict = {}
-for i in range(len(res)):
-    res_dict[i] = res[i]
+    res_dict = {}
+    for i in range(len(res)):
+        res_dict[i] = res[i]
 
+    # Produce json file
+    dataset = "cifar10"
 
+    dir_path = f"./dataset_idx/{dataset}/sparse_dir{dirichlet}_U{U}/{num_clients}client/"
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+    json.dump(res_dict, open(dir_path + f"{dataset}_sparse.json", "w"), indent=4, cls=NpEncoder)
+    print("Output generated successfully")
 
+    # Produce stat file
 
-# Produce json file
-dataset = "cifar100"
-
-dir_path = f"./dataset_idx/{dataset}/sparse_dir{dirichlet}/{num_clients}client/"
-if not os.path.exists(dir_path):
-    os.makedirs(dir_path)
-json.dump(res_dict, open(dir_path + f"{dataset}_sparse.json", "w"), indent=4, cls=NpEncoder)
-print("Output generated successfully")
-
-# Produce stat file
-
-np.savetxt(dir_path + f"{dataset}_sparse_stat.csv", dis_mtx, delimiter=",", fmt="%d")
-print("Stats generated successfully")
+    np.savetxt(dir_path + f"{dataset}_sparse_stat.csv", dis_mtx, delimiter=",", fmt="%d")
+    print("Stats generated successfully")
 
 
-dir_path_figures = f"figures/{dataset}/sparse_dir{dirichlet}/"
-if not os.path.exists(dir_path_figures):
-    os.makedirs(dir_path_figures)
-plt.figure(figsize=(45,15))
-sns.heatmap(dis_mtx[:20], annot= True, cmap="coolwarm")
-plt.savefig(f"figures/{dataset}/sparse_dir{dirichlet}/{num_clients}client.png")
+    dir_path_figures = f"figures/{dataset}/sparse_dir{dirichlet}_U{U}/"
+    if not os.path.exists(dir_path_figures):
+        os.makedirs(dir_path_figures)
+    plt.figure(figsize=(15,30))
+    sns.heatmap(dis_mtx[:30], annot= True, cmap="coolwarm")
+    plt.savefig(dir_path_figures + f"{num_clients}client.png")
