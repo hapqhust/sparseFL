@@ -7,3 +7,5 @@ benchmark/cifar10/data/cifar-10-python.tar.gz
 benchmark/cifar10/data/cifar-10-batches-py/
 benchmark/cifar100/data/cifar-100-python.tar.gz
 benchmark/cifar100/data/cifar-100-python/
+
+.gitpod.yml
