@@ -188,15 +188,15 @@ def pathological_non_iid_split(dataset, n_classes, n_clients, n_classes_per_clie
 
     return clients_indices
 
-training_data = datasets.CIFAR10(
-    root="./benchmark/cifar10/data/",
+training_data = datasets.MNIST(
+    root="./benchmark/mnist/data/",
     train=True,
     download=True,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
 )
 
-testing_data = datasets.CIFAR10(
-    root="./benchmark/cifar10/data/",
+testing_data = datasets.MNIST(
+    root="./benchmark/mnist/data/",
     train=False,
     download=True,
     transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))]),
@@ -207,14 +207,17 @@ num_clients=100
 
 labels = training_data.targets
 total_label = len(np.unique(labels))
-dirichlet = 0.1
-Us = [5]
+dirichlet_list = [0.2, 0.3, 0.4]
+# dirichlet_list = [0.07]
+# dirichlet = 0.5
+Us = [20]
 # Us = [5, 10, 15, 20, 40, 60, 80, 100]
 # seed = random.randint(1,100) if dirichlet == 1 else 1
+U = 20
 
-for U in Us:
+for dirichlet in dirichlet_list:
     count = 0
-    while (count <= 100):
+    while (count <= 30):
         bl = 1
         res = by_labels_non_iid_split(training_data, n_classes=total_label, n_clients=num_clients, n_clusters=-1, alpha=dirichlet, frac=U/100, seed=random.randint(1,1000))
 
@@ -235,7 +238,7 @@ for U in Us:
         if(bl == 1):
             break
     
-    if (count > 100):
+    if (count > 30):
         continue
 
     print(np.sum(dis_mtx, 1))
@@ -246,7 +249,7 @@ for U in Us:
         res_dict[i] = res[i]
 
     # Produce json file
-    dataset = "cifar10"
+    dataset = "mnist"
 
     dir_path = f"./dataset_idx/{dataset}/sparse_dir{dirichlet}_U{U}/{num_clients}client/"
     if not os.path.exists(dir_path):
