@@ -207,7 +207,7 @@ num_clients=100
 
 labels = training_data.targets
 total_label = len(np.unique(labels))
-dirichlet_list = [0.2, 0.3, 0.4]
+dirichlet_list = [0.1, 0.3, 0.5]
 # dirichlet_list = [0.07]
 # dirichlet = 0.5
 Us = [20]
