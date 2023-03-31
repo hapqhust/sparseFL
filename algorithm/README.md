@@ -89,4 +89,3 @@ python main.py --task synthetic_cnum30_dist10_skew0.5_seed0 --num_epochs 20 --al
 # run fedavg (origin), uniform sample and weighted average
 python main.py --task synthetic_cnum30_dist10_skew0.5_seed0 --num_epochs 20 --algorithm fedavg --aggregate weighted_com --sample uniform --model lr --learning_rate 0.01 --batch_size 10 --num_rounds 200 --proportion 0.34 --gpu 0 --lr_scheduler 0
 ```
- ## Example 2 : Scaffold
