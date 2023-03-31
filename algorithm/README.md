@@ -1,3 +1,9 @@
+# Idea of our proposal for FL
+We have implemented our algorithms, which are saved in files with the format `xxx_with_random.py`. The detail of our proposal is decribed in our paper `Random Matching ...`. 
+
+In our paper, the local models from the first training process are transferred peer-2-peer for the next process. However, In order to implement easily, we send the first local models to the corresponding matched client through server. And this implementation will not change performance of original proposal.
+
+
 # How to realize federated algorithms by easyFL?
 Either you want to quickly implement your own federated algorithms, 
 or you want to reproducing the experimental results of other papers, 
@@ -89,7 +95,3 @@ python main.py --task synthetic_cnum30_dist10_skew0.5_seed0 --num_epochs 20 --al
 # run fedavg (origin), uniform sample and weighted average
 python main.py --task synthetic_cnum30_dist10_skew0.5_seed0 --num_epochs 20 --algorithm fedavg --aggregate weighted_com --sample uniform --model lr --learning_rate 0.01 --batch_size 10 --num_rounds 200 --proportion 0.34 --gpu 0 --lr_scheduler 0
 ```
-# Idea of our proposal for FL
-We have implemented our algorithms, which are saved in files with the format `xxx_with_random.py`. The detail of our proposal is decribed in our paper `Random Matching ...`. 
-
-In our paper, the local models from the first training process are transferred peer-2-peer for the next process. However, In order to implement easily, we send the first local models to the corresponding matched client through server. And this implementation will not change performance of original proposal.
